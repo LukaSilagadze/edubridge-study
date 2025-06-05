@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="EduBridge - Student Profile for Nino Gigauri">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="./css/profile.css">
+  <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon">
+  <title>EduBridge - ნინო გიგაურის პროფილი</title>
+</head>
+<body>
+  <header class="main-header">
+    <div class="header-container">
+        <i class="fa-solid fa-bars menu_icon"></i>
+      <a href="./index.html"><img src="./images/logo1.png" alt="EduBridge Logo" class="logo"></a>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="./index.html" class="nav-link">მთავარი</a></li>
+          <li><a href="#" class="nav-link">აღმოაჩინე აქტივობები</a></li>
+          <li><a href="#" class="nav-link active">ჩემი პროფილი</a></li>
+          <li><a href="#" class="nav-link">სერტიფიკატები</a></li>
+          <li><a href="#" class="nav-link">რჩევები</a></li>
+          <li><a href="#" class="nav-link">კონტაქტი</a></li>
+        </ul>
+      </nav>
+      <div class="profile-actions">
+        <button class="icon-btn" aria-label="User profile">
+          <i class="fas fa-user"></i>
+        </button>
+        <a href="#" class="logout-btn">გასვლა</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="profile-main">
+    <div class="container">
+      <section class="profile-card">
+        <div class="profile-header">
+          <div class="profile-info">
+            <img src="./images/profilepic_girl.jpg" alt="ნინო გიგაურის ფოტო" class="profile-avatar">
+            <div class="profile-details">
+              <h1 class="profile-name">ნინო გიგაური</h1>
+              <p class="profile-meta"><i class="fas fa-graduation-cap"></i> მე-11 კლასი | კერძო სკოლა "კოლეგიუმი"</p>
+              <p class="profile-meta"><i class="fas fa-map-marker-alt"></i> საქართველო, თბილისი</p>
+              <button class="edit-profile-btn">
+                <i class="fas fa-pen"></i> პროფილის რედაქტირება
+              </button>
+            </div>
+          </div>
+          <div class="profile-stats">
+            <div class="stat-item">
+              <i class="fas fa-trophy"></i>
+              <span>წარმატებები: <strong>14</strong></span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-certificate"></i>
+              <span>სერტიფიკატები: <strong>10</strong></span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-tasks"></i>
+              <span>აქტივობები: <strong>12</strong></span>
+            </div>
+            <div class="skill-tags">
+              <span class="tag">STEM</span>
+              <span class="tag">Public Speaking</span>
+              <span class="tag">Leadership</span>
+              <span class="tag">Programming</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><i class="fas fa-scroll"></i> სერტიფიკატები</h2>
+        <div class="grid-container">
+          <article class="certificate-card">
+            <div class="certificate-content">
+              <h3>Math Olympiad</h3>
+              <p class="certificate-meta">By Georgian MOE • National • March 2025</p>
+              <button class="view-btn">
+                <i class="fas fa-file-pdf"></i> ნახვა
+              </button>
+            </div>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-content">
+              <h3>Debate Championship</h3>
+              <p class="certificate-meta">By Youth Parliament • School • April 2025</p>
+              <button class="view-btn">
+                <i class="fas fa-file-pdf"></i> ნახვა
+              </button>
+            </div>
+          </article>
+          <article class="certificate-card">
+            <div class="certificate-content">
+              <h3>Best Delegate - UN Model</h3>
+              <p class="certificate-meta">By UN Association • International • May 2025</p>
+              <button class="view-btn">
+                <i class="fas fa-file-pdf"></i> ნახვა
+              </button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><i class="fas fa-history"></i> აქტივობების ისტორია</h2>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <time class="timeline-date">მაისი 2025</time>
+              <p>გაეროს მოდელის კონფერენციაზე საუკეთესო დელეგატის ჯილდო</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <time class="timeline-date">თებერვალი 2025</time>
+              <p>მონაწილეობა მიიღო დებატების ტურნირში</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-marker"></div>
+            <div class="timeline-content">
+              <time class="timeline-date">იანვარი 2025</time>
+              <p>გაიმარჯვა მათემატიკის ოლიმპიადაში</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><i class="fas fa-project-diagram"></i> პროექტები</h2>
+        <div class="grid-container">
+          <article class="project-card">
+            <img src="./images/smartirrigation.jpeg" alt="Smart Irrigation System" class="project-image">
+            <div class="project-content">
+              <h3>Smart Irrigation System</h3>
+              <p class="project-meta">Science Fair • Electronics, IoT</p>
+              <button class="view-btn">ნახვა</button>
+            </div>
+          </article>
+          <article class="project-card">
+            <img src="./images/mobilelearning.webp" alt="Mobile Learning App" class="project-image">
+            <div class="project-content">
+              <h3>Mobile Learning App</h3>
+              <p class="project-meta">App Hackathon • UI/UX, JavaScript</p>
+              <button class="view-btn">ნახვა</button>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title"><i class="fas fa-comment-alt"></i> რეკომენდაციები</h2>
+        <div class="grid-container">
+          <article class="testimonial-card">
+            <blockquote>
+              <p>"ნინო გამოირჩეოდა გუნდურობით და ლიდერობით."</p>
+              <footer>— მაია იოსელიანი, მასწავლებელი</footer>
+            </blockquote>
+          </article>
+          <article class="testimonial-card">
+            <blockquote>
+              <p>"ძალიან კრეატიული მოსწავლე, მუდამ ინოვაციური იდეებით."</p>
+              <footer>— გიორგი ქავთარაძე, მენტორი</footer>
+            </blockquote>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="./index.html" aria-label="EduBridge homepage">
+                        <img src="./images/logo1.png" alt="EduBridge Logo" class="footer-logo" width="100" height="100">
+                    </a>
+                    <p class="footer-about">EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61576915596052" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>სარჩევი</h4>
+                    <ul>
+                        <li><a href="#">მთავარი</a></li>
+                        <li><a href="#">აღმოაჩინე აქტივობები</a></li>
+                        <li><a href="#">ჩემი პროფილი</a></li>
+                        <li><a href="#">სერტიფიკატები</a></li>
+                        <li><a href="#">რჩევები</a></li>
+                        <li><a href="#">კონტაქტი</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ინფორმაცია</h4>
+                    <ul>
+                        <li><a href="#">ჩვენს შესახებ</a></li>
+                        <li><a href="#">პარტნიორები</a></li>
+                        <li><a href="#">წესები და პირობები</a></li>
+                        <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
+                        <li><a href="#">ხშირად დასმული კითხვები</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>კონტაქტი</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> თბილისი, საქართველო</li>
+                        <li><i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789</li>
+                        <li><i class="fas fa-envelope" aria-hidden="true"></i> info@edubridge.ge</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+                <div class="footer-links">
+                    <a href="#">წესები</a>
+                    <a href="#">კონფიდენციალურობა</a>
+                </div>
+            </div>
+        </footer>
+          <a href="#top">
+        <button class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+    </a>
+</body>
+</html>

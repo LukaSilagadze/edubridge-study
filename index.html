@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="EduBridge - პლატფორმა სასკოლო ოლიმპიადების, ტურნირებისა და სხვა საგანმანათლებლო აქტივობებისთვის" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/resolutions.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Georgian:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/54e5db6ee9.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
+    <title>EduBridge | სასკოლო აქტივობების პლატფორმა</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                <i class="fas fa-bars menu"></i>
+            </button>
+
+            <!-- Logo -->
+            <div class="header_left_side">
+                <a href="./index.html" aria-label="EduBridge homepage">
+                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
+                </a>
+            </div>
+
+            <!-- ✅ Nav Menu (This will be shown/hidden on mobile) -->
+            <nav class="header_nav" id="main-menu">
+                <ul class="header_ul">
+                    <li><a href="./index.html" class="header_list active">მთავარი</a></li>
+                    <li><a href="./activities.html" class="header_list">აღმოაჩინე აქტივობები</a></li>
+                    <li><a href="./profile.html" class="header_list">ჩემი პროფილი</a></li>
+                    <li><a href="./certificates.html" class="header_list">სერტიფიკატები</a></li>
+                    <li><a href="./tips.html" class="header_list">რჩევები</a></li>
+                    <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+                </ul>
+            </nav>
+
+            <!-- Auth Buttons and Profile -->
+            <div class="header_right_side">
+                <div class="auth-buttons profile-dropdown">
+                    <button class="btn signup">რეგისტრაცია</button>
+                    <button class="btn signin">ავტორიზაცია</button>
+                </div>
+                <i class="fa-solid fa-user profile_btn"></i>
+            </div>
+        </header>
+
+
+
+        <main>
+            <section class="hero" aria-labelledby="main-heading">
+                <div class="hero-content">
+                    <h1 id="main-heading">
+                        აღმოაჩინე. მიიღე მონაწილეობა. გამოიჩინე თავი.
+                    </h1>
+                    <p class="hero-text">
+                        იპოვე ოლიმპიადები, ტურნირები და სხვა სასკოლო აქტივობები. განათავსე
+                        შენი წარმატებები ერთ პორტფოლიოში.
+                    </p>
+                    <div class="cta-buttons">
+                        <a href="#activities" class="btn signin">
+                            <i class="fas fa-search" aria-hidden="true"></i> აღმოაჩინე
+                            აქტივობები
+                        </a>
+                        <a href="./profile.html">
+                            <button class="btn signup">
+                                <i class="fas fa-folder" aria-hidden="true"></i> ჩემი
+                                პორტფოლიო
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <!-- <div class="hero-scroll-indicator">
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </div> -->
+                <!-- commercials -->
+                
+
+
+            </section>
+
+
+            <div class="ad-carousel">
+                    <div class="ad-track">
+                        <div class="ad-slide">
+                            <!-- <img src="ad1" alt="PLACE YOUR ADS HERE"> -->
+                             <p class="ad">
+                                PLACE YOUR AD HERE
+                             </p>
+                        </div>
+                        <div class="ad-slide">
+                            <!-- <img src="ad2"  alt="PLACE YOUR ADS HERE"> -->
+                             <p class="ad">
+                                PLACE YOUR AD HERE
+                             </p>
+                        </div>
+                        <div class="ad-slide">
+                            <!-- <img src="ad3" alt="PLACE YOUR ADS HERE"> -->
+                             <p class="ad">
+                                PLACE YOUR AD HERE
+                             </p>
+                        </div>
+                        <div class="ad-slide">
+                            <!-- <img src="asd3" alt="PLACE YOUR ADS HERE"> -->
+                             <p class="ad">
+                                PLACE YOUR AD HERE
+                             </p>
+                        </div>
+                        <div class="ad-slide">
+                            <!-- <img src="ad4" alt="PLACE YOUR ADS HERE"> -->
+                             <p class="ad">
+                                PLACE YOUR AD HERE
+                             </p>
+                        </div>
+                    </div>
+                </div>
+
+            <section id="activities" class="section" aria-labelledby="activities-heading">
+                <div class="section-header">
+                    <h2 id="activities-heading">
+                        <i class="fas fa-fire" aria-hidden="true"></i> აქტუალური
+                        აქტივობები
+                    </h2>
+                    <a href="#" class="view-all">ყველას ნახვა</a>
+                </div>
+                <div class="grid">
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="./images/math_olympiad.jpg" alt="მათემატიკის ოლიმპიადა" loading="lazy" \\\\
+                                width="300" height="150" />
+                            <span class="card-badge">ახალი</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>მათემატიკის ოლიმპიადა</h3>
+                            <p class="card-meta">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i> 9-12
+                                კლასი
+                            </p>
+                            <p class="card-meta">
+                                <i class="far fa-clock" aria-hidden="true"></i> რეგისტრაცია
+                                დასრულდება: 25 ივნისი
+                            </p>
+                            <button class="btn card-btn">გაიგე მეტი</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="./images/debate.jpg" alt="დებატების ტურნირი" loading="lazy" width="300"
+                                height="150" />
+                            <span class="card-badge">პოპულარული</span>
+                        </div>
+                        <div class="card-content">
+                            <h3>გაეროს მოდელირება</h3>
+                            <p class="card-meta">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i> 8-11
+                                კლასი
+                            </p>
+                            <p class="card-meta">
+                                <i class="far fa-clock" aria-hidden="true"></i> რეგისტრაცია
+                                დასრულდება: 30 ივნისი
+                            </p>
+                            <button class="btn card-btn">გაიგე მეტი</button>
+                        </div>
+                    </article>
+                    <article class="card">
+                        <div class="card-image">
+                            <img src="./images/programing.jpeg" alt="პროგრამირების ოლიმპიადა" loading="lazy" width="300"
+                                height="150" />
+                        </div>
+                        <div class="card-content">
+                            <h3>პროგრამირების ოლიმპიადა</h3>
+                            <p class="card-meta">
+                                <i class="fas fa-graduation-cap" aria-hidden="true"></i> 10-12
+                                კლასი
+                            </p>
+                            <p class="card-meta">
+                                <i class="far fa-clock" aria-hidden="true"></i> რეგისტრაცია
+                                დასრულდება: 15 ივლისი
+                            </p>
+                            <button class="btn card-btn">გაიგე მეტი</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section achievements" aria-labelledby="achievements-heading">
+                <div class="section-header">
+                    <h2 id="achievements-heading">
+                        <i class="fas fa-trophy" aria-hidden="true"></i> ბოლო წარმატებები
+                    </h2>
+                    <a href="#" class="view-all">ყველას ნახვა</a>
+                </div>
+                <div class="grid">
+                    <article class="card achievement-card">
+                        <div class="achievement-badge gold">
+                            <i class="fas fa-medal" aria-hidden="true"></i>
+                        </div>
+                        <img src="./images/profilepic_girl.jpg" alt="ელენე" class="achievement-image" loading="lazy"
+                            width="120" height="120" />
+                        <div class="achievement-content">
+                            <h3>ელენე - ოქროს მედალი</h3>
+                            <p class="achievement-meta">მათემატიკის ოლიმპიადა, 2025</p>
+                            <p class="achievement-quote">
+                                "EduBridge დამეხმარა შესაბამისი ოლიმპიადის პოვნაში და
+                                მომზადებაში!"
+                            </p>
+                        </div>
+                    </article>
+                    <article class="card achievement-card">
+                        <div class="achievement-badge silver">
+                            <i class="fas fa-medal" aria-hidden="true"></i>
+                        </div>
+                        <img src="./images/profilepic_boy.jpg" alt="გიორგი" class="achievement-image" loading="lazy"
+                            width="120" height="120" />
+                        <div class="achievement-content">
+                            <h3>გიორგი - საუკეთესო დელეგატი</h3>
+                            <p class="achievement-meta">გაეროს მოდელირება, თბილისი</p>
+                            <p class="achievement-quote">
+                                "ამ პლატფორმის წყალობით აღმოვაჩინე ჩემი ნიჭი საჯარო
+                                გამოსვლებში."
+                            </p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section how-it-works" aria-labelledby="how-it-works-heading">
+                <h2 id="how-it-works-heading">
+                    <i class="fas fa-lightbulb" aria-hidden="true"></i> როგორ მუშაობს?
+                </h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-search" aria-hidden="true"></i>
+                        </div>
+                        <h3>აღმოაჩინე აქტივობები</h3>
+                        <p>იპოვე შენთვის საინტერესო ოლიმპიადები და ღონისძიებები</p>
+                    </div>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-edit" aria-hidden="true"></i>
+                        </div>
+                        <h3>გაიარე რეგისტრაცია</h3>
+                        <p>დარეგისტრირდი რამდენიმე მარტივი ნაბიჯით</p>
+                    </div>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-users" aria-hidden="true"></i>
+                        </div>
+                        <h3>მიიღე მონაწილეობა</h3>
+                        <p>გამოიჩინე თავი შერჩეულ აქტივობაში</p>
+                    </div>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-right" aria-hidden="true"></i>
+                    </div>
+                    <div class="step">
+                        <div class="step-icon">
+                            <i class="fas fa-certificate" aria-hidden="true"></i>
+                        </div>
+                        <h3>დააგროვე სერტიფიკატები</h3>
+                        <p>შეინახე შენი წარმატებები პროფილში</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section stats">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="1500">1500</div>
+                    <div class="stat-label">რეგისტრირებული მოსწავლე</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="120">120</div>
+                    <div class="stat-label">აქტივობა წელიწადში</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="350">350</div>
+                    <div class="stat-label">სერტიფიკატი გაიცა</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="95">95%</div>
+                    <div class="stat-label">% კმაყოფილების დონე</div>
+                </div>
+            </section>
+
+            <section class="newsletter" aria-labelledby="newsletter-heading">
+                <div class="newsletter-content">
+                    <h2 id="newsletter-heading">
+                        <i class="fas fa-envelope" aria-hidden="true"></i> მიიღე სიახლეები
+                    </h2>
+                    <p class="newsletter-text">
+                        დარეგისტრირდი და გაეცანი ახალ ღონისძიებებს და რჩევებს.
+                    </p>
+                    <form class="newsletter-form">
+                        <div class="form-group">
+                            <input type="email" placeholder="შეიყვანე ელფოსტა" required aria-label="Email address" />
+                            <button type="submit" class="newsletter-btn">გამოწერა</button>
+                        </div>
+                        <div class="form-agreement">
+                            <input type="checkbox" id="newsletter-agree" required />
+                            <label for="newsletter-agree">ვეთანხმები პირობებს და კონფიდენციალურობის პოლიტიკას</label>
+                        </div>
+                    </form>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="./index.html" aria-label="EduBridge homepage">
+                        <img src="./images/logo1.png" alt="EduBridge Logo" class="footer-logo" width="100"
+                            height="100" />
+                    </a>
+                    <p class="footer-about">
+                        EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
+                        აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61576915596052" aria-label="Facebook"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh" aria-label="Instagram"
+                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>სარჩევი</h4>
+                    <ul>
+                        <li><a href="#">მთავარი</a></li>
+                        <li><a href="#">აღმოაჩინე აქტივობები</a></li>
+                        <li><a href="#">ჩემი პროფილი</a></li>
+                        <li><a href="#">სერტიფიკატები</a></li>
+                        <li><a href="#">რჩევები</a></li>
+                        <li><a href="#">კონტაქტი</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ინფორმაცია</h4>
+                    <ul>
+                        <li><a href="#">ჩვენს შესახებ</a></li>
+                        <li><a href="#">პარტნიორები</a></li>
+                        <li><a href="#">წესები და პირობები</a></li>
+                        <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
+                        <li><a href="#">ხშირად დასმული კითხვები</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>კონტაქტი</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            თბილისი, საქართველო
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            info@edubridge.ge
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+                <div class="footer-links">
+                    <a href="#">წესები</a>
+                    <a href="#">კონფიდენციალურობა</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a href="#top">
+        <button class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+    </a>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
