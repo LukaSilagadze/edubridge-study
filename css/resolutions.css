@@ -71,6 +71,9 @@
     .hero-content{
         transform: scale(0.8);
     }
+    .ad{
+        font-size: 30px;
+    }
 }
 
 
@@ -89,6 +92,16 @@
     }
     .cta-buttons{
         transform: scale(.8);
+    }
+    .ad-slide{
+        width: 430px;
+        height: 100px;
+        border: 4px solid #e5a800;
+        border-radius: 20px;
+    }
+    .ad{
+        color: #e5a800;
+        font-size: 24px;
     }
 }
 
