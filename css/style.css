@@ -114,7 +114,6 @@ header {
     color: var(--light-text);
     font-size: 24px;
     cursor: pointer;
-    padding: 10px;
 }
 
 .auth-buttons {
@@ -160,7 +159,7 @@ header {
     transform: translateY(-2px);
 }
 .profile_btn{
-    display: none;
+    display: block;
     font-size: 30px;
     color: var(--light-text);
 }

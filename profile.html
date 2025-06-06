@@ -5,34 +5,47 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="EduBridge - Student Profile for Nino Gigauri">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="./css/profile.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/resolutions.css">
   <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon">
   <title>EduBridge - ნინო გიგაურის პროფილი</title>
 </head>
 <body>
-  <header class="main-header">
-    <div class="header-container">
-        <i class="fa-solid fa-bars menu_icon"></i>
-      <a href="./index.html"><img src="./images/logo1.png" alt="EduBridge Logo" class="logo"></a>
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li><a href="./index.html" class="nav-link">მთავარი</a></li>
-          <li><a href="#" class="nav-link">აღმოაჩინე აქტივობები</a></li>
-          <li><a href="#" class="nav-link active">ჩემი პროფილი</a></li>
-          <li><a href="#" class="nav-link">სერტიფიკატები</a></li>
-          <li><a href="#" class="nav-link">რჩევები</a></li>
-          <li><a href="#" class="nav-link">კონტაქტი</a></li>
-        </ul>
-      </nav>
-      <div class="profile-actions">
-        <button class="icon-btn" aria-label="User profile">
-          <i class="fas fa-user"></i>
-        </button>
-        <a href="#" class="logout-btn">გასვლა</a>
-      </div>
-    </div>
-  </header>
+  <header>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                <i class="fas fa-bars menu"></i>
+            </button>
+
+            <!-- Logo -->
+            <div class="header_left_side">
+                <a href="./index.html" aria-label="EduBridge homepage">
+                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
+                </a>
+            </div>
+
+            <!-- ✅ Nav Menu (This will be shown/hidden on mobile) -->
+            <nav class="header_nav" id="main-menu">
+                <ul class="header_ul">
+                    <li><a href="./index.html" class="header_list active">მთავარი</a></li>
+                    <li><a href="./activities.html" class="header_list">აღმოაჩინე აქტივობები</a></li>
+                    <li><a href="./profile.html" class="header_list">ჩემი პროფილი</a></li>
+                    <li><a href="./certificates.html" class="header_list">სერტიფიკატები</a></li>
+                    <li><a href="./tips.html" class="header_list">რჩევები</a></li>
+                    <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+                </ul>
+            </nav>
+
+            <!-- Auth Buttons and Profile -->
+            <div class="header_right_side">
+                <div class="auth-buttons profile-dropdown">
+                    <button class="btn signup">რეგისტრაცია</button>
+                    <button class="btn signin">ავტორიზაცია</button>
+                </div>
+                <i class="fa-solid fa-user profile_btn"></i>
+            </div>
+        </header>
 
   <main class="profile-main">
     <div class="container">
@@ -231,5 +244,6 @@
             <i class="fas fa-arrow-up" aria-hidden="true"></i>
         </button>
     </a>
+    <script src="./script.js"></script>
 </body>
 </html>

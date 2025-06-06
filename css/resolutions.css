@@ -23,9 +23,11 @@
 
 
 @media (max-width: 1125px) {
+    header{
+        padding-inline: 50px;
+    }
     .mobile-menu-toggle{
         display: block;
-        padding-inline: 57px;
         font-size: 30px;
     }
     .header_ul{

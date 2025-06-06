@@ -48,104 +48,6 @@ img {
   padding: 0 20px;
 }
 
-/* Header Styles */
-.main-header {
-  background-color: var(--primary-color);
-  color: var(--white-color);
-  padding: 15px 40px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-.header-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.menu_icon{
-    display: none;
-    color: #fff;
-    font-size: 24px;
-}
-
-.logo {
-    width: 70px;
-    height: 70px;
-    transition: var(--transition);
-}
-.logo:hover{
-    transform: scale(1.05);
-}
-
-.nav-list {
-  display: flex;
-  list-style: none;
-  gap: 24px;
-}
-
-.nav-link {
-  font-weight: 500;
-  padding: 8px 0;
-  position: relative;
-  transition: var(--transition);
-}
-
-.nav-link:hover,
-.nav-link.active {
-  color: var(--secondary-color);
-}
-
-.nav_link::after {
-    content: "";
-    position: absolute;
-    width: 0%;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--secondary-color);
-    transition: var(--transition);
-}
-
-.nav_link:hover::after,
-.nav_link.active::after {
-    width: 100%;
-}
-.nav-link.active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: var(--secondary-color);
-}
-
-.profile-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.icon-btn {
-  color: var(--white-color);
-  font-size: 1.1rem;
-  transition: var(--transition);
-}
-
-.icon-btn:hover {
-  color: var(--secondary-color);
-}
-
-.logout-btn {
-  color: var(--white-color);
-  transition: var(--transition);
-}
-
-.logout-btn:hover {
-  color: var(--secondary-color);
-}
 
 /* Profile Card */
 .profile-card {
@@ -261,9 +163,8 @@ img {
   margin: 40px 0;
 }
 
-.section-title {
+.section-title h2{
   color: var(--primary-color);
-  margin-bottom: 24px;
   font-size: 1.5rem;
   display: flex;
   align-items: center;
@@ -271,6 +172,7 @@ img {
 }
 
 .grid-container {
+  margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 20px;
