@@ -278,6 +278,7 @@ header {
   display: flex;
 
   animation: scroll 5s ease-out infinite;
+  animation-delay: 5s;
 }
 @keyframes scroll {
   0% {
