@@ -175,17 +175,18 @@ header {
 }
 
 .profile-dropdown {
-  position: absolute;
-  top: 100%;
-  right: 20px;
-  background: var(--primary-color);
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  display: none;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
+    position: absolute;
+    top: 100%;
+    right: 20px;
+    background: var(--primary-color);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+
 }
 
 .profile-dropdown.active {
@@ -235,7 +236,17 @@ header {
     justify-content: center;
     flex-wrap: wrap;
 }
-
+.hero_ylw_btn{
+    animation: glow 3s linear  infinite fill-mode;
+}
+@keyframes glow {
+    0%{
+        transform: scale(0.5);
+    }
+    100%{
+        transform: scale(1.5);
+    }
+}
 .cta-buttons .btn {
     padding: 14px 28px;
     font-size: 16px;
