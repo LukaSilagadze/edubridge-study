@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ka">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EduBridge - აღმოაჩინე სასკოლო ოლიმპიადები, ტურნირები და საგანმანათლებლო აქტივობები" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/discover.css" />
+    <link rel="stylesheet" href="./css/resolutions.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Georgian:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/54e5db6ee9.js" crossorigin="anonymous"></script>
+    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
+    <title>EduBridge | აღმოაჩინე აქტივობები</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                <i class="fas fa-bars menu"></i>
+            </button>
+
+            <!-- Logo -->
+            <div class="header_left_side">
+                <a href="./index.html" aria-label="EduBridge homepage">
+                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
+                </a>
+            </div>
+
+            <!-- Nav Menu -->
+            <nav class="header_nav" id="main-menu">
+                <ul class="header_ul">
+                    <li><a href="./index.html" class="header_list">მთავარი</a></li>
+                    <li><a href="./discover.html" class="header_list active">აღმოაჩინე აქტივობები</a></li>
+                    <li><a href="./profile.html" class="header_list">ჩემი პროფილი</a></li>
+                    <li><a href="#" class="header_list">სერტიფიკატები</a></li>
+                    <li><a href="#" class="header_list">რჩევები</a></li>
+                    <li><a href="#" class="header_list">კონტაქტი</a></li>
+                </ul>
+            </nav>
+
+            <!-- Auth Buttons and Profile -->
+            <div class="header_right_side">
+                <div class="auth-buttons profile-dropdown">
+                    <button class="btn signup">რეგისტრაცია</button>
+                    <button class="btn signin">ავტორიზაცია</button>
+                </div>
+                <i class="fa-solid fa-user profile_btn"></i>
+            </div>
+        </header>
+
+        <main class="discover-main">
+            <!-- Hero Search Section -->
+            <section class="discover-hero" aria-labelledby="discover-heading">
+                <div class="discover-hero-content">
+                    <h1 id="discover-heading">
+                        <i class="fas fa-search"></i> აღმოაჩინე შენთვის საინტერესო აქტივობები
+                    </h1>
+                    <div class="search-container">
+                        <div class="search-box">
+                            <input type="text" placeholder="ძიება (ოლიმპიადა, საგანი, ტიპი...)" aria-label="Search activities">
+                            <button class="search-btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                        <div class="filter-toggle">
+                            <button class="btn filter-btn">
+                                <i class="fas fa-sliders-h"></i> ფილტრები
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Filters Panel (Initially hidden) -->
+            <div class="filters-panel">
+                <div class="filters-header">
+                    <h3><i class="fas fa-filter"></i> ფილტრები</h3>
+                    <button class="close-filters"><i class="fas fa-times"></i></button>
+                </div>
+                <div class="filter-group">
+                    <h4>საგანი</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="subject" value="math">
+                            <span>მათემატიკა</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="subject" value="physics">
+                            <span>ფიზიკა</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="subject" value="chemistry">
+                            <span>ქიმია</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="subject" value="biology">
+                            <span>ბიოლოგია</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="subject" value="programming">
+                            <span>პროგრამირება</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="subject" value="debate">
+                            <span>დებატები</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>კლასი</h4>
+                    <div class="grade-range">
+                        <div class="range-labels">
+                            <span>1</span>
+                            <span>12</span>
+                        </div>
+                        <input type="range" min="1" max="12" value="9" class="grade-slider">
+                        <div class="selected-grade">9 კლასი</div>
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>ტიპი</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="olympiad">
+                            <span>ოლიმპიადა</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="tournament">
+                            <span>ტურნირი</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="camp">
+                            <span>საზაფხულო ბანაკი</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="course">
+                            <span>კურსი</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-actions">
+                    <button class="btn reset-filters">ფილტრების გასუფთავება</button>
+                    <button class="btn apply-filters">ფილტრების გამოყენება</button>
+                </div>
+            </div>
+
+            <!-- Activities Grid -->
+            <section class="discover-activities" aria-labelledby="activities-heading">
+                <div class="section-header">
+                    <h2 id="activities-heading">
+                        <i class="fas fa-fire"></i> რეკომენდირებული აქტივობები
+                    </h2>
+                    <div class="sort-options">
+                        <label for="sort-by">დალაგება:</label>
+                        <select id="sort-by" class="sort-select">
+                            <option value="popular">პოპულარობით</option>
+                            <option value="newest">უახლესი</option>
+                            <option value="deadline">რეგისტრაციის დასრულება</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="activity-tabs">
+                    <button class="tab-btn active" data-tab="all">ყველა</button>
+                    <button class="tab-btn" data-tab="olympiads">ოლიმპიადები</button>
+                    <button class="tab-btn" data-tab="tournaments">ტურნირები</button>
+                    <button class="tab-btn" data-tab="camps">ბანაკები</button>
+                    <button class="tab-btn" data-tab="courses">კურსები</button>
+                </div>
+                
+                <div class="activity-grid" id="activity-grid">
+                    <!-- Activity cards will be loaded here -->
+                </div>
+                
+                <div class="load-more">
+                    <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
+                </div>
+            </section>
+
+            <!-- Featured Organizations -->
+            <section class="featured-orgs">
+                <h2><i class="fas fa-star"></i> პარტნიორი ორგანიზაციები</h2>
+                <div class="orgs-carousel">
+                    <div class="org-card">
+                        <img src="./images/channels4_profile.jpg" alt="განათლების სამინისტრო" loading="lazy">
+                        <h3>განათლების სამინისტრო</h3>
+                    </div>
+                    <div class="org-card">
+                        <img src="./images/TSU_Logo.png" alt="თბილისის სახელმწიფო უნივერსიტეტი" loading="lazy">
+                        <h3>თსუ</h3>
+                    </div>
+                    <div class="org-card">
+                        <img src="./images/it-step.png" alt="საქართველოს ტექნოლოგიური პარკი" loading="lazy">
+                        <h3>It Step</h3>
+                    </div>
+                    <div class="org-card">
+                        <img src="./images/gmuna.jpg" alt="ახალგაზრდული პარლამენტი" loading="lazy">
+                        <h3>საქართველოს გაეროს მოდელირების ასოციაცია</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer (same as index.html) -->
+        <footer>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="./index.html" aria-label="EduBridge homepage">
+                        <img src="./images/logo1.png" alt="EduBridge Logo" class="footer-logo" width="100" height="100" />
+                    </a>
+                    <p class="footer-about">
+                        EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
+                        აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+                    </p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/profile.php?id=61576915596052" aria-label="Facebook"
+                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh" aria-label="Instagram"
+                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>სარჩევი</h4>
+                    <ul>
+                        <li><a href="./index.html">მთავარი</a></li>
+                        <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
+                        <li><a href="./profile.html">ჩემი პროფილი</a></li>
+                        <li><a href="#">სერტიფიკატები</a></li>
+                        <li><a href="#">რჩევები</a></li>
+                        <li><a href="#">კონტაქტი</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>ინფორმაცია</h4>
+                    <ul>
+                        <li><a href="#">ჩვენს შესახებ</a></li>
+                        <li><a href="#">პარტნიორები</a></li>
+                        <li><a href="#">წესები და პირობები</a></li>
+                        <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
+                        <li><a href="#">ხშირად დასმული კითხვები</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>კონტაქტი</h4>
+                    <ul class="footer-contact">
+                        <li>
+                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                            თბილისი, საქართველო
+                        </li>
+                        <li>
+                            <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
+                            info@edubridge.ge
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+                <div class="footer-links">
+                    <a href="#">წესები</a>
+                    <a href="#">კონფიდენციალურობა</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <a href="#top">
+        <button class="back-to-top" aria-label="Back to top">
+            <i class="fas fa-arrow-up" aria-hidden="true"></i>
+        </button>
+    </a>
+
+    <script src="./script.js"></script>
+    <script src="./discover.js"></script>
+</body>
+
+</html>
