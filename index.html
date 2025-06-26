@@ -137,23 +137,28 @@
           </div>
         </div>
 
-        <section class="recent-activities" aria-labelledby="activities-heading">
+        <section class="activity-timeline" aria-labelledby="timeline-heading">
           <div class="section-header">
-            <h2 id="activities-heading">
-              <i class="fas fa-clock-rotate-left"></i> ბოლო აქტივობები
+            <h2 id="timeline-heading">
+              <i class="fas fa-stream"></i> ბოლო აქტივობები
             </h2>
             <a href="#" class="view-all">ყველას ნახვა</a>
           </div>
 
-          <div class="activities-scroller">
-            <div class="activities-container" id="activity-feed">
-              <!-- Activities will be loaded here by JavaScript -->
-            </div>
+          <div class="timeline-container" id="activity-timeline">
+            <!-- Timeline items will be inserted here -->
+          </div>
+
+          <div class="load-more">
+            <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
           </div>
         </section>
 
-
-        <section id="activities" class="section" aria-labelledby="activities-heading">
+        <section
+          id="activities"
+          class="section"
+          aria-labelledby="activities-heading"
+        >
           <div class="section-header">
             <h2 id="activities-heading">
               <i class="fas fa-fire" aria-hidden="true"></i> აქტუალური

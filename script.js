@@ -49,86 +49,138 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 });
 
-// Updated activity data with more entries
+// Update your activity data structure
 const activities = [
     {
         id: 1,
-        user: "ნინო ნათელაშვილი",
-        avatar: "profilepic_girl.jpg",
+        user: "ლუკა სილაგაძე",
+        avatar: "profilepic_boy.jpg",
         action: "მიიღო სერტიფიკატი",
-        details: "მათემატიკის ოლიმპიადა - ოქრო",
+        details: "მათემატიკის რესპუბლიკური ოლიმპიადა - ოქროს მედალი",
         icon: "certificate",
-        time: "2 საათის წინ"
+        time: "2 საათის წინ",
+        likes: 5,
+        comments: 2,
+        liked: false
     },
     {
         id: 2,
-        user: "გიორგი მამულაძე",
-        avatar: "profilepic_boy.jpg",
-        action: "დარეგისტრირდა",
-        details: "გაეროს მოდელირება 2025",
-        icon: "calendar-check",
-        time: "5 საათის წინ"
+        user: "ნინო გიგაური",
+        avatar: "profilepic_girl.jpg",
+        action: "მიიღო სერტიფიკატი",
+        details: "მათემატიკის რესპუბლიკური ოლიმპიადა - ოქროს მედალი",
+        icon: "certificate",
+        time: "2 საათის წინ",
+        likes: 5,
+        comments: 2,
+        liked: false
     },
     {
         id: 3,
-        user: "თამარ ჩხიკვაძე",
-        avatar: "profilepic_girl.jpg",
-        action: "დაასრულა კურსი",
-        details: "Python პროგრამირება",
-        icon: "graduation-cap",
-        time: "1 დღის წინ"
-    },
-    {
-        id: 4,
-        user: "ლუკა ზარანდია",
+        user: "დათა ბახტაძე",
         avatar: "profilepic_boy.jpg",
         action: "მიიღო სერტიფიკატი",
-        details: "დებატების ტურნირი - ვერცხლი",
+        details: "მათემატიკის რესპუბლიკური ოლიმპიადა - ოქროს მედალი",
         icon: "certificate",
-        time: "2 დღის წინ"
+        time: "2 საათის წინ",
+        likes: 5,
+        comments: 2,
+        liked: false
     },
-    {
-        id: 5,
-        user: "ანა ბერიძე",
-        avatar: "profilepic_girl.jpg",
-        action: "დაიწყო ახალი კურსი",
-        details: "ვებ-დიზაინის საბაზო კურსი",
-        icon: "laptop-code",
-        time: "1 დღის წინ"
-    },
-    {
-        id: 6,
-        user: "დავით ჯანაშია",
-        avatar: "profilepic_boy.jpg",
-        action: "მიიღო სერტიფიკატი",
-        details: "რობოტექნიკის ბანაკი",
-        icon: "robot",
-        time: "3 დღის წინ"
-    }
+    // ... more activities
 ];
 
-// Function to render compact activity cards
-function renderActivities() {
-    const activityFeed = document.getElementById('activity-feed');
+// Function to render timeline
+function renderTimeline() {
+    const timelineContainer = document.getElementById('activity-timeline');
     
-    if (!activityFeed) return;
-    
-    activityFeed.innerHTML = activities.map(activity => `
-        <div class="activity-card">
-            <img src="./images/${activity.avatar}" alt="${activity.user}" class="activity-avatar">
-            <div class="activity-content">
-                <div class="activity-user">${activity.user}</div>
-                <div class="activity-text">
+    timelineContainer.innerHTML = activities.map(activity => `
+        <div class="timeline-item" data-activity-id="${activity.id}">
+            <div class="timeline-content">
+                <div class="timeline-header">
+                    <img src="./images/${activity.avatar}" alt="${activity.user}" class="timeline-avatar">
+                    <div>
+                        <span class="timeline-user">${activity.user}</span>
+                        <span class="timeline-time">
+                            <i class="far fa-clock"></i> ${activity.time}
+                        </span>
+                    </div>
+                </div>
+                <div class="timeline-text">
+                    <i class="fas fa-${activity.icon} timeline-icon"></i>
                     <strong>${activity.action}:</strong> ${activity.details}
                 </div>
-                <div class="activity-meta">
-                    <i class="fas fa-${activity.icon} activity-icon"></i>
-                    <span>${activity.time}</span>
+                <div class="timeline-actions">
+                    <button class="action-btn like-btn ${activity.liked ? 'liked' : ''}" data-activity-id="${activity.id}">
+                        <i class="${activity.liked ? 'fas' : 'far'} fa-heart"></i>
+                        <span class="count">${activity.likes}</span>
+                    </button>
+                    <button class="action-btn comment-btn ${activity.showComments ? 'active' : ''}" data-activity-id="${activity.id}">
+                        <i class="far fa-comment"></i>
+                        <span class="count">${activity.comments}</span>
+                    </button>
                 </div>
+                <div class="comment-section hidden" id="comments-${activity.id}"></div>
             </div>
         </div>
     `).join('');
+    
+    // Add event listeners
+    addTimelineEventListeners();
 }
 
-// Call this when page loads
-document.addEventListener('DOMContentLoaded', renderActivities);
+// Load more functionality
+document.querySelector('.load-more-btn')?.addEventListener('click', function() {
+    // In a real app, you would fetch more activities from server
+    const moreActivities = [
+        // Additional activity objects
+    ];
+    
+    activities.push(...moreActivities);
+    renderTimeline();
+});
+
+// Initialize
+document.addEventListener('DOMContentLoaded', renderTimeline);
+
+
+// Enhanced like functionality with animation
+function handleLike(activityId) {
+    const activity = activities.find(a => a.id === activityId);
+    if (!activity) return;
+    
+    // Toggle like state
+    activity.liked = !activity.liked;
+    activity.likes += activity.liked ? 1 : -1;
+    
+    // Update UI
+    const likeBtn = document.querySelector(`.like-btn[data-activity-id="${activityId}"]`);
+    if (likeBtn) {
+        likeBtn.classList.toggle('liked', activity.liked);
+        likeBtn.innerHTML = `
+            <i class="${activity.liked ? 'fas' : 'far'} fa-heart"></i>
+            <span class="count">${activity.likes}</span>
+        `;
+    }
+}
+
+// Enhanced comment toggle
+function toggleComments(activityId) {
+    const activity = activities.find(a => a.id === activityId);
+    if (!activity) return;
+    
+    activity.showComments = !activity.showComments;
+    
+    const commentBtn = document.querySelector(`.comment-btn[data-activity-id="${activityId}"]`);
+    const commentSection = document.getElementById(`comments-${activityId}`);
+    
+    if (commentBtn && commentSection) {
+        commentBtn.classList.toggle('active', activity.showComments);
+        commentSection.classList.toggle('hidden', !activity.showComments);
+        
+        // Load comments if not already loaded
+        if (activity.showComments && !commentSection.innerHTML) {
+            loadComments(activityId);
+        }
+    }
+}
