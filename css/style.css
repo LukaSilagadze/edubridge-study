@@ -203,7 +203,7 @@ header {
     align-items: center;
     color: var(--light-text);
     text-align: center;
-    padding: 150px 20px 150px;
+    padding: 125px 20px;
     position: relative;
 }
 
@@ -320,7 +320,7 @@ header {
 
 /* Section Styles */
 .section {
-    padding: 80px 40px;
+    padding: 40px 40px;
     background-color: var(--light-bg);
 }
 
@@ -947,3 +947,4 @@ footer {
 .activities-scroller::-webkit-scrollbar-thumb:hover {
     background: #aaa;
 }
+
