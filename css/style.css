@@ -828,9 +828,8 @@ footer {
 
 /* Vertical Timeline Styles */
 .activity-timeline {
-    margin: 40px 0;
+    margin: 40px auto;
     max-width: 800px;
-    margin: auto;
 }
 
 .timeline-container {
