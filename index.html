@@ -137,22 +137,95 @@
           </div>
         </div>
 
-        <section class="activity-timeline" aria-labelledby="timeline-heading">
-          <div class="section-header">
-            <h2 id="timeline-heading">
-              <i class="fas fa-stream"></i> ბოლო აქტივობები
-            </h2>
-            <a href="#" class="view-all">ყველას ნახვა</a>
+      <!-- Replace both dashboard-section and activity-timeline sections with this combined section -->
+<section class="dashboard-timeline-section" aria-labelledby="dashboard-timeline-heading">
+  <div class="dashboard-timeline-container">
+    <!-- Left column - Dashboard cards -->
+    <div class="dashboard-column">
+      <!-- Welcome Card (compact version) -->
+      <div class="dashboard-card welcome-card compact">
+        <div class="welcome-content">
+          <h2><i class="fas fa-user-graduate"></i> მოგესალმებით, <span id="user-name">ნინო</span>!</h2>
+          <div class="user-stats compact">
+            <div class="stat-item">
+              <i class="fas fa-trophy"></i>
+              <span class="stat-number" id="achievements-count">14</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-certificate"></i>
+              <span class="stat-number" id="certificates-count">10</span>
+            </div>
+            <div class="stat-item">
+              <i class="fas fa-calendar-check"></i>
+              <span class="stat-number" id="activities-count">12</span>
+            </div>
           </div>
+        </div>
+      </div>
 
-          <div class="timeline-container" id="activity-timeline">
-            <!-- Timeline items will be inserted here -->
-          </div>
+      <!-- Upcoming Events (compact version) -->
+      <div class="dashboard-card events-card compact">
+        <div class="card-header">
+          <h3><i class="fas fa-calendar-alt"></i> მომავალი ღონისძიებები</h3>
+          <a href="./discover.html" class="view-all">ყველას ნახვა</a>
+        </div>
+        <div class="events-list" id="events-list">
+          <!-- Events will be loaded here by JavaScript -->
+        </div>
+      </div>
 
-          <div class="load-more">
-            <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
+      <!-- Progress Tracker (compact version) -->
+      <div class="dashboard-card progress-card compact">
+        <div class="card-header">
+          <h3><i class="fas fa-chart-line"></i> თქვენი პროგრესი</h3>
+        </div>
+        <div class="progress-tracker">
+          <div class="progress-category">
+            <div class="category-header">
+              <i class="fas fa-square-root-alt"></i>
+              <span>მათემატიკა</span>
+              <span class="progress-percent">75%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill math-progress" style="width: 75%"></div>
+            </div>
           </div>
-        </section>
+          <div class="progress-category">
+            <div class="category-header">
+              <i class="fas fa-atom"></i>
+              <span>ფიზიკა</span>
+              <span class="progress-percent">60%</span>
+            </div>
+            <div class="progress-bar">
+              <div class="progress-fill physics-progress" style="width: 60%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right column - Timeline -->
+    <div class="timeline-column">
+      <div class="section-header">
+        <h2 id="timeline-heading">
+          <i class="fas fa-stream"></i> ბოლო აქტივობები
+        </h2>
+        <a href="#" class="view-all">ყველას ნახვა</a>
+      </div>
+
+      <div class="timeline-container" id="activity-timeline">
+        <!-- Timeline items will be inserted here -->
+      </div>
+
+      <div class="load-more">
+        <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+        <!-- Add this section after the hero section in index.html -->
+
 
         <section
           id="activities"
@@ -511,5 +584,6 @@
     </a>
 
     <script src="./script.js"></script>
+    <script src="./dashboard.js"></script>
   </body>
 </html>
