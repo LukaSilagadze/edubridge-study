@@ -1,54 +1,3 @@
-
-
-document.addEventListener('DOMContentLoaded', function () {
-  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-  const mainMenu = document.querySelector('.header_nav');
-  const mainMenuLinks = document.querySelectorAll('.header_list');
-  const profileBtn = document.querySelector('.profile_btn');
-  const profileDropdown = document.querySelector('.profile-dropdown');
-
-  // Toggle mobile menu
-  mobileMenuToggle.addEventListener('click', function () {
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-    this.setAttribute('aria-expanded', !isExpanded);
-    mainMenu.classList.toggle('active');
-    document.body.style.overflow = isExpanded ? 'auto' : 'hidden';
-  });
-
-  // Close mobile menu when a nav link is clicked
-  mainMenuLinks.forEach(link => {
-    link.addEventListener('click', function () {
-      if (window.innerWidth <= 1125) {
-        mobileMenuToggle.setAttribute('aria-expanded', 'false');
-        mainMenu.classList.remove('active');
-        document.body.style.overflow = 'auto';
-      }
-    });
-  });
-
-  // Reset nav when resizing up
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 1125) {
-      mobileMenuToggle.setAttribute('aria-expanded', 'false');
-      mainMenu.classList.remove('active');
-      document.body.style.overflow = 'auto';
-    }
-  });
-
-  // Toggle profile dropdown
-  if (profileBtn && profileDropdown) {
-    profileBtn.addEventListener('click', function () {
-      profileDropdown.classList.toggle('active');
-    });
-
-    document.addEventListener('click', function (e) {
-      if (!e.target.closest('.profile_btn') && !e.target.closest('.profile-dropdown')) {
-        profileDropdown.classList.remove('active');
-      }
-    });
-  }
-});
-
 // Update your activity data structure
 const activities = [
     {
@@ -129,6 +78,23 @@ function renderTimeline() {
     addTimelineEventListeners();
 }
 
+// Function to add event listeners to timeline items
+function addTimelineEventListeners() {
+    document.querySelectorAll('.like-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const activityId = parseInt(this.getAttribute('data-activity-id'));
+            handleLike(activityId);
+        });
+    });
+
+    document.querySelectorAll('.comment-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const activityId = parseInt(this.getAttribute('data-activity-id'));
+            toggleComments(activityId);
+        });
+    });
+}
+
 // Load more functionality
 document.querySelector('.load-more-btn')?.addEventListener('click', function() {
     // In a real app, you would fetch more activities from server
@@ -141,8 +107,37 @@ document.querySelector('.load-more-btn')?.addEventListener('click', function() {
 });
 
 // Initialize
-document.addEventListener('DOMContentLoaded', renderTimeline);
+document.addEventListener('DOMContentLoaded', function() {
+    renderTimeline();
+    
+    // Load upcoming events
+    loadUpcomingEvents();
+});
 
+function loadUpcomingEvents() {
+    const eventsList = document.getElementById('events-list');
+    if (eventsList) {
+        // In a real app, you would fetch these from the server
+        const events = [
+            { name: "მათემატიკის ოლიმპიადა", date: "25 ივნისი", time: "10:00" },
+            { name: "პროგრამირების კონკურსი", date: "30 ივნისი", time: "14:00" },
+            { name: "სამეცნიერო ფერისტვალი", date: "5 ივლისი", time: "11:00" }
+        ];
+        
+        eventsList.innerHTML = events.map(event => `
+            <div class="event-item">
+                <div class="event-date">
+                    <span class="event-day">${event.date.split(' ')[0]}</span>
+                    <span class="event-month">${event.date.split(' ')[1]}</span>
+                </div>
+                <div class="event-details">
+                    <h4>${event.name}</h4>
+                    <p><i class="far fa-clock"></i> ${event.time}</p>
+                </div>
+            </div>
+        `).join('');
+    }
+}
 
 // Enhanced like functionality with animation
 function handleLike(activityId) {
@@ -161,6 +156,12 @@ function handleLike(activityId) {
             <i class="${activity.liked ? 'fas' : 'far'} fa-heart"></i>
             <span class="count">${activity.likes}</span>
         `;
+        
+        // Add animation
+        likeBtn.classList.add('animate-like');
+        setTimeout(() => {
+            likeBtn.classList.remove('animate-like');
+        }, 500);
     }
 }
 
@@ -183,4 +184,33 @@ function toggleComments(activityId) {
             loadComments(activityId);
         }
     }
+}
+
+function loadComments(activityId) {
+    const commentSection = document.getElementById(`comments-${activityId}`);
+    if (!commentSection) return;
+    
+    // In a real app, you would fetch comments from the server
+    const comments = [
+        { user: "მარიამი", text: "გილოცავთ! 🎉", time: "1 საათის წინ" },
+        { user: "გიორგი", text: "დიდი წარმატება!", time: "45 წუთის წინ" }
+    ];
+    
+    commentSection.innerHTML = comments.map(comment => `
+        <div class="comment-item">
+            <img src="./images/profilepic_girl.jpg" alt="${comment.user}" class="comment-avatar">
+            <div class="comment-content">
+                <div class="comment-header">
+                    <span class="comment-user">${comment.user}</span>
+                    <span class="comment-time">${comment.time}</span>
+                </div>
+                <p class="comment-text">${comment.text}</p>
+            </div>
+        </div>
+    `).join('') + `
+    <div class="add-comment">
+        <input type="text" placeholder="დაამატეთ კომენტარი..." class="comment-input">
+        <button class="btn comment-submit-btn">გაგზავნა</button>
+    </div>
+    `;
 }
