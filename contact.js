@@ -1,33 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    // Form Submission
-    const contactForm = document.getElementById('contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const subject = document.getElementById('subject').value;
-            const message = document.getElementById('message').value;
-            
-            // Simple validation
-            if (!name || !email || !message) {
-                alert('გთხოვთ შეავსოთ ყველა საჭირო ველი');
-                return;
-            }
-            
-            // In a real app, you would send this data to your server
-            console.log('Form submitted:', { name, email, subject, message });
-            
-            // Show success message
-            alert('თქვენი შეტყობინება მიღებულია! ჩვენი გუნდი დაგიკავშირდებათ მალე.');
-            
-            // Reset form
-            contactForm.reset();
-        });
-    }
     
     // FAQ Accordion
     const faqQuestions = document.querySelectorAll('.faq-question');
