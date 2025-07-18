@@ -184,3 +184,45 @@ function toggleComments(activityId) {
         }
     }
 }
+
+
+// In the profile dropdown click handler
+profileBtn.addEventListener('click', function() {
+    const isAuthenticated = localStorage.getItem('edubridge-auth') === 'true';
+    
+    if (isAuthenticated) {
+        // Show profile options if logged in
+        profileDropdown.innerHTML = `
+            <a href="./profile.html" class="dropdown-item">
+                <i class="fas fa-user"></i> ჩემი პროფილი
+            </a>
+            <a href="./certificates.html" class="dropdown-item">
+                <i class="fas fa-certificate"></i> ჩემი სერტიფიკატები
+            </a>
+            <button class="dropdown-item logout-btn">
+                <i class="fas fa-sign-out-alt"></i> გამოსვლა
+            </button>
+        `;
+    } else {
+        // Show auth options if not logged in
+        profileDropdown.innerHTML = `
+            <a href="./signin.html" class="dropdown-item">
+                <i class="fas fa-sign-in-alt"></i> ავტორიზაცია
+            </a>
+            <a href="./signup.html" class="dropdown-item">
+                <i class="fas fa-user-plus"></i> რეგისტრაცია
+            </a>
+        `;
+    }
+    
+    profileDropdown.classList.toggle('active');
+});
+
+// Add logout functionality
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('logout-btn')) {
+        localStorage.removeItem('edubridge-auth');
+        localStorage.removeItem('edubridge-user');
+        window.location.href = 'signin.html';
+    }
+});

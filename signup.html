@@ -1,0 +1,106 @@
+<div class="auth-form-container">
+    <div class="auth-form-header">
+        <h2>რეგისტრაცია</h2>
+        <p>შექმენით ახალი ანგარიში</p>
+    </div>
+
+    <form class="auth-form" id="signup-form">
+        <div class="form-row">
+            <div class="form-group">
+                <label for="signup-firstname">სახელი</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signup-firstname" name="firstname" required placeholder="შეიყვანეთ სახელი">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="signup-lastname">გვარი</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="signup-lastname" name="lastname" required placeholder="შეიყვანეთ გვარი">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-email">ელ.ფოსტა</label>
+            <div class="input-with-icon">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="signup-email" name="email" required placeholder="შეიყვანეთ ელ.ფოსტა">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-password">პაროლი</label>
+            <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="signup-password" name="password" required placeholder="შეიყვანეთ პაროლი">
+                <button type="button" class="toggle-password" aria-label="Show password">
+                    <i class="fas fa-eye"></i>
+                </button>
+            </div>
+            <div class="password-strength">
+                <div class="strength-meter">
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                    <span class="strength-bar"></span>
+                </div>
+                <span class="strength-text">პაროლის სიძლიერე: <span id="strength-value">სუსტი</span></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-confirm-password">გაიმეორეთ პაროლი</label>
+            <div class="input-with-icon">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="signup-confirm-password" name="confirm-password" required placeholder="გაიმეორეთ პაროლი">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="signup-grade">კლასი</label>
+            <select id="signup-grade" name="grade" required>
+                <option value="" disabled selected>აირჩიეთ კლასი</option>
+                <option value="1">1 კლასი</option>
+                <option value="2">2 კლასი</option>
+                <option value="3">3 კლასი</option>
+                <option value="4">4 კლასი</option>
+                <option value="5">5 კლასი</option>
+                <option value="6">6 კლასი</option>
+                <option value="7">7 კლასი</option>
+                <option value="8">8 კლასი</option>
+                <option value="9">9 კლასი</option>
+                <option value="10">10 კლასი</option>
+                <option value="11">11 კლასი</option>
+                <option value="12">12 კლასი</option>
+            </select>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms-agree" name="terms" required>
+            <label for="terms-agree">ვეთანხმები <a href="#">გამოყენების პირობებს</a> და <a href="#">კონფიდენციალურობის პოლიტიკას</a></label>
+        </div>
+
+        <button type="submit" class="auth-submit-btn">რეგისტრაცია</button>
+
+        <div class="auth-divider">
+            <span>ან</span>
+        </div>
+
+        <div class="social-auth">
+            <button type="button" class="social-btn google-btn">
+                <img src="./images/google-icon.png" alt="Google" width="20" height="20">
+                გაგრძელება Google-ით
+            </button>
+            <button type="button" class="social-btn facebook-btn">
+                <img src="./images/facebook-icon.png" alt="Facebook" width="20" height="20">
+                გაგრძელება Facebook-ით
+            </button>
+        </div>
+
+        <div class="auth-switch">
+            უკვე გაქვთ ანგარიში? <a href="./signin.html" class="switch-link">ავტორიზაცია</a>
+        </div>
+    </form>
+</div>
