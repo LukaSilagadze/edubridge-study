@@ -82,54 +82,72 @@ document.addEventListener("DOMContentLoaded", function () {
   ];
 
   // Render Activities
-  function renderActivities(activitiesToRender) {
+  // Update your renderActivities function to include proper data-id and click handling
+function renderActivities(activitiesToRender) {
     const grid = document.getElementById("activity-grid");
     grid.innerHTML = "";
 
     activitiesToRender.forEach((activity) => {
-      const card = document.createElement("article");
-      card.className = "activity-card";
-      card.innerHTML = `
-                <div class="activity-image">
-                    <img src="./images/${activity.image}" alt="${
-        activity.title
-      }" loading="lazy">
-                    ${
-                      activity.badge
-                        ? `<span class="activity-badge">${activity.badge}</span>`
-                        : ""
-                    }
-                </div>
-                <div class="activity-content">
-                    <h3 class="activity-title">${activity.title}</h3>
-                    <div class="activity-meta">
-                        <div class="activity-meta-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span>ასაკი: ${activity.age}</span>
-                        </div>
-                        <div class="activity-meta-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>${activity.location}</span>
-                        </div>
-                        <div class="activity-meta-item">
-                            <i class="far fa-clock"></i>
-                            <span>რეგისტრაციის დასრულება: ${
-                              activity.deadline
-                            }</span>
-                        </div>
+        const card = document.createElement("article");
+        card.className = "activity-card";
+        // Add data-id attribute to the card
+        card.setAttribute('data-id', activity.id);
+        
+        card.innerHTML = `
+            <div class="activity-image">
+                <img src="./images/${activity.image}" alt="${activity.title}" loading="lazy">
+                ${activity.badge ? `<span class="activity-badge">${activity.badge}</span>` : ""}
+            </div>
+            <div class="activity-content">
+                <h3 class="activity-title">${activity.title}</h3>
+                <div class="activity-meta">
+                    <div class="activity-meta-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>ასაკი: ${activity.age}</span>
                     </div>
-                    <p class="activity-description">${activity.description}</p>
-                    <div class="activity-actions">
-                        <a href="#" class="activity-btn details-btn">დეტალები</a>
-                        <a href="${
-                          activity.link
-                        }" target="_blank" class="activity-btn register-btn">რეგისტრაცია</a>
+                    <div class="activity-meta-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>${activity.location}</span>
+                    </div>
+                    <div class="activity-meta-item">
+                        <i class="far fa-clock"></i>
+                        <span>რეგისტრაციის დასრულება: ${activity.deadline}</span>
                     </div>
                 </div>
-            `;
-      grid.appendChild(card);
+                <p class="activity-description">${activity.description}</p>
+                <div class="activity-actions">
+                    <a href="#" class="activity-btn details-btn">დეტალები</a>
+                    <a href="${activity.link}" target="_blank" class="activity-btn register-btn">რეგისტრაცია</a>
+                </div>
+            </div>
+        `;
+        grid.appendChild(card);
     });
-  }
+
+    // Set up event listeners after cards are rendered
+    setupDetailsButtons();
+}
+
+// Function to handle details button clicks
+function setupDetailsButtons() {
+    document.querySelectorAll('.details-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Find the closest activity card
+            const card = this.closest('.activity-card');
+            
+            // Get the activity ID from the data-id attribute
+            const activityId = card.getAttribute('data-id');
+            
+            // Debugging: log the ID to console
+            console.log("Navigating to activity ID:", activityId);
+            
+            // Redirect to details page with activity ID
+            window.location.href = `details.html?id=${activityId}`;
+        });
+    });
+}
 
   // Filter Activities by Tab
   function filterActivities(tab) {
@@ -253,3 +271,41 @@ document.addEventListener("DOMContentLoaded", function () {
     renderActivities(sortedActivities);
   });
 });
+
+
+// Add click event listeners to details buttons
+function setupDetailsButtons() {
+    document.querySelectorAll('.details-btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            // Get the activity ID from the card (you'll need to add data-id to your cards)
+            const card = this.closest('.activity-card');
+            const activityId = card.dataset.id;
+            
+            // Redirect to details page with activity ID
+            window.location.href = `details.html?id=${activityId}`;
+        });
+    });
+}
+
+// Call this function after rendering activities
+// Add this to your renderActivities function after grid.appendChild(card):
+// setupDetailsButtons();
+
+// Update your renderActivities function to include data-id attribute:
+function renderActivities(activitiesToRender) {
+    const grid = document.getElementById("activity-grid");
+    grid.innerHTML = "";
+
+    activitiesToRender.forEach((activity) => {
+        const card = document.createElement("article");
+        card.className = "activity-card";
+        card.dataset.id = activity.id; // Add this line
+        card.innerHTML = `
+            <!-- rest of your card HTML -->
+        `;
+        grid.appendChild(card);
+    });
+    
+    setupDetailsButtons(); // Add this line
+}
