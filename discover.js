@@ -114,7 +114,7 @@ function renderActivities(activitiesToRender) {
                         <span>რეგისტრაციის დასრულება: ${activity.deadline}</span>
                     </div>
                 </div>
-                <p class="activity-description">${activity.description}</p>
+                
                 <div class="activity-actions">
                     <a href="#" class="activity-btn details-btn">დეტალები</a>
                     <a href="${activity.link}" target="_blank" class="activity-btn register-btn">რეგისტრაცია</a>
