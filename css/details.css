@@ -253,25 +253,50 @@
     color: #e5a800;
 }
 
-/* Requirements Section */
-.requirements-list {
-    list-style-type: none;
+/* Contact Section Styles */
+.contact-section {
+    background: var(--light-bg);
+    padding: 25px;
+    border-radius: 12px;
 }
 
-.requirements-list li {
-    position: relative;
-    padding-left: 25px;
-    margin-bottom: 10px;
-    line-height: 1.6;
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
-.requirements-list li:before {
-    content: "\f00c";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    position: absolute;
-    left: 0;
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-top: 3px;
+}
+
+.contact-label {
+    font-weight: 600;
+    color: var(--primary-color);
+    min-width: 100px;
+}
+
+.contact-value {
+    color: #555;
+    flex: 1;
+}
+
+.contact-value a {
     color: var(--secondary-color);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.contact-value a:hover {
+    text-decoration: underline;
 }
 
 /* Similar Activities Section */
@@ -389,4 +414,25 @@
     .similar-activities-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Preserve line breaks and white-space */
+.activity-description-section p {
+    white-space: pre-line;
+    line-height: 1.7;
+}
+
+/* Multiple phone numbers styling */
+.phone-number {
+    margin-bottom: 8px;
+}
+
+.phone-number:last-child {
+    margin-bottom: 0;
+}
+
+.contact-value div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }

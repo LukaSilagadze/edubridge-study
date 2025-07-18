@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="ka">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="EduBridge - აქტივობის დეტალები" />
@@ -10,233 +9,296 @@
     <link rel="stylesheet" href="./css/details.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Georgian:wght@400;500;600;700&display=swap"
-        rel="stylesheet" />
-    <script src="https://kit.fontawesome.com/54e5db6ee9.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Georgian:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/54e5db6ee9.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
     <title>EduBridge | აქტივობის დეტალები</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <header>
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
-                <i class="fas fa-bars menu"></i>
-            </button>
+      <header>
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-menu"
+        >
+          <i class="fas fa-bars menu"></i>
+        </button>
 
-            <!-- Logo -->
-            <div class="header_left_side">
-                <a href="./index.html" aria-label="EduBridge homepage">
-                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
-                </a>
+        <!-- Logo -->
+        <div class="header_left_side">
+          <a href="./index.html" aria-label="EduBridge homepage">
+            <img
+              src="./images/logo1.png"
+              alt="EduBridge Logo"
+              class="logo"
+              width="70"
+              height="70"
+            />
+          </a>
+        </div>
+
+        <!-- Nav Menu -->
+        <nav class="header_nav" id="main-menu">
+          <ul class="header_ul">
+            <li><a href="./index.html" class="header_list">მთავარი</a></li>
+            <li>
+              <a href="./discover.html" class="header_list"
+                >აღმოაჩინე აქტივობები</a
+              >
+            </li>
+            <li>
+              <a href="./profile.html" class="header_list">ჩემი პროფილი</a>
+            </li>
+            <li>
+              <a href="./certificates.html" class="header_list"
+                >სერტიფიკატები</a
+              >
+            </li>
+            <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+          </ul>
+        </nav>
+
+        <!-- Auth Buttons and Profile -->
+        <div class="header_right_side">
+          <div class="auth-buttons profile-dropdown">
+            <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
+            <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
+          </div>
+          <i class="fa-solid fa-user profile_btn"></i>
+        </div>
+      </header>
+
+      <main class="activity-details-main">
+        <!-- Back Button -->
+        <div class="back-container">
+          <a href="./discover.html" class="back-btn">
+            <i class="fas fa-arrow-left"></i> უკან დაბრუნება
+          </a>
+        </div>
+
+        <!-- Activity Details Section -->
+        <section class="activity-details" aria-labelledby="activity-title">
+          <!-- Activity Header with Image -->
+          <div class="activity-header">
+            <div class="activity-image-container">
+              <img
+                id="activity-main-image"
+                src=""
+                alt="Activity Image"
+                loading="lazy"
+              />
+              <span id="activity-badge" class="activity-badge"></span>
             </div>
 
-            <!-- Nav Menu -->
-            <nav class="header_nav" id="main-menu">
-                <ul class="header_ul">
-                    <li><a href="./index.html" class="header_list">მთავარი</a></li>
-                    <li><a href="./discover.html" class="header_list">აღმოაჩინე აქტივობები</a></li>
-                    <li><a href="./profile.html" class="header_list">ჩემი პროფილი</a></li>
-                    <li><a href="./certificates.html" class="header_list">სერტიფიკატები</a></li>
-                    <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
-                </ul>
-            </nav>
+            <div class="activity-header-content">
+              <h1 id="activity-title"></h1>
+              <div class="activity-meta">
+                <div class="meta-item">
+                  <i class="fas fa-calendar-alt"></i>
+                  <span id="activity-date"></span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-map-marker-alt"></i>
+                  <span id="activity-location"></span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-graduation-cap"></i>
+                  <span id="activity-age"></span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-tag"></i>
+                  <span id="activity-type"></span>
+                </div>
+                <div class="meta-item">
+                  <i class="fas fa-book"></i>
+                  <span id="activity-subject"></span>
+                </div>
+              </div>
 
-            <!-- Auth Buttons and Profile -->
-            <div class="header_right_side">
-                <div class="auth-buttons profile-dropdown">
-                    <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
-                    <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
+              <div class="activity-price-deadline">
+                <div class="price-container">
+                  <span class="price-label">ფასი:</span>
+                  <span id="activity-price" class="price"></span>
                 </div>
-                <i class="fa-solid fa-user profile_btn"></i>
-            </div>
-        </header>
+                <div class="deadline-container">
+                  <span class="deadline-label">რეგისტრაციის დასრულება:</span>
+                  <span id="activity-deadline" class="deadline"></span>
+                </div>
+              </div>
 
-        <main class="activity-details-main">
-            <!-- Back Button -->
-            <div class="back-container">
-                <a href="./discover.html" class="back-btn">
-                    <i class="fas fa-arrow-left"></i> უკან დაბრუნება
-                </a>
+              <a
+                id="register-link"
+                href="#"
+                target="_blank"
+                class="btn register-btn"
+              >
+                <i class="fas fa-pencil-alt"></i> რეგისტრაცია
+              </a>
+            </div>
+          </div>
+
+          <!-- Activity Description -->
+          <div class="activity-description-section">
+            <h2><i class="fas fa-info-circle"></i> აღწერა</h2>
+            <p id="activity-description"></p>
+          </div>
+
+          <!-- Additional Info Sections -->
+          <div class="additional-sections">
+            <!-- Schedule Section -->
+            <div class="info-section schedule-section">
+              <h2><i class="fas fa-calendar-day"></i> განრიგი</h2>
+              <div class="schedule-items" id="schedule-items">
+                <!-- Will be populated by JavaScript -->
+              </div>
             </div>
 
-            <!-- Activity Details Section -->
-            <section class="activity-details" aria-labelledby="activity-title">
-                <!-- Activity Header with Image -->
-                <div class="activity-header">
-                    <div class="activity-image-container">
-                        <img id="activity-main-image" src="" alt="Activity Image" loading="lazy">
-                        <span id="activity-badge" class="activity-badge"></span>
-                    </div>
-                    
-                    <div class="activity-header-content">
-                        <h1 id="activity-title"></h1>
-                        <div class="activity-meta">
-                            <div class="meta-item">
-                                <i class="fas fa-calendar-alt"></i>
-                                <span id="activity-date"></span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                <span id="activity-location"></span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-graduation-cap"></i>
-                                <span id="activity-age"></span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-tag"></i>
-                                <span id="activity-type"></span>
-                            </div>
-                            <div class="meta-item">
-                                <i class="fas fa-book"></i>
-                                <span id="activity-subject"></span>
-                            </div>
-                        </div>
-                        
-                        <div class="activity-price-deadline">
-                            <div class="price-container">
-                                <span class="price-label">ფასი:</span>
-                                <span id="activity-price" class="price"></span>
-                            </div>
-                            <div class="deadline-container">
-                                <span class="deadline-label">რეგისტრაციის დასრულება:</span>
-                                <span id="activity-deadline" class="deadline"></span>
-                            </div>
-                        </div>
-                        
-                        <a id="register-link" href="#" target="_blank" class="btn register-btn">
-                            <i class="fas fa-pencil-alt"></i> რეგისტრაცია
-                        </a>
-                    </div>
+            <!-- Organizer Section -->
+            <div class="info-section organizer-section">
+              <h2><i class="fas fa-building"></i> ორგანიზატორი</h2>
+              <div class="organizer-info">
+                <img
+                  id="organizer-logo"
+                  src="./images/logo1.png"
+                  alt="Organizer Logo"
+                />
+                <div class="organizer-details">
+                  <h3 id="organizer-name">EduBridge</h3>
+                  <p id="organizer-description">
+                    საგანმანათლებლო აქტივობების პლატფორმა
+                  </p>
+                  <a
+                    href="#"
+                    id="organizer-website"
+                    class="organizer-link"
+                    target="_blank"
+                  >
+                    <i class="fas fa-globe"></i> ვებსაიტი
+                  </a>
                 </div>
-                
-                <!-- Activity Description -->
-                <div class="activity-description-section">
-                    <h2><i class="fas fa-info-circle"></i> აღწერა</h2>
-                    <p id="activity-description"></p>
-                </div>
-                
-                <!-- Additional Info Sections -->
-                <div class="additional-sections">
-                    <!-- Schedule Section -->
-                    <div class="info-section schedule-section">
-                        <h2><i class="fas fa-calendar-day"></i> განრიგი</h2>
-                        <div class="schedule-items" id="schedule-items">
-                            <!-- Will be populated by JavaScript -->
-                        </div>
-                    </div>
-                    
-                    <!-- Organizer Section -->
-                    <div class="info-section organizer-section">
-                        <h2><i class="fas fa-building"></i> ორგანიზატორი</h2>
-                        <div class="organizer-info">
-                            <img id="organizer-logo" src="./images/logo1.png" alt="Organizer Logo">
-                            <div class="organizer-details">
-                                <h3 id="organizer-name">EduBridge</h3>
-                                <p id="organizer-description">საგანმანათლებლო აქტივობების პლატფორმა</p>
-                                <a href="#" id="organizer-website" class="organizer-link">
-                                    <i class="fas fa-globe"></i> ვებსაიტი
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Requirements Section -->
-                    <div class="info-section requirements-section">
-                        <h2><i class="fas fa-clipboard-check"></i> მონაწილეობის პირობები</h2>
-                        <ul id="requirements-list">
-                            <!-- Will be populated by JavaScript -->
-                        </ul>
-                    </div>
-                </div>
-            </section>
-            
-            <!-- Similar Activities Section -->
-            <section class="similar-activities">
-                <h2><i class="fas fa-fire"></i> მსგავსი აქტივობები</h2>
-                <div class="similar-activities-grid" id="similar-activities-grid">
-                    <!-- Will be populated by JavaScript -->
-                </div>
-            </section>
-        </main>
+              </div>
+            </div>
 
-        <!-- Footer (same as other pages) -->
-        <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <a href="./index.html" aria-label="EduBridge homepage">
-                        <img src="./images/logo1.png" alt="EduBridge Logo" class="footer-logo" width="100" height="100" />
-                    </a>
-                    <p class="footer-about">
-                        EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
-                        აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
-                    </p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/profile.php?id=61576915596052" aria-label="Facebook"
-                            target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh" aria-label="Instagram"
-                            target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h4>სარჩევი</h4>
-                    <ul>
-                        <li><a href="./index.html">მთავარი</a></li>
-                        <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
-                        <li><a href="./profile.html">ჩემი პროფილი</a></li>
-                        <li><a href="./certificates.html">სერტიფიკატები</a></li>
-                        <li><a href="./contact.html">კონტაქტი</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>ინფორმაცია</h4>
-                    <ul>
-                        <li><a href="#">ჩვენს შესახებ</a></li>
-                        <li><a href="#">პარტნიორები</a></li>
-                        <li><a href="#">წესები და პირობები</a></li>
-                        <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
-                        <li><a href="#">ხშირად დასმული კითხვები</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>კონტაქტი</h4>
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                            თბილისი, საქართველო
-                        </li>
-                        <li>
-                            <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope" aria-hidden="true"></i>
-                            info@edubridge.ge
-                        </li>
-                    </ul>
-                </div>
+            <!-- contact Section -->
+            <div class="info-section contact-section">
+              <h2><i class="fas fa-envelope"></i> კონტაქტი</h2>
+              <div class="contact-info" id="contact-info">
+                <!-- Will be populated by JavaScript -->
+              </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
-                <div class="footer-links">
-                    <a href="#">წესები</a>
-                    <a href="#">კონფიდენციალურობა</a>
-                </div>
+          </div>
+        </section>
+
+        <!-- Similar Activities Section -->
+        <section class="similar-activities">
+          <h2><i class="fas fa-fire"></i> მსგავსი აქტივობები</h2>
+          <div class="similar-activities-grid" id="similar-activities-grid">
+            <!-- Will be populated by JavaScript -->
+          </div>
+        </section>
+      </main>
+
+      <!-- Footer (same as other pages) -->
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="./index.html" aria-label="EduBridge homepage">
+              <img
+                src="./images/logo1.png"
+                alt="EduBridge Logo"
+                class="footer-logo"
+                width="100"
+                height="100"
+              />
+            </a>
+            <p class="footer-about">
+              EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
+              აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/profile.php?id=61576915596052"
+                aria-label="Facebook"
+                target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh"
+                aria-label="Instagram"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="#" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
             </div>
-        </footer>
+          </div>
+          <div class="footer-section">
+            <h4>სარჩევი</h4>
+            <ul>
+              <li><a href="./index.html">მთავარი</a></li>
+              <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
+              <li><a href="./profile.html">ჩემი პროფილი</a></li>
+              <li><a href="./certificates.html">სერტიფიკატები</a></li>
+              <li><a href="./contact.html">კონტაქტი</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>ინფორმაცია</h4>
+            <ul>
+              <li><a href="#">ჩვენს შესახებ</a></li>
+              <li><a href="#">პარტნიორები</a></li>
+              <li><a href="#">წესები და პირობები</a></li>
+              <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
+              <li><a href="#">ხშირად დასმული კითხვები</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>კონტაქტი</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                თბილისი, საქართველო
+              </li>
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                info@edubridge.ge
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+          <div class="footer-links">
+            <a href="#">წესები</a>
+            <a href="#">კონფიდენციალურობა</a>
+          </div>
+        </div>
+      </footer>
     </div>
 
     <a href="#top">
-        <button class="back-to-top" aria-label="Back to top">
-            <i class="fas fa-arrow-up" aria-hidden="true"></i>
-        </button>
+      <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up" aria-hidden="true"></i>
+      </button>
     </a>
 
     <script src="./script.js"></script>
     <script src="./details.js"></script>
-</body>
-
+  </body>
 </html>
