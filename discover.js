@@ -37,73 +37,44 @@ document.addEventListener('DOMContentLoaded', function() {
     const activities = [
         {
             id: 1,
-            title: "მათემატიკის რესპუბლიკური ოლიმპიადა",
-            type: "olympiad",
-            subject: "math",
-            grades: "9-12",
+            title: "ნიუ იორკის საერთაშორისო გაეროს მოდელირება",
+            type: "mun",
+            subject: "debate",
+            age: "13-24",
             deadline: "25 ივნისი",
-            location: "თბილისი",
-            description: "ქვეყნის მასშტაბის მათემატიკის ოლიმპიადა უმაღლესი დონის ამოცანებით.",
-            image: "math_olympiad.jpg",
+            location: "new york",
+            price: "4800",
+            description: "ნიუ იორკის საერთაშორისო გაეროს მოდელირება",
+            image: "munnyc2025.png",
             badge: "ახალი"
         },
         {
             id: 2,
-            title: "გაეროს მოდელირება",
-            type: "tournament",
+            title: "ისტორიული კრიზისების კომიტეტის სიმულაცია",
+            type: "mun",
             subject: "debate",
-            grades: "8-11",
+            age: "14-25",
             deadline: "30 ივნისი",
-            location: "თბილისის საერთაშორისო სკოლა",
-            description: "გაეროს სხვადასხვა კომიტეტების მოდელირება ინგლისურ და ქართულ ენებზე.",
-            image: "debate.jpg",
+            date: "12-16 აგვისტო",
+            location: "თბილისი",
+            price: "70",
+            description: "ისტორიული კრიზისების კომიტეტის სიმულაცია",
+            image: "HccSimulation2025.png",
             badge: "პოპულარული"
         },
         {
             id: 3,
-            title: "პროგრამირების საზაფხულო ბანაკი",
+            title: "SDG საზაფხულო ბანაკი ბაკურიანში",
             type: "camp",
-            subject: "programming",
-            grades: "7-12",
-            deadline: "15 ივლისი",
-            location: "ბათუმი",
-            description: "2 კვირიანი ინტენსიური პროგრამირების კურსი Python და Web Development-ზე.",
-            image: "mobilelearning.webp"
+            subject: "mun",
+            age: "14-25",
+            deadline: "30 ივლისი",
+            date: "12-16 აგვისტო",
+            location: "ბაკურიანი",
+            price: "670",
+            description: "SDG საზაფხულო ბანაკი ბაკურიანში ⛱️☀️",
+            image: "SDGCampBakuriani.png"
         },
-        {
-            id: 4,
-            title: "ფიზიკის ოლიმპიადა",
-            type: "olympiad",
-            subject: "physics",
-            grades: "9-11",
-            deadline: "10 ივლისი",
-            location: "თბილისის სახელმწიფო უნივერსიტეტი",
-            description: "რესპუბლიკური ეტაპი საერთაშორისო ფიზიკის ოლიმპიადისთვის.",
-            image: "physics.jpg"
-        },
-        {
-            id: 5,
-            title: "რობოტექნიკის კურსები",
-            type: "course",
-            subject: "programming",
-            grades: "5-9",
-            deadline: "მუდმივად",
-            location: "ონლაინ",
-            description: "8 კვირიანი კურსი რობოტების პროგრამირების საფუძვლებზე Arduino-ს გამოყენებით.",
-            image: "robotics.jpg"
-        },
-        {
-            id: 6,
-            title: "დებატების ტურნირი",
-            type: "tournament",
-            subject: "debate",
-            grades: "10-12",
-            deadline: "5 აგვისტო",
-            location: "ქუთაისი",
-            description: "წლიური დებატების ტურნირი ქართულ და ინგლისურ ენებზე.",
-            image: "debate_2.webp",
-            badge: "ახალი"
-        }
     ];
     
     // Render Activities
@@ -124,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     <div class="activity-meta">
                         <div class="activity-meta-item">
                             <i class="fas fa-graduation-cap"></i>
-                            <span>${activity.grades} კლასი</span>
+                            <span>ასაკი: ${activity.age}</span>
                         </div>
                         <div class="activity-meta-item">
                             <i class="fas fa-map-marker-alt"></i>
@@ -132,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                         <div class="activity-meta-item">
                             <i class="far fa-clock"></i>
-                            <span>რეგისტრაცია დასრულდება: ${activity.deadline}</span>
+                            <span>რეგისტრაციის დასრულება: ${activity.deadline}</span>
                         </div>
                     </div>
                     <p class="activity-description">${activity.description}</p>
@@ -158,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (tab === 'tournaments') return activity.type === 'tournament';
             if (tab === 'camps') return activity.type === 'camp';
             if (tab === 'courses') return activity.type === 'course';
+            if (tab === 'mun') return activity.type === 'mun';
             return true;
         });
         

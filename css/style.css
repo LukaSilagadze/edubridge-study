@@ -439,6 +439,10 @@ header {
     margin-top: 15px;
     justify-content: center;
 }
+.card-btn:hover{
+  background-color: var(--primary-color);
+  color: var(--light-bg);
+}
 
 /* Achievements Section */
 .achievements {
