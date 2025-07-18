@@ -194,6 +194,13 @@ header {
 }
 
 /* Hero Section */
+.test_lable{
+    background: linear-gradient(rgba(1, 54, 98, 0.8), rgba(1, 54, 98, 0.9)), url('./images/hero-banner.jpg') no-repeat center center/cover;
+    margin: auto;
+    color: var(--light-text);
+    text-align: center;
+    padding: 30px 20px 30px;
+}
 .hero {
     background: linear-gradient(rgba(1, 54, 98, 0.9), rgba(1, 54, 98, 0.95)), 
                 url('../images/contact-bg.jpg') no-repeat center center/cover;
