@@ -64,6 +64,10 @@ Dress Code: ოფიციალური
         email: "georgianmuna@gmail.com",
         phones: ["+995 555 12 34 56", "+995 577 98 76 54"],
         address: "თბილისი, საქართველო",
+        social: {
+          facebook: "https://facebook.com/georgianMUN",
+          instagram: "georgianmuna_official",
+        },
       },
       organizer: {
         name: "Georgian Model United Nations Association (GMUNA)",
@@ -83,8 +87,7 @@ Dress Code: ოფიციალური
       date: "2 - 3 - 4 აგვისტო, 2025",
       location: "თბილისი, საქართველო",
       price: "70 ლარი",
-      description:
-        `🇺🇳 HISTORICAL CRISIS COMMITTEE SIMULATION | TBILISI 2025
+      description: `🇺🇳 HISTORICAL CRISIS COMMITTEE SIMULATION | TBILISI 2025
 
 🎓საქართველოს გაეროს მოდელირების ასოციაცია იწყებს მონაწილეების შერჩევას „ისტორიული კრიზისების კომიტეტის“ (Historical Crisis Committee – HCC) სიმულაციისთვის, რომელიც ჩატარდება თბილისში, 2-3-4 აგვისტოს.
 
@@ -131,6 +134,10 @@ https://docs.google.com/forms/d/e/1FAIpQLSfAgERXVPV1b2Z1nstVDdrs57NbyfnCNkGz_r3z
         email: "georgianmuna@gmail.com",
         phones: ["+995 555 12 34 56", "+995 577 98 76 54"],
         address: "თბილისი, საქართველო",
+        social: {
+          facebook: "https://facebook.com/georgianMUN",
+          instagram: "georgianmuna_official",
+        },
       },
       organizer: {
         name: "საქართველოს გაეროს მოდელირების ასოციაცია",
@@ -150,8 +157,7 @@ https://docs.google.com/forms/d/e/1FAIpQLSfAgERXVPV1b2Z1nstVDdrs57NbyfnCNkGz_r3z
       date: "12-16 აგვისტო, 2025",
       location: "ბაკურიანი, საქართველო",
       price: "670 ლარი",
-      description:
-        `SDG საზაფხულო ბანაკი ბაკურიანში ⛱️☀️
+      description: `SDG საზაფხულო ბანაკი ბაკურიანში ⛱️☀️
 
 საქართველოს გაეროს მოდელირების ასოციაცია, იწყებს მონაწილეების შერჩევას „SDG Camp bakuriani “-ის სესიისთვის.
 
@@ -220,6 +226,10 @@ https://forms.gle/oo1qrc5nGAqWgVez6
         email: "georgianmuna@gmail.com",
         phones: ["+995 555 12 34 56", "+995 577 98 76 54"],
         address: "თბილისი, საქართველო",
+        social: {
+          facebook: "https://facebook.com/georgianMUN",
+          instagram: "georgianmuna_official",
+        },
       },
       organizer: {
         name: "საქართველოს გაეროს მოდელირების ასოციაცია",
@@ -302,32 +312,32 @@ https://forms.gle/oo1qrc5nGAqWgVez6
             <i class="fas fa-envelope"></i>
             <span class="contact-label">Email:</span>
             <span class="contact-value">
-                <a href="mailto:${activity.contact.email}">${
-      activity.contact.email
-    }</a>
+                <a href="mailto:${activity.contact.email}">${activity.contact.email}</a>
             </span>
         </div>
-<div class="contact-item">
-    <i class="fas fa-phone"></i>
-    <span class="contact-label">ტელეფონი:</span>
-    <div class="contact-value">
-        ${activity.contact.phones
-          .map(
-            (phone) => `
-            <div class="phone-number">
-                <a href="tel:${phone}">${phone}</a>
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <span class="contact-label">ტელეფონი:</span>
+            <div class="contact-value">
+                ${activity.contact.phones.map(phone => `
+                    <div class="phone-number">
+                        <a href="tel:${phone}">${phone}</a>
+                    </div>
+                `).join('')}
             </div>
-        `
-          )
-          .join("")}
-    </div>
-</div>
+        </div>
         <div class="contact-item">
             <i class="fas fa-map-marker-alt"></i>
             <span class="contact-label">მისამართი:</span>
             <span class="contact-value">${activity.contact.address}</span>
         </div>
     `;
+
+    // Add social media links if they exist
+    if (activity.contact.social) {
+        const socialLinksHTML = createSocialLinks(activity.contact.social);
+        contactContainer.innerHTML += socialLinksHTML;
+    }
 
     // Set organizer info
     document.getElementById("organizer-logo").src = activity.organizer.logo;
@@ -379,4 +389,34 @@ https://forms.gle/oo1qrc5nGAqWgVez6
       similarContainer.appendChild(activityCard);
     });
   }
-});
+
+  // Helper function to create social media links
+function createSocialLinks(socialMedia) {
+    const platforms = [
+        { key: 'facebook', icon: 'fab fa-facebook-f', label: 'Facebook' },
+        { key: 'instagram', icon: 'fab fa-instagram', label: 'Instagram' },
+        { key: 'twitter', icon: 'fab fa-twitter', label: 'Twitter' },
+        { key: 'linkedin', icon: 'fab fa-linkedin-in', label: 'LinkedIn' }
+    ];
+
+    let linksHTML = '<div class="contact-item social-media-item"><i class="fas fa-share-alt"></i><span class="contact-label">სოციალური ქსელები:</span><div class="social-links">';
+
+    platforms.forEach(platform => {
+        if (socialMedia[platform.key]) {
+            let url = socialMedia[platform.key];
+            // Handle Instagram usernames (if it's not a full URL)
+            if (platform.key === 'instagram' && !url.startsWith('http')) {
+                url = `https://instagram.com/${url.replace('@', '')}`;
+            }
+            
+            linksHTML += `
+                <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-link ${platform.key}" aria-label="${platform.label}">
+                    <i class="${platform.icon}"></i>
+                </a>
+            `;
+        }
+    });
+
+    linksHTML += '</div></div>';
+    return linksHTML;
+}});

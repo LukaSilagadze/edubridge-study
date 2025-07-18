@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/reset.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/details.css" />
+    <link rel="stylesheet" href="./css/resolutions.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,58 +25,38 @@
   <body>
     <div class="container">
       <header>
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="mobile-menu-toggle"
-          aria-expanded="false"
-          aria-controls="main-menu"
-        >
-          <i class="fas fa-bars menu"></i>
-        </button>
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                <i class="fas fa-bars menu"></i>
+            </button>
 
-        <!-- Logo -->
-        <div class="header_left_side">
-          <a href="./index.html" aria-label="EduBridge homepage">
-            <img
-              src="./images/logo1.png"
-              alt="EduBridge Logo"
-              class="logo"
-              width="70"
-              height="70"
-            />
-          </a>
+            <!-- Logo -->
+            <div class="header_left_side">
+                <a href="./index.html" aria-label="EduBridge homepage">
+                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
+                </a>
+            </div>
+
+            <!-- Nav Menu -->
+            <nav class="header_nav" id="main-menu">
+                <ul class="header_ul">
+                    <li><a href="./index.html" class="header_list">მთავარი</a></li>
+                    <li><a href="./discover.html" class="header_list active">აღმოაჩინე აქტივობები</a></li>
+                    <li><a href="./profile.html" class="header_list">ჩემი პროფილი</a></li>
+                    <li><a href="./certificates.html" class="header_list">სერტიფიკატები</a></li>
+                    <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+                </ul>
+            </nav>
+
+            <!-- Auth Buttons and Profile -->
+            <div class="header_right_side">
+                <div class="auth-buttons profile-dropdown">
+                    <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
+                    <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
+                </div>
+            <i class="fa-solid fa-user profile_btn"></i>
         </div>
-
-        <!-- Nav Menu -->
-        <nav class="header_nav" id="main-menu">
-          <ul class="header_ul">
-            <li><a href="./index.html" class="header_list">მთავარი</a></li>
-            <li>
-              <a href="./discover.html" class="header_list"
-                >აღმოაჩინე აქტივობები</a
-              >
-            </li>
-            <li>
-              <a href="./profile.html" class="header_list">ჩემი პროფილი</a>
-            </li>
-            <li>
-              <a href="./certificates.html" class="header_list"
-                >სერტიფიკატები</a
-              >
-            </li>
-            <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
-          </ul>
-        </nav>
-
-        <!-- Auth Buttons and Profile -->
-        <div class="header_right_side">
-          <div class="auth-buttons profile-dropdown">
-            <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
-            <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
-          </div>
-          <i class="fa-solid fa-user profile_btn"></i>
-        </div>
-      </header>
+        </header>
 
       <main class="activity-details-main">
         <!-- Back Button -->
