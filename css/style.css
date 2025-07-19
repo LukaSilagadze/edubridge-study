@@ -1654,10 +1654,56 @@ footer {
 @media (max-width: 600px) {
   .dashboard-column {
     flex-direction: column;
-  }
+  } 
   
   .dashboard-card {
     flex: 1 1 100%;
   }
 }
 
+.feature-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  transition: right 0.5s ease;
+}
+
+.feature-notification.hidden {
+  right: -400px; /* Moves it off screen */
+}
+
+.notification-bubble {
+  background: linear-gradient(135deg, #4a6bff, #6a11cb);
+  color: white;
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 280px;
+  position: relative;
+  border-left: 4px solid #ffcc00;
+}
+
+.notification-bubble p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.close-notification {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+/* Gentle pulse effect */
+.notification-bubble {
+  animation: pulse 5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}

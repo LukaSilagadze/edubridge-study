@@ -1,4 +1,11 @@
 
+  const notification = document.querySelector(".feature-notification");
+  const closeBtn = document.querySelector(".close-notification");
+
+  closeBtn.addEventListener("click", () => {
+    notification.classList.add("hidden");
+  });
+
 
 document.addEventListener('DOMContentLoaded', function () {
   const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');

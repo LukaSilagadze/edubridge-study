@@ -23,7 +23,10 @@
     <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
     <title>EduBridge | სასკოლო აქტივობების პლატფორმა</title>
 
-    <meta name="google-site-verification" content="4BOroCTBt2WKcfzzmQuxsrWkuq-_a3VxcJsM9_Vs4dg" />
+    <meta
+      name="google-site-verification"
+      content="4BOroCTBt2WKcfzzmQuxsrWkuq-_a3VxcJsM9_Vs4dg"
+    />
   </head>
 
   <body>
@@ -62,26 +65,24 @@
                 >აღმოაჩინე აქტივობები</a
               >
             </li>
-            <li>
+            <!-- <li>
               <a href="./profile.html" class="header_list">ჩემი პროფილი</a>
-            </li>
-            <li>
-              <a href="./certificates.html" class="header_list"
-                >სერტიფიკატები</a
-              >
-            </li>
+            </li> -->
+            <!-- <li>
+              <a href="./certificates.html" class="header_list">სერტიფიკატები</a>
+            </li> -->
             <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
           </ul>
         </nav>
 
         <!-- Auth Buttons and Profile -->
         <div class="header_right_side">
-            <div class="auth-buttons profile-dropdown">
-                <a href="./auth.html" class="btn signup">auth</a>
-                <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
-                <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
-            </div>
-            <i class="fa-solid fa-user profile_btn"></i>
+          <div class="auth-buttons profile-dropdown">
+            <!-- <a href="./auth.html" class="btn signup">auth</a> -->
+            <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
+            <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
+          </div>
+          <i class="fa-solid fa-user profile_btn"></i>
         </div>
       </header>
 
@@ -89,7 +90,7 @@
         <section class="hero" aria-labelledby="main-heading">
           <p class="hero-test-mode">
             <i class="fas fa-exclamation-triangle"></i> საიტი სატესტო რეჟიმშია
-        </p>
+          </p>
           <div class="hero-content">
             <h1 id="main-heading">
               აღმოაჩინე. მიიღე მონაწილეობა. გამოიჩინე თავი.
@@ -142,95 +143,112 @@
           </div>
         </div>
 
-      <!-- Replace both dashboard-section and activity-timeline sections with this combined section -->
-<section class="dashboard-timeline-section" aria-labelledby="dashboard-timeline-heading">
-  <div class="dashboard-timeline-container">
-    <!-- Left column - Dashboard cards -->
-    <div class="dashboard-column">
-      <!-- Welcome Card (compact version) -->
-      <div class="dashboard-card welcome-card compact">
-        <div class="welcome-content">
-          <h2><i class="fas fa-user-graduate"></i> მოგესალმებით, <span id="user-name">ნინო</span>!</h2>
-          <div class="user-stats compact">
-            <div class="stat-item">
-              <i class="fas fa-trophy"></i>
-              <span class="stat-number" id="achievements-count">14</span>
+        <!-- Replace both dashboard-section and activity-timeline sections with this combined section -->
+        <section
+          class="dashboard-timeline-section"
+          aria-labelledby="dashboard-timeline-heading"
+        >
+          <div class="dashboard-timeline-container">
+            <!-- Left column - Dashboard cards -->
+            <div class="dashboard-column">
+              <!-- Welcome Card (compact version) -->
+              <div class="dashboard-card welcome-card compact">
+                <div class="welcome-content">
+                  <h2>
+                    <i class="fas fa-user-graduate"></i> მოგესალმებით,
+                    <span id="user-name">ნინო</span>!
+                  </h2>
+                  <div class="user-stats compact">
+                    <div class="stat-item">
+                      <i class="fas fa-trophy"></i>
+                      <span class="stat-number" id="achievements-count"
+                        >14</span
+                      >
+                    </div>
+                    <div class="stat-item">
+                      <i class="fas fa-certificate"></i>
+                      <span class="stat-number" id="certificates-count"
+                        >10</span
+                      >
+                    </div>
+                    <div class="stat-item">
+                      <i class="fas fa-calendar-check"></i>
+                      <span class="stat-number" id="activities-count">12</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Upcoming Events (compact version) -->
+              <div class="dashboard-card events-card compact">
+                <div class="card-header">
+                  <h3>
+                    <i class="fas fa-calendar-alt"></i> მომავალი ღონისძიებები
+                  </h3>
+                  <a href="./discover.html" class="view-all">ყველას ნახვა</a>
+                </div>
+                <div class="events-list" id="events-list">
+                  <!-- Events will be loaded here by JavaScript -->
+                </div>
+              </div>
+
+              <!-- Progress Tracker (compact version) -->
+              <div class="dashboard-card progress-card compact">
+                <div class="card-header">
+                  <h3><i class="fas fa-chart-line"></i> თქვენი პროგრესი</h3>
+                </div>
+                <div class="progress-tracker">
+                  <div class="progress-category">
+                    <div class="category-header">
+                      <i class="fas fa-square-root-alt"></i>
+                      <span>მათემატიკა</span>
+                      <span class="progress-percent">75%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div
+                        class="progress-fill math-progress"
+                        style="width: 75%"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="progress-category">
+                    <div class="category-header">
+                      <i class="fas fa-atom"></i>
+                      <span>ფიზიკა</span>
+                      <span class="progress-percent">60%</span>
+                    </div>
+                    <div class="progress-bar">
+                      <div
+                        class="progress-fill physics-progress"
+                        style="width: 60%"
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="stat-item">
-              <i class="fas fa-certificate"></i>
-              <span class="stat-number" id="certificates-count">10</span>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-calendar-check"></i>
-              <span class="stat-number" id="activities-count">12</span>
+
+            <!-- Right column - Timeline -->
+            <div class="timeline-column">
+              <div class="section-header">
+                <h2 id="timeline-heading">
+                  <i class="fas fa-stream"></i> ბოლო აქტივობები
+                </h2>
+                <a href="#" class="view-all">ყველას ნახვა</a>
+              </div>
+
+              <div class="timeline-container" id="activity-timeline">
+                <!-- Timeline items will be inserted here -->
+              </div>
+
+              <div class="load-more">
+                <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!-- Upcoming Events (compact version) -->
-      <div class="dashboard-card events-card compact">
-        <div class="card-header">
-          <h3><i class="fas fa-calendar-alt"></i> მომავალი ღონისძიებები</h3>
-          <a href="./discover.html" class="view-all">ყველას ნახვა</a>
-        </div>
-        <div class="events-list" id="events-list">
-          <!-- Events will be loaded here by JavaScript -->
-        </div>
-      </div>
-
-      <!-- Progress Tracker (compact version) -->
-      <div class="dashboard-card progress-card compact">
-        <div class="card-header">
-          <h3><i class="fas fa-chart-line"></i> თქვენი პროგრესი</h3>
-        </div>
-        <div class="progress-tracker">
-          <div class="progress-category">
-            <div class="category-header">
-              <i class="fas fa-square-root-alt"></i>
-              <span>მათემატიკა</span>
-              <span class="progress-percent">75%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill math-progress" style="width: 75%"></div>
-            </div>
-          </div>
-          <div class="progress-category">
-            <div class="category-header">
-              <i class="fas fa-atom"></i>
-              <span>ფიზიკა</span>
-              <span class="progress-percent">60%</span>
-            </div>
-            <div class="progress-bar">
-              <div class="progress-fill physics-progress" style="width: 60%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Right column - Timeline -->
-    <div class="timeline-column">
-      <div class="section-header">
-        <h2 id="timeline-heading">
-          <i class="fas fa-stream"></i> ბოლო აქტივობები
-        </h2>
-        <a href="#" class="view-all">ყველას ნახვა</a>
-      </div>
-
-      <div class="timeline-container" id="activity-timeline">
-        <!-- Timeline items will be inserted here -->
-      </div>
-
-      <div class="load-more">
-        <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
-      </div>
-    </div>
-  </div>
-</section>
+        </section>
 
         <!-- Add this section after the hero section in index.html -->
-
 
         <section
           id="activities"
@@ -257,15 +275,20 @@
               <div class="card-content">
                 <h3>ნიუ იორკის საერთაშორისო გაეროს მოდელირება</h3>
                 <p class="card-meta">
-                  <i class="fas fa-graduation-cap" aria-hidden="true"></i> ასაკი: 13-დან 24 წლამდე
+                  <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                  ასაკი: 13-დან 24 წლამდე
                 </p>
                 <p class="card-meta">
-                  <i class="fa-solid fa-calendar-days"></i> თარიღი: 2025 წლის ნოემბერი
+                  <i class="fa-solid fa-calendar-days"></i> თარიღი: 2025 წლის
+                  ნოემბერი
                 </p>
                 <p class="card-meta">
-                  <i class="fa-solid fa-money-bill"></i> საფასური: 4800 აშშ დოლარი 
+                  <i class="fa-solid fa-money-bill"></i> საფასური: 4800 აშშ
+                  დოლარი
                 </p>
-                <a href="/details.html?id=1"><button class="btn card-btn">გაიგე მეტი</button></a>
+                <a href="/details.html?id=1"
+                  ><button class="btn card-btn">გაიგე მეტი</button></a
+                >
               </div>
             </article>
             <article class="card">
@@ -280,15 +303,19 @@
               <div class="card-content">
                 <h3>ისტორიული კრიზისების კომიტეტის სიმულაცია</h3>
                 <p class="card-meta">
-                  <i class="fas fa-graduation-cap" aria-hidden="true"></i> ასაკი: 14-25
+                  <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                  ასაკი: 14-25
                 </p>
                 <p class="card-meta">
-                  <i class="fa-solid fa-calendar-days"></i> თარიღი: 2-3-4 აგვისტო
+                  <i class="fa-solid fa-calendar-days"></i> თარიღი: 2-3-4
+                  აგვისტო
                 </p>
                 <p class="card-meta">
                   <i class="fa-solid fa-money-bill"></i> საფასური: 70 ლარი
                 </p>
-                <a href="/details.html?id=2"><button class="btn card-btn">გაიგე მეტი</button></a>
+                <a href="/details.html?id=2"
+                  ><button class="btn card-btn">გაიგე მეტი</button></a
+                >
               </div>
             </article>
             <article class="card">
@@ -303,15 +330,19 @@
               <div class="card-content">
                 <h3>SDG საზაფხულო ბანაკი ბაკურიანში ⛱️☀️</h3>
                 <p class="card-meta">
-                  <i class="fas fa-graduation-cap" aria-hidden="true"></i> ასაკი: 14-25
+                  <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                  ასაკი: 14-25
                 </p>
                 <p class="card-meta">
-                  <i class="fa-solid fa-calendar-days"></i> თარიღი: 12-16 აგვისტო
+                  <i class="fa-solid fa-calendar-days"></i> თარიღი: 12-16
+                  აგვისტო
                 </p>
                 <p class="card-meta">
                   <i class="fa-solid fa-money-bill"></i> საფასური: 670 ლარი
                 </p>
-                <a href="/details.html?id=3"><button class="btn card-btn">გაიგე მეტი</button></a>
+                <a href="/details.html?id=3"
+                  ><button class="btn card-btn">გაიგე მეტი</button></a
+                >
               </div>
             </article>
           </div>
@@ -523,7 +554,9 @@
                 target="_blank"
                 ><i class="fa-brands fa-instagram"></i
               ></a>
-              <a href="https://www.youtube.com/@EduBridge-study" aria-label="YouTube"
+              <a
+                href="https://www.youtube.com/@EduBridge-study"
+                aria-label="YouTube"
                 ><i class="fa-brands fa-youtube"></i
               ></a>
               <a href="#" aria-label="LinkedIn"
@@ -583,6 +616,17 @@
         <i class="fas fa-arrow-up" aria-hidden="true"></i>
       </button>
     </a>
+
+    <!-- Place this before the closing </body> tag -->
+    <div class="feature-notification">
+      <div class="notification-bubble">
+        <span class="close-notification" aria-label="Close notification">&times;</span>
+        <p>🎉 სულ მალე! <br><strong>ექაუნთის შექმნის</strong> ფუნქცია მალე იქნება ხელმისაწვდომი!</p>
+      </div>
+    </div>
+
+
+
 
     <script src="./script.js"></script>
     <script src="./dashboard.js"></script>
