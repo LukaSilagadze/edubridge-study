@@ -1,10 +1,5 @@
 
-  const notification = document.querySelector(".feature-notification");
-  const closeBtn = document.querySelector(".close-notification");
 
-  closeBtn.addEventListener("click", () => {
-    notification.classList.add("hidden");
-  });
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -55,6 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+  const notification = document.querySelector(".feature-notification");
+  const closeBtn = document.querySelector(".close-notification");
+
+  closeBtn.addEventListener("click", () => {
+    notification.classList.add("hidden");
+  });
 
 // Update your activity data structure
 const activities = [

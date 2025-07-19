@@ -82,6 +82,20 @@ header {
     padding: 5px 0;
     transition: var(--transition);
 }
+.under-construction {
+  color: #9c9c9c;
+}
+
+.under-construction-icon {
+    color: #F6B100;
+    animation: hammer-animation 2s infinite;
+    margin-right: 5px;
+}
+
+@keyframes hammer-animation {
+    0%, 100% { transform: rotate(-15deg); }
+    50% { transform: rotate(15deg); }
+}
 
 .header_list.active {
     font-weight: 600;

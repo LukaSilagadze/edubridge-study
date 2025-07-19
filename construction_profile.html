@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduBridge | პროფილი მშენებარეა</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/resolutions.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .construction-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 70vh;
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        
+        .construction-icon {
+            font-size: 5rem;
+            color: #F6B100;
+            margin-bottom: 2rem;
+            animation: hammer-animation 2s infinite;
+        }
+        
+        .construction-title {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .construction-title:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--secondary-color);
+        }
+        
+        .construction-text {
+            font-size: 1.2rem;
+            color: #555;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .construction-belt {
+            width: 100%;
+            height: 40px;
+            background: repeating-linear-gradient(
+                45deg,
+                #F6B100,
+                #F6B100 20px,
+                #000 20px,
+                #000 40px
+            );
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            margin: 2rem 0;
+            overflow: hidden;
+        }
+        
+        .progress {
+            height: 100%;
+            width: 65%;
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            position: relative;
+            animation: progress-animation 2s ease-in-out infinite;
+        }
+        
+        .progress:after {
+            content: "65%";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 0.8rem;
+        }
+        
+        @keyframes hammer-animation {
+            0%, 100% { transform: rotate(-15deg); }
+            50% { transform: rotate(15deg); }
+        }
+        
+        @keyframes progress-animation {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+        
+        .coming-soon {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+        <!-- Mobile Menu Toggle -->
+        <button
+          class="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-controls="main-menu"
+        >
+          <i class="fas fa-bars menu"></i>
+        </button>
+
+        <!-- Logo -->
+        <div class="header_left_side">
+          <a href="./index.html" aria-label="EduBridge homepage">
+            <img
+              src="./images/logo1.png"
+              alt="EduBridge Logo"
+              class="logo"
+              width="70"
+              height="70"
+            />
+          </a>
+        </div>
+
+        <!-- ✅ Nav Menu (This will be shown/hidden on mobile) -->
+        <nav class="header_nav" id="main-menu">
+          <ul class="header_ul">
+            <li>
+              <a href="./index.html" class="header_list">მთავარი</a>
+            </li>
+            <li>
+              <a href="./discover.html" class="header_list"
+                >აღმოაჩინე აქტივობები</a
+              >
+            </li>
+            <li>
+              <a href="./construction_profile.html" class="header_list under-construction active">
+                <i class="fas fa-hard-hat under-construction-icon"></i> ჩემი პროფილი
+              </a>
+            </li>
+            <!-- <li>
+              <a href="./certificates.html" class="header_list">სერტიფიკატები</a>
+            </li> -->
+            <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+          </ul>
+        </nav>
+
+        <!-- Auth Buttons and Profile -->
+        <div class="header_right_side">
+          <div class="auth-buttons profile-dropdown">
+            <!-- <a href="./auth.html" class="btn signup">auth</a> -->
+            <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
+            <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
+          </div>
+          <i class="fa-solid fa-user profile_btn"></i>
+        </div>
+      </header>
+
+        <main>
+            <section class="construction-container">
+                <div class="construction-belt"></div>
+                
+                <div class="construction-icon">
+                    <i class="fas fa-hard-hat"></i>
+                    <i class="fas fa-hammer" style="margin-left: -20px;"></i>
+                </div>
+                
+                <h1 class="construction-title">პროფილის გვერდი დეველოპმენტშია!</h1>
+                
+                <!-- <div class="progress-bar">
+                    <div class="progress"></div>
+                </div> -->
+                
+                <p class="construction-text">
+                    ჩვენ ვმუშაობთ თქვენი პროფილის გვერდის შექმნაზე, სადაც შეძლებთ თქვენი მონაწილეობის ისტორიის, 
+                    მიღწევების და სერტიფიკატების ნახვას. გთხოვთ, მოგვიანებით სცადოთ.
+                </p>
+                
+                <p class="coming-soon">მალე ხელმისაწვდომი იქნება!</p>
+                
+                <div class="construction-belt"></div>
+            </section>
+        </main>
+
+        <!-- Footer (same as index.html) -->
+      <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="./index.html" aria-label="EduBridge homepage">
+              <img
+                src="./images/logo1.png"
+                alt="EduBridge Logo"
+                class="footer-logo"
+                width="100"
+                height="100"
+              />
+            </a>
+            <p class="footer-about">
+              EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
+              აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/profile.php?id=61576915596052"
+                aria-label="Facebook"
+                target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh"
+                aria-label="Instagram"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a href="https://www.youtube.com/@EduBridge-study" aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>სარჩევი</h4>
+            <ul>
+              <li><a href="./index.html">მთავარი</a></li>
+              <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
+              <li><a href="./profile.html">ჩემი პროფილი</a></li>
+              <li><a href="./certificates.html">სერტიფიკატები</a></li>
+              <li><a href="./contact.html">კონტაქტი</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>ინფორმაცია</h4>
+            <ul>
+              <li><a href="#">ჩვენს შესახებ</a></li>
+              <li><a href="#">პარტნიორები</a></li>
+              <li><a href="#">წესები და პირობები</a></li>
+              <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
+              <li><a href="#">ხშირად დასმული კითხვები</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>კონტაქტი</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                თბილისი, საქართველო
+              </li>
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                edubridge.org@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+          <div class="footer-links">
+            <a href="#">წესები</a>
+            <a href="#">კონფიდენციალურობა</a>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
