@@ -146,19 +146,17 @@
         </div>
 
         <!-- Replace both dashboard-section and activity-timeline sections with this combined section -->
-        <section
+        <!-- <section
           class="dashboard-timeline-section"
           aria-labelledby="dashboard-timeline-heading"
         >
           <div class="dashboard-timeline-container">
-            <!-- Left column - Dashboard cards -->
             <div class="dashboard-column">
-              <!-- Welcome Card (compact version) -->
               <div class="dashboard-card welcome-card compact">
                 <div class="welcome-content">
                   <h2>
-                    <i class="fas fa-user-graduate"></i> მოგესალმებით,
-                    <span id="user-name">ნინო</span>!
+                    <i class="fas fa-user-graduate"></i> მოგესალმებით!
+                    <span id="user-name"></span>
                   </h2>
                   <div class="user-stats compact">
                     <div class="stat-item">
@@ -181,7 +179,6 @@
                 </div>
               </div>
 
-              <!-- Upcoming Events (compact version) -->
               <div class="dashboard-card events-card compact">
                 <div class="card-header">
                   <h3>
@@ -190,11 +187,9 @@
                   <a href="./discover.html" class="view-all">ყველას ნახვა</a>
                 </div>
                 <div class="events-list" id="events-list">
-                  <!-- Events will be loaded here by JavaScript -->
                 </div>
               </div>
 
-              <!-- Progress Tracker (compact version) -->
               <div class="dashboard-card progress-card compact">
                 <div class="card-header">
                   <h3><i class="fas fa-chart-line"></i> თქვენი პროგრესი</h3>
@@ -230,7 +225,6 @@
               </div>
             </div>
 
-            <!-- Right column - Timeline -->
             <div class="timeline-column">
               <div class="section-header">
                 <h2 id="timeline-heading">
@@ -240,7 +234,6 @@
               </div>
 
               <div class="timeline-container" id="activity-timeline">
-                <!-- Timeline items will be inserted here -->
               </div>
 
               <div class="load-more">
@@ -248,7 +241,7 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> -->
 
         <!-- Add this section after the hero section in index.html -->
 
@@ -504,7 +497,7 @@
               <i class="fas fa-envelope" aria-hidden="true"></i> მიიღე სიახლეები
             </h2>
             <p class="newsletter-text">
-              დარეგისტრირდი და გაეცანი ახალ ღონისძიებებს და რჩევებს.
+              არ გამოტოვო სიახლეები და ახალი ღონისძიებები! მიიღე საუკეთესო შეთავაზებები და სიახლეები შენს Email-ზე.
             </p>
             <form class="newsletter-form">
               <div class="form-group">
@@ -626,10 +619,6 @@
         <p>🎉 სულ მალე! <br><strong>ექაუნთის შექმნის</strong> ფუნქცია მალე იქნება ხელმისაწვდომი!</p>
       </div>
     </div>
-
-
-
-
     <script src="./script.js"></script>
     <script src="./dashboard.js"></script>
   </body>
