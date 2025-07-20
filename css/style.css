@@ -295,17 +295,24 @@ header {
   cursor: pointer;
   height: 130px;
 }
-
+.ad_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+}
 .ad{
     color: #e5a800;
     font-size: 50px;
 }
+.ad_slide_active{
+  border: none;
+}
 
 .ad-track {
   display: flex;
-
-  animation: scroll 5s ease-out infinite;
-  animation-delay: 5s;
+  animation: scroll 7.5s ease-out infinite;
+  animation-delay: 7.5s;
 }
 @keyframes scroll {
   0% {
