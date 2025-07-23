@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="EduBridge - შექმენი ანგარიში" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/resolutions.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Georgian:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/dc2d1e509b.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
+    <script type="module" src="./auth.js"></script>
+    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
+    <title>EduBridge | რეგისტრაცია</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
+                <i class="fas fa-bars menu"></i>
+            </button>
+
+            <div class="header_left_side">
+                <a href="./index.html" aria-label="EduBridge homepage">
+                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
+                </a>
+            </div>
+
+            <nav class="header_nav" id="main-menu">
+                <ul class="header_ul">
+                    <li><a href="./index.html" class="header_list">მთავარი</a></li>
+                    <li><a href="./discover.html" class="header_list">აღმოაჩინე აქტივობები</a></li>
+                    <li>
+                        <a href="./construction_profile.html" class="header_list under-construction">
+                            <i class="fas fa-hard-hat under-construction-icon"></i> ჩემი პროფილი
+                        </a>
+                    </li>
+                    <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+                </ul>
+            </nav>
+
+            <div class="header_right_side">
+                <div class="auth-buttons profile-dropdown">
+                    <a href="./signup.html" class="btn signup">რეგისტრაცია</a>
+                    <a href="./signin.html" class="btn signin">ავტორიზაცია</a>
+                </div>
+                <i class="fa-solid fa-user profile_btn"></i>
+            </div>
+        </header>
+
+        <main class="auth-container">
+            <section class="auth-section">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>შექმენი ანგარიში</h1>
+                        <p>შემოირთე EduBridge-ის საგანმანათლებლო საზოგადოებაში</p>
+                    </div>
+                    
+                    <form id="signup-form" class="auth-form">
+                        <div class="form-group">
+                            <label for="fullname">სახელი და გვარი</label>
+                            <input type="text" id="fullname" name="fullname" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">ელ. ფოსტა</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="password">პაროლი</label>
+                            <input type="password" id="password" name="password" minlength="8" required>
+                            <div class="password-strength">
+                                <span class="strength-bar"></span>
+                                <span class="strength-bar"></span>
+                                <span class="strength-bar"></span>
+                                <span class="strength-text"></span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="confirm-password">გაიმეორე პაროლი</label>
+                            <input type="password" id="confirm-password" name="confirm-password" required>
+                            <span id="password-match" class="validation-message"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="region">რეგიონი</label>
+                            <select id="region" name="region" required>
+                                <option value="" disabled selected>აირჩიე რეგიონი</option>
+                                <option value="tbilisi">თბილისი</option>
+                                <option value="adjara">აჭარა</option>
+                                <option value="imereti">იმერეთი</option>
+                                <option value="kakheti">კახეთი</option>
+                                <option value="kvemo-kartli">ქვემო ქართლი</option>
+                                <option value="shida-kartli">შიდა ქართლი</option>
+                                <option value="samegrelo">სამეგრელო</option>
+                                <option value="samegrelo-zemo-svaneti">სამეგრელო-ზემო სვანეთი</option>
+                                <option value="guria">გურია</option>
+                                <option value="abkhazia">აფხაზეთი</option>
+                                <option value="samtskhe-javakheti">სამცხე-ჯავახეთი</option>
+                                <option value="mtskheta-mtianeti">მცხეთა-მთიანეთი</option>
+                                <option value="racha-lechkhumi-and-qvemo-svaneti">რაჭა-ლეჩხუმი და ქვემო სვანეთი</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>სკოლის ტიპი</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="school-type" value="public" required>
+                                    <span class="radio-checkmark"></span>
+                                    საჯარო სკოლა
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="school-type" value="private">
+                                    <span class="radio-checkmark"></span>
+                                    კერძო სკოლა
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group" id="school-selection" style="display: none;">
+                            <label for="school">სკოლა</label>
+                            <select id="school" name="school" disabled required>
+                                <option value="" disabled selected>ჯერ აირჩიე რეგიონი და სკოლის ტიპი</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group_auth checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">ვეთანხმები <a href="#" class="terms-link">გამოყენების პირობებს</a> და <a href="#" class="terms-link">გამოყენების პირობებს</a> და <a href="#" class="terms-link">კონფიდენციალურობის პოლიტიკას</a></label>
+                        </div>
+                        
+                        <button type="submit" class="btn signin auth-btn" id="submit">რეგისტრაცია</button>
+                    </form>
+                    
+                    <div class="auth-footer">
+                        <p>უკვე გაქვს ანგარიში? <a href="./signin.html">შესვლა</a></p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+        <div class="footer-content">
+          <div class="footer-section">
+            <a href="./index.html" aria-label="EduBridge homepage">
+              <img
+                src="./images/logo1.png"
+                alt="EduBridge Logo"
+                class="footer-logo"
+                width="100"
+                height="100"
+              />
+            </a>
+            <p class="footer-about">
+              EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
+              აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+            </p>
+            <div class="footer-social">
+              <a
+                href="https://www.facebook.com/profile.php?id=61576915596052"
+                aria-label="Facebook"
+                target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/edu_bridge123?igsh=cW01eGNubW5tbTlh"
+                aria-label="Instagram"
+                target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+              <a
+                href="https://www.youtube.com/@EduBridge-study"
+                aria-label="YouTube"
+                ><i class="fa-brands fa-youtube"></i
+              ></a>
+              <a href="#" aria-label="LinkedIn"
+                ><i class="fa-brands fa-linkedin-in"></i
+              ></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h4>სარჩევი</h4>
+            <ul>
+              <li><a href="./index.html">მთავარი</a></li>
+              <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
+              <li><a href="./profile.html">ჩემი პროფილი</a></li>
+              <li><a href="./certificates.html">სერტიფიკატები</a></li>
+              <li><a href="./contact.html">კონტაქტი</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>ინფორმაცია</h4>
+            <ul>
+              <li><a href="#">ჩვენს შესახებ</a></li>
+              <li><a href="#">პარტნიორები</a></li>
+              <li><a href="#">წესები და პირობები</a></li>
+              <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
+              <li><a href="#">ხშირად დასმული კითხვები</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h4>კონტაქტი</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
+                თბილისი, საქართველო
+              </li>
+              <li>
+                <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
+              </li>
+              <li>
+                <i class="fas fa-envelope" aria-hidden="true"></i>
+                edubridge.org@gmail.com
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+          <div class="footer-links">
+            <a href="#">წესები</a>
+            <a href="#">კონფიდენციალურობა</a>
+          </div>
+        </div>
+      </footer>
+        
+    </div>
+    <script src="./firebase-config.js"></script> 
+    <script src="./script.js"></script>
+    <script src="./auth.js"></script>
+    
+</body>
+</html>
