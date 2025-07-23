@@ -350,6 +350,7 @@ https://forms.gle/oo1qrc5nGAqWgVez6
         email: "info@logosi.org",
         phones: ["+995 577 12 32 92", "+995 577 68 07 88"],
         address: "ლეო კვაჭაძის I ჩიხი, 6, Tbilisi, Georgia",
+        maps: "https://maps.app.goo.gl/j54AA75uKnv81z8W8",
         social: {
           facebook: "https://www.facebook.com/Logos.Edu.Ge",
           instagram: "logos_international_academy"
@@ -457,9 +458,13 @@ https://forms.gle/oo1qrc5nGAqWgVez6
             </div>
         </div>
         <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span class="contact-label">მისამართი:</span>
-            <span class="contact-value">${activity.contact.address}</span>
+          <i class="fas fa-map-marker-alt"></i>
+          <span class="contact-label">მისამართი:</span>
+          <span class="contact-value">
+            <a href="${activity.contact.maps}" target="_blank" rel="noopener">
+              ${activity.contact.address}
+            </a>
+          </span>
         </div>
     `;
 
