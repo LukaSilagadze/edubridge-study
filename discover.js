@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 5,
       title: "ახალგაზრდობის ხმა",
-      type: ["debate"],
+      type: ["tournaments"],
       subject: "დებატები",
       age: "14-29 წლამდე",
       deadline: "18 ივლისი",
@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function () {
       price: "უფასო",
       description: "ახალგაზრდობის ხმა",
       image: "debate1.jpg",
-      badge: "",
+      badge: "უფასო",
       link: "https://forms.gle/4GHF5oGCH5jV6K5j7",
     },
   ];
