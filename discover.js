@@ -94,6 +94,21 @@ document.addEventListener("DOMContentLoaded", function () {
       badge: "",
       link: "https://logos.edu.ge/logosis_sazafxulo_skolashi_registracia/",
     },
+    {
+      id: 5,
+      title: "ახალგაზრდობის ხმა",
+      type: ["debate"],
+      subject: "დებატები",
+      age: "14-29 წლამდე",
+      deadline: "18 ივლისი",
+      date: "არჩევადია",
+      location: "თბილისი, საქართველო",
+      price: "უფასო",
+      description: "ახალგაზრდობის ხმა",
+      image: "debate1.jpg",
+      badge: "",
+      link: "https://forms.gle/4GHF5oGCH5jV6K5j7",
+    },
   ];
 
   // Render Activities
