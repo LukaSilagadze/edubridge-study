@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 3,
       title: "SDG საზაფხულო ბანაკი ბაკურიანში",
-      type: ["camp"],
+      type: "camp",
       subject: "mun",
       age: "14-25",
       deadline: "30 ივლისი",
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 4,
       title: "ლოგოსის საზაფხულო სკოლა ლისზე",
-      type: ["camp"],
+      type: "camp",
       subject: "საზაფხულო სკოლა",
       age: "5-12 წლამდე",
       deadline: "30 ივლისი",
@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 5,
       title: "ახალგაზრდობის ხმა",
-      type: ["tournaments"],
+      type: "tournaments",
       subject: "დებატები",
       age: "14-29 წლამდე",
       deadline: "18 ივლისი",
@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 6,
       title: "პროგრამირება სკოლის პარალელურად",
-      type: ["course"],
+      type: "course",
       subject: "პროგრამირების",
       age: "14-17 წლამდე",
       deadline: "",
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 7,
       title: "Junior IT აკადემია",
-      type: ["course"],
+      type: "course",
       subject: "პროგრამირების",
       age: "9-13 წელი",
       deadline: "",
@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 8,
       title: "გრაფიკული დიზაინი სკოლის პარალელურად",
-      type: ["course"],
+      type: "course",
       subject: "გრაფიკული დიზაინი",
       age: "14-17 წლამდე",
       deadline: "",
@@ -153,6 +153,21 @@ document.addEventListener("DOMContentLoaded", function () {
       image: "ItStep_3.png",
       badge: "",
       link: "https://ge.itstep.org/p-ropesia-sk-olis-p-aralelurad#program_learning",
+    },
+    {
+      id: 9,
+      title: "სამთო სათხილამურო კლუბი იქსტრიმი",
+      type: "camp",
+      subject: "ბანაკი",
+      age: "6-14 წლის",
+      deadline: "",
+      date: "10 დღიანი შეკრება",
+      location: "ბაკურიანი, საქართველო",
+      price: "",
+      description: "",
+      image: "Xtreme.jpg",
+      badge: "",
+      link: "https://forms.gle/Xnrae5GYvUVmptsU9",
     },
   ];
 
