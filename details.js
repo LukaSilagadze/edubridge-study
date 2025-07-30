@@ -365,50 +365,21 @@ https://forms.gle/oo1qrc5nGAqWgVez6
       },
     },
     {
-      id: 5,
-      title: "ახალგაზრდობის ხმა",
-      type: ["debate"],
-      subject: "დებატები",
-      age: "14-29 წლამდე",
-      deadline: "18 ივლისი",
-      date: "არჩევადია",
+      id: 6,
+      title: "პროგრამირება სკოლის პარალელურად",
+      type: "course",
+      subject: "პროგრამირების",
+      age: "14-17 წლამდე",
+      deadline: "",
+      date: "კვირაში 2-ჯერ",
       location: "თბილისი, საქართველო",
-      price: "უფასო",
-      description: `იწყება პროექტი "ახალგაზრდობის ხმა" , რომელსაც ახორციელებს დებატებისა და განათლების ეროვნული ინსტიტუტი  და ითვალისწინებს დებატების ჩემპიონატის ჩატარებას. პროექტი მხარადჭერილია ახალგაზრდობის სააგენტოს  მიერ 2025 წლის საგრანტო კონკურსის “ახალგაზრდული ორგანიზაციების გაძლიერება” ფარგლებში. 
-
-პროექტის ფარგლებში ახალგაზრდებს (14-29 წლამდე) ეძლევათ უნიკალური შესაძლებლობა 
-დაეუფლონ თანამედროვე მოქალაქისთვის სასიცოცხლოდ მნიშვნელოვან 
-უნარ-ჩვევებს, სრულიად უსასყიდლოდ, საერთაშორისო ტრენერების მიერ, ქართულ 
-ენაზე. 
-
-სწავლების პროცესში მოხდება ფორმალური 
-დებატების ტექნიკის სწავლება და სახალისო აქტივობებით ისეთი უნარების 
-განვითარება, როგორიცაა კრიტიკული აზროვნება, პრეზენტაციების მომზადება, 
-დროის მართვა, გუნდურობა, მოკვლევის წარმოება, ოპონენტის პატივისცემა, 
-ყველაფერი, რაც ნებსმიერ სფეორში გამოადგება ახალგაზრდას. 
-
-შერჩეული აპლიკანტებს ჩაუტრდენათ ტრენინგები დებატების ტექნიკაში.
-
-ტრენინგ-კურსების
- გავლის შედეგად ახალგაზრდებს მიეცემათ შესაძლებლობა, მონაწილეობა მიიღონ 
-რეგიონალურ და ეროვნულ ჩემპიონატებში, რომელიც მთელი საქართველოს მასშტაბით
- ახალგაზრდებს გააერთიანებს. გარდა ამისა, მათ მუდმივად ექნებათ 
-უპირატესობა ჩაერთონ დებატებისა და განათლების ინსტიტუტის სხვადასხვა 
-აქტივობებში  https://www.facebook.com/DebatesGeorgia
-
-აპლიკაციის შევსების ბოლო დღე არის 18 ივლისი.
-
-პროექტის
- შესარჩევი კონკურსი ძალიან დიდია, ამიტომ ახალგაზრდებმა პირველ ეტაპზე, 
-რაც შეიძლება დროულად უნდა შეავსონ ეს აპლიკაციის ფორმა. გასაუბრებები 
-დაიწყება ეტაპობრივად, როგორც კი დაიწყება აპლიკაციების შევსება. 
-
-იჩქარეთ, არ გამოტოვოთ ეს შანსი!`,
-      images: [
-  "./images/debate1.jpg",
+      price: "",
+      description: `დეტალების სანახავად გადადით სარეგისტრაციო ბმულზე: https://ge.itstep.org/p-ropesia-sk-olis-p-aralelurad#program_learning`,
+      image: [
+  "./images/ItStep_1.png",
 ],
-      badge: "უფასო",
-      link: "https://forms.gle/4GHF5oGCH5jV6K5j7",
+      badge: "",
+      link: "https://ge.itstep.org/p-ropesia-sk-olis-p-aralelurad#program_learning",
       schedule: [
         { date: "1", 
           event: "" },
@@ -429,23 +400,129 @@ https://forms.gle/oo1qrc5nGAqWgVez6
         },
       ],
       contact: {
-        email: "gedebate@gmail.com",
-        phones: ["599 73 33 06"],
+        email: "study@itstep.ge",
+        phones: ["032 215 55 51"],
         address: "თბილისი, საქართველო",
-        maps: "https://maps.app.goo.gl/Wr3MSsGzTAfu91Vx7",
+        maps: "https://maps.app.goo.gl/fPYvWWrk667yJcaz8",
         social: {
-          facebook: "https://www.facebook.com/DebatesGeorgia",
-          instagram: "logos_international_academy"
+          facebook: "https://www.facebook.com/itstep.ge",
+          instagram: "itstep.ge"
         },
       },
       organizer: {
-        name: "Georgian Institute for Debate and Education • GIDE ",
+        name: "IT Academy Step Georgia",
         description:
-          "ორგანიზაცია საერთაშორისო დებატების საგანმანათლებლო ასოციაციის (IDEA) ერთადერთი წევრია საქართველოდან",
-        logo: "./images/GIDE.png",
-        website: "https://debate.edu.ge/",
+          "საერთაშორისო ტრანსფორმაციული განათლების უდიდესი ცენტრი, IT - ინფორმაციული ტექნოლოგიების დარგში. განვითარდი, სანამ დროა",
+        logo: "./images/it-step.png",
+        website: "https://ge.itstep.org/",
       },
-    }
+    },
+    {
+      id: 7,
+      title: "Junior IT აკადემია",
+      type: "course",
+      subject: "პროგრამირება",
+      age: "9-13 წელი",
+      deadline: "",
+      date: "კვირაში 1 დღე, 2 საათი",
+      location: "თბილისი, საქართველო",
+      price: "",
+      description: `დეტალების სანახავად გადადით სარეგისტრაციო ბმულზე: https://ge.itstep.org/junior-step-computer-academy-ge`,
+      image: [
+  "./images/ItStep_2.png",
+],
+      badge: "",
+      link: "https://ge.itstep.org/junior-step-computer-academy-ge",
+      schedule: [
+        { date: "1", 
+          event: "" },
+        {
+          date: "2",
+          event: "",
+        },
+        {
+          date: "3",
+          event: "",
+        },
+        { date: "4", 
+          event: "" 
+        },
+        {
+          date: "5",
+          event: "",
+        },
+      ],
+      contact: {
+        email: "study@itstep.ge",
+        phones: ["032 215 55 51"],
+        address: "თბილისი, საქართველო",
+        maps: "https://maps.app.goo.gl/fPYvWWrk667yJcaz8",
+        social: {
+          facebook: "https://www.facebook.com/itstep.ge",
+          instagram: "itstep.ge"
+        },
+      },
+      organizer: {
+        name: "IT Academy Step Georgia",
+        description:
+          "საერთაშორისო ტრანსფორმაციული განათლების უდიდესი ცენტრი, IT - ინფორმაციული ტექნოლოგიების დარგში. განვითარდი, სანამ დროა",
+        logo: "./images/it-step.png",
+        website: "https://ge.itstep.org/",
+      },
+    },
+    {
+      id: 8,
+      title: "გრაფიკული დიზაინი სკოლის პარალელურად",
+      type: "course",
+      subject: "გრაფიკული დიზაინი",
+      age: "14-17 წლამდე",
+      deadline: "",
+      date: "კვირაში 2-ჯერ",
+      location: "თბილისი, საქართველო",
+      price: "",
+      description: `დეტალების სანახავად გადადით სარეგისტრაციო ბმულზე: https://ge.itstep.org/p-ropesia-sk-olis-p-aralelurad#program_learning`,
+      image: [
+  "./images/ItStep_3.png",
+],
+      badge: "",
+      link: "https://ge.itstep.org/p-ropesia-sk-olis-p-aralelurad#program_learning",
+      schedule: [
+        { date: "1", 
+          event: "" },
+        {
+          date: "2",
+          event: "",
+        },
+        {
+          date: "3",
+          event: "",
+        },
+        { date: "4", 
+          event: "" 
+        },
+        {
+          date: "5",
+          event: "",
+        },
+      ],
+      contact: {
+        email: "study@itstep.ge",
+        phones: ["032 215 55 51"],
+        address: "თბილისი, საქართველო",
+        maps: "https://maps.app.goo.gl/fPYvWWrk667yJcaz8",
+        social: {
+          facebook: "https://www.facebook.com/itstep.ge",
+          instagram: "itstep.ge"
+        },
+      },
+      organizer: {
+        name: "IT Academy Step Georgia",
+        description:
+          "საერთაშორისო ტრანსფორმაციული განათლების უდიდესი ცენტრი, IT - ინფორმაციული ტექნოლოგიების დარგში. განვითარდი, სანამ დროა",
+        logo: "./images/it-step.png",
+        website: "https://ge.itstep.org/",
+      },
+    },
   ];
 
   // Find the selected activity
