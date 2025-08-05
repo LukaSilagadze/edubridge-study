@@ -169,6 +169,21 @@ document.addEventListener("DOMContentLoaded", function () {
       badge: "",
       link: "https://forms.gle/Xnrae5GYvUVmptsU9",
     },
+    {
+      id: 10,
+      title: "International Education Fair LEAF Tbilisi / Batumi",
+      type: "galley",
+      subject: "გამოფენა",
+      age: "12-21 წლის",
+      deadline: "",
+      date: "11/12 ოქტომბერი",
+      location: "თბილისი / ბათუმი",
+      price: "უფასო",
+      description: "",
+      image: "leaf_1.png",
+      badge: "",
+      link: "https://leaf.ge/leaf-fair-registration-2025/",
+    },
   ];
 
   // Render Activities
