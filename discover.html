@@ -23,7 +23,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
-    <title>EduBridge | აღმოაჩინე აქტივობები</title>
+    <title>EduBridge | Discover Activities</title>
   </head>
 
   <body>
@@ -54,31 +54,31 @@
         <!-- Nav Menu -->
         <nav class="header_nav" id="main-menu">
           <ul class="header_ul">
-            <li><a href="./index.html" class="header_list">მთავარი</a></li>
+            <li><a href="./index.html" class="header_list">Home</a></li>
             <li>
               <a href="./discover.html" class="header_list active"
-                >აღმოაჩინე აქტივობები</a
+                >Discover Activities</a
               >
             </li>
             <li>
               <a href="./construction_profile.html" class="header_list under-construction ">
-                <i class="fas fa-hard-hat under-construction-icon"></i> ჩემი პროფილი
+                <i class="fas fa-hard-hat under-construction-icon"></i> My Profile
               </a>
             </li>
             <!-- <li>
               <a href="./certificates.html" class="header_list"
-                >სერტიფიკატები</a
+                >Certificates</a
               >
             </li> -->
-            <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+            <li><a href="./contact.html" class="header_list">Contact</a></li>
           </ul>
         </nav>
 
         <!-- Auth Buttons and Profile -->
         <div class="header_right_side">
           <div class="auth-buttons profile-dropdown">
-            <a href="#" class="btn signup">რეგისტრაცია</a>
-            <a href="#" class="btn signin">ავტორიზაცია</a>
+            <a href="#" class="btn signup">Sign Up</a>
+            <a href="#" class="btn signin">Sign In</a>
           </div>
           <i class="fa-solid fa-user profile_btn"></i>
         </div>
@@ -88,18 +88,18 @@
         <!-- Hero Search Section -->
         <section class="discover-hero" aria-labelledby="discover-heading">
           <p class="hero-test-mode">
-            <i class="fas fa-exclamation-triangle"></i> საიტი სატესტო რეჟიმშია
+            <i class="fas fa-exclamation-triangle"></i> This page is in test mode.
+            Some features may not work as expected.
           </p>
           <div class="discover-hero-content">
             <h1 id="discover-heading">
-              <i class="fas fa-search"></i> აღმოაჩინე შენთვის საინტერესო
-              აქტივობები
+              <i class="fas fa-search"></i> Discover Activities
             </h1>
             <div class="search-container">
               <div class="search-box">
                 <input
                   type="text"
-                  placeholder="ძიება (ოლიმპიადა, საგანი, ტიპი...)"
+                  placeholder="Search for activities..."
                   aria-label="Search activities"
                 />
                 <button class="search-btn">
@@ -108,7 +108,7 @@
               </div>
               <div class="filter-toggle">
                 <button class="btn filter-btn">
-                  <i class="fas fa-sliders-h"></i> ფილტრები
+                  <i class="fas fa-sliders-h"></i> Filters
                 </button>
               </div>
             </div>
@@ -118,41 +118,41 @@
         <!-- Filters Panel (Initially hidden) -->
         <div class="filters-panel">
           <div class="filters-header">
-            <h3><i class="fas fa-filter"></i> ფილტრები</h3>
+            <h3><i class="fas fa-filter"></i> Filters</h3>
             <button class="close-filters"><i class="fas fa-times"></i></button>
           </div>
           <div class="filter-group">
-            <h4>საგანი</h4>
+            <h4>Subject</h4>
             <div class="filter-options">
               <label class="filter-option">
                 <input type="checkbox" name="subject" value="math" />
-                <span>მათემატიკა</span>
+                <span>Mathematics</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="subject" value="physics" />
-                <span>ფიზიკა</span>
+                <span>Physics</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="subject" value="chemistry" />
-                <span>ქიმია</span>
+                <span>Chemistry</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="subject" value="biology" />
-                <span>ბიოლოგია</span>
+                <span>Biology</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="subject" value="programming" />
-                <span>პროგრამირება</span>
+                <span>Programming</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="subject" value="debate" />
-                <span>დებატები</span>
+                <span>Debates</span>
               </label>
             </div>
           </div>
 
           <div class="filter-group">
-            <h4>კლასი</h4>
+            <h4>Grade</h4>
             <div class="grade-range">
               <div class="range-labels">
                 <span>1</span>
@@ -165,35 +165,35 @@
                 value="9"
                 class="grade-slider"
               />
-              <div class="selected-grade">9 კლასი</div>
+              <div class="selected-grade">9 Grade</div>
             </div>
           </div>
 
           <div class="filter-group">
-            <h4>ტიპი</h4>
+            <h4>Type</h4>
             <div class="filter-options">
               <label class="filter-option">
                 <input type="checkbox" name="type" value="olympiad" />
-                <span>ოლიმპიადა</span>
+                <span>Olympiad</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="type" value="tournament" />
-                <span>ტურნირი</span>
+                <span>Tournament</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="type" value="camp" />
-                <span>საზაფხულო ბანაკი</span>
+                <span>Summer Camp</span>
               </label>
               <label class="filter-option">
                 <input type="checkbox" name="type" value="course" />
-                <span>კურსი</span>
+                <span>Course</span>
               </label>
             </div>
           </div>
 
           <div class="filter-actions">
-            <button class="btn reset-filters">ფილტრების გასუფთავება</button>
-            <button class="btn apply-filters">ფილტრების გამოყენება</button>
+            <button class="btn reset-filters">Reset Filters</button>
+            <button class="btn apply-filters">Apply Filters</button>
           </div>
         </div>
 
@@ -204,25 +204,25 @@
         >
           <div class="section-header">
             <h2 id="activities-heading">
-              <i class="fas fa-fire"></i> აქტივობები
+              <i class="fas fa-fire"></i> Activities
             </h2>
             <div class="sort-options">
-              <label for="sort-by">დალაგება:</label>
+              <label for="sort-by">Sort by:</label>
               <select id="sort-by" class="sort-select">
-                <option value="popular">პოპულარობით</option>
-                <option value="newest">უახლესი</option>
-                <option value="deadline">რეგისტრაციის დასრულება</option>
+                <option value="popular">Popularity</option>
+                <option value="newest">Newest</option>
+                <option value="deadline">Registration Deadline</option>
               </select>
             </div>
           </div>
 
           <div class="activity-tabs">
-            <button class="tab-btn active" data-tab="all">ყველა</button>
-            <button class="tab-btn" data-tab="mun">გაეროს მოდელირება</button>
-            <button class="tab-btn" data-tab="olympiads">ოლიმპიადები</button>
-            <button class="tab-btn" data-tab="tournaments">ტურნირები</button>
-            <button class="tab-btn" data-tab="camp">ბანაკები</button>
-            <button class="tab-btn" data-tab="courses">კურსები</button>
+            <button class="tab-btn active" data-tab="all">All</button>
+            <button class="tab-btn" data-tab="mun">Model UN</button>
+            <button class="tab-btn" data-tab="olympiads">Olympiads</button>
+            <button class="tab-btn" data-tab="tournaments">Tournaments</button>
+            <button class="tab-btn" data-tab="camp">Camps</button>
+            <button class="tab-btn" data-tab="courses">Courses</button>
           </div>
 
           <div class="activity-grid" id="activity-grid">
@@ -230,13 +230,13 @@
           </div>
 
           <div class="load-more">
-            <button class="btn load-more-btn">მეტის ჩატვირთვა</button>
+            <button class="btn load-more-btn">Load More</button>
           </div>
         </section>
 
         <!-- Featured Organizations -->
         <section class="featured-orgs">
-          <h2><i class="fas fa-star"></i> პარტნიორი ორგანიზაციები</h2>
+          <h2><i class="fas fa-star"></i> Featured Organizations</h2>
           <div class="orgs-carousel">
             <div class="org-card">
               <img
@@ -257,10 +257,10 @@
             <div class="org-card">
               <img
                 src="./images/gmuna.jpg"
-                alt="საქართველოს გაეროს მოდელირების ასოციაცია"
+                alt="Georgian Model United Nations Association"
                 loading="lazy"
               />
-              <h3>საქართველოს გაეროს მოდელირების ასოციაცია</h3>
+              <h3>Georgian Model United Nations Association</h3>
             </div>
             <div class="org-card">
               <img
@@ -268,7 +268,7 @@
                 alt="It Step"
                 loading="lazy"
               />
-              <h3>IT აკადემია STEP</h3>
+              <h3>IT Academy STEP</h3>
             </div>
             <div class="org-card">
               <img
@@ -276,12 +276,12 @@
                 alt="Xtreme"
                 loading="lazy"
               />
-              <h3>სამთო-სათხილამურო კლუბი ''იქსტრიმი" Xtreme ski-school </h3>
+              <h3>Xtreme Ski School</h3>
             </div>
             <div class="org-card">
               <img
                 src="./images/LEAF.jpg"
-                alt="It Step"
+                alt="LEAF [Liberal Enhanced Arts Foundation]"
                 loading="lazy"
               />
               <h3>LEAF [Liberal Enhanced Arts Foundation]</h3>
@@ -304,8 +304,7 @@
               />
             </a>
             <p class="footer-about">
-              EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
-              აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+              EduBridge is a platform that connects students with extracurricular activities and helps them document their achievements.
             </p>
             <div class="footer-social">
               <a
@@ -329,31 +328,31 @@
             </div>
           </div>
           <div class="footer-section">
-            <h4>სარჩევი</h4>
+            <h4>table of contents</h4>
             <ul>
-              <li><a href="./index.html">მთავარი</a></li>
-              <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
-              <li><a href="./profile.html">ჩემი პროფილი</a></li>
-              <li><a href="./certificates.html">სერტიფიკატები</a></li>
-              <li><a href="./contact.html">კონტაქტი</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./discover.html">Discover Activities</a></li>
+              <li><a href="./profile.html">My Profile</a></li>
+              <li><a href="./certificates.html">Certificates</a></li>
+              <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>ინფორმაცია</h4>
+            <h4>Information</h4>
             <ul>
-              <li><a href="#">ჩვენს შესახებ</a></li>
-              <li><a href="#">პარტნიორები</a></li>
-              <li><a href="#">წესები და პირობები</a></li>
-              <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
-              <li><a href="#">ხშირად დასმული კითხვები</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Frequently Asked Questions</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>კონტაქტი</h4>
+            <h4>Contact</h4>
             <ul class="footer-contact">
               <li>
                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                თბილისი, საქართველო
+                Tbilisi, Georgia
               </li>
               <li>
                 <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
@@ -366,10 +365,10 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+          <p>&copy; 2025 EduBridge. All rights reserved.</p>
           <div class="footer-links">
-            <a href="#">წესები</a>
-            <a href="#">კონფიდენციალურობა</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
           </div>
         </div>
       </footer>

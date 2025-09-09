@@ -81,7 +81,7 @@
 
 @media (max-width: 430px) {
     .hero{
-        padding: 100px 20px;
+        padding: 40px 20px;
     }
     .hero-content{
         transform: scale(1);

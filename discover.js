@@ -37,87 +37,87 @@ document.addEventListener("DOMContentLoaded", function () {
   const activities = [
     {
       id: 1,
-      title: "ნიუ იორკის საერთაშორისო გაეროს მოდელირება",
+      title: "New York International Model UN",
       type: "mun",
       subject: "debate",
       age: "13-24",
-      deadline: "25 ივნისი",
-      location: "ნიუ იორკი, აშშ",
+      deadline: "25 June",
+      location: "New York, USA",
       price: "4800",
-      description: "ნიუ იორკის საერთაშორისო გაეროს მოდელირება",
+      description: "New York International Model UN",
       image: "munnyc2025.png",
-      badge: "ახალი",
+      badge: "New",
       link: "https://forms.gle/GHzuzQ1E4bY356cy6",
     },
     {
       id: 2,
-      title: "ისტორიული კრიზისების კომიტეტის სიმულაცია",
+      title: "Historical Crises Committee Simulation",
       type: "mun",
       subject: "debate",
       age: "14-25",
-      deadline: "30 ივნისი",
-      date: "12-16 აგვისტო",
-      location: "თბილისი",
+      deadline: "30 June",
+      date: "12-16 August",
+      location: "Tbilisi, Georgia",
       price: "70",
-      description: "ისტორიული კრიზისების კომიტეტის სიმულაცია",
+      description: "Historical Crises Committee Simulation",
       image: "HccSimulation2025.png",
-      badge: "ახალი",
+      badge: "New",
       link: "https://docs.google.com/forms/d/e/1FAIpQLSfAgERXVPV1b2Z1nstVDdrs57NbyfnCNkGz_r3z-nOCBYEzSQ/viewform",
     },
     {
       id: 3,
-      title: "SDG საზაფხულო ბანაკი ბაკურიანში",
+      title: "SDG Summer Camp in Bakuriani",
       type: "camp",
       subject: "mun",
       age: "14-25",
-      deadline: "30 ივლისი",
-      date: "12-16 აგვისტო",
-      location: "ბაკურიანი",
+      deadline: "30 July",
+      date: "12-16 August",
+      location: "Bakuriani, Georgia",
       price: "670",
-      description: "SDG საზაფხულო ბანაკი ბაკურიანში ⛱️☀️",
+      description: "SDG Summer Camp in Bakuriani ⛱️☀️",
       image: "SDGCampBakuriani.png",
-      badge: "ახალი",
+      badge: "New",
       link: "https://forms.gle/oo1qrc5nGAqWgVez6",
     },
     {
       id: 4,
-      title: "ლოგოსის საზაფხულო სკოლა ლისზე",
+      title: "Logos Summer School in Lisi",
       type: "camp",
-      subject: "საზაფხულო სკოლა",
-      age: "5-12 წლამდე",
-      deadline: "30 ივლისი",
-      date: "12-16 აგვისტო",
-      location: "თბილისი, საქართველო",
-      price: "130-515 ევრო",
-      description: "ლოგოსის საზაფხულო სკოლა ლისზე ⛱️☀️",
+      subject: "Summer School",
+      age: "5-12",
+      deadline: "30 July",
+      date: "12-16 August",
+      location: "Tbilisi, Georgia",
+      price: "130-515 Euro",
+      description: "Logos Summer School in Lisi ⛱️☀️",
       image: "gardening.png",
       badge: "",
       link: "https://logos.edu.ge/logosis_sazafxulo_skolashi_registracia/",
     },
     {
       id: 5,
-      title: "ახალგაზრდობის ხმა",
+      title: "Youth Voice",
       type: "tournaments",
-      subject: "დებატები",
-      age: "14-29 წლამდე",
-      deadline: "18 ივლისი",
-      date: "არჩევადია",
-      location: "თბილისი, საქართველო",
-      price: "უფასო",
-      description: "ახალგაზრდობის ხმა",
+      subject: "Debates",
+      age: "14-29",
+      deadline: "18 July",
+      date: "Optional",
+      location: "Tbilisi, Georgia",
+      price: "Free",
+      description: "Youth Voice - Debate Tournament",
       image: "debate1.jpg",
-      badge: "უფასო",
+      badge: "Free",
       link: "https://forms.gle/4GHF5oGCH5jV6K5j7",
     },
     {
       id: 6,
-      title: "პროგრამირება სკოლის პარალელურად",
+      title: "Programming Alongside School",
       type: "course",
-      subject: "პროგრამირების",
-      age: "14-17 წლამდე",
+      subject: "Programming",
+      age: "14-17 years",
       deadline: "",
-      date: "კვირაში 2-ჯერ",
-      location: "თბილისი, საქართველო",
+      date: "Twice a week",
+      location: "Tbilisi, Georgia",
       price: "",
       description: "ItStep Academy",
       image: "ItStep_1.png",
@@ -126,13 +126,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 7,
-      title: "Junior IT აკადემია",
+      title: "Junior IT Academy",
       type: "course",
-      subject: "პროგრამირების",
-      age: "9-13 წელი",
+      subject: "Programming",
+      age: "9-13 years",
       deadline: "",
-      date: "კვირაში 1 დღე, 2 საათი",
-      location: "თბილისი, საქართველო",
+      date: "Once a week, 2 hours",
+      location: "Tbilisi, Georgia",
       price: "",
       description: "ItStep Academy",
       image: "ItStep_2.png",
@@ -141,13 +141,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 8,
-      title: "გრაფიკული დიზაინი სკოლის პარალელურად",
+      title: "Graphic Design Alongside School",
       type: "course",
-      subject: "გრაფიკული დიზაინი",
-      age: "14-17 წლამდე",
+      subject: "Graphic Design",
+      age: "14-17 years",
       deadline: "",
-      date: "კვირაში 2-ჯერ",
-      location: "თბილისი, საქართველო",
+      date: "Twice a week",
+      location: "Tbilisi, Georgia",
       price: "",
       description: "ItStep Academy",
       image: "ItStep_3.png",
@@ -156,13 +156,13 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       id: 9,
-      title: "სამთო სათხილამურო კლუბი იქსტრიმი",
+      title: "Mountain Climbing Club Xtreme",
       type: "camp",
-      subject: "ბანაკი",
-      age: "6-14 წლის",
+      subject: "Camp",
+      age: "6-14 years",
       deadline: "",
-      date: "10 დღიანი შეკრება",
-      location: "ბაკურიანი, საქართველო",
+      date: "10-day gathering",
+      location: "Bakuriani, Georgia",
       price: "",
       description: "",
       image: "Xtreme.jpg",
@@ -172,13 +172,13 @@ document.addEventListener("DOMContentLoaded", function () {
     {
       id: 10,
       title: "International Education Fair LEAF Tbilisi / Batumi",
-      type: "galley",
-      subject: "გამოფენა",
-      age: "12-21 წლის",
+      type: "gallery",
+      subject: "Gallery",
+      age: "12-21 years",
       deadline: "",
-      date: "11/12 ოქტომბერი",
-      location: "თბილისი / ბათუმი",
-      price: "უფასო",
+      date: "11/12 October",
+      location: "Tbilisi / Batumi",
+      price: "Free",
       description: "",
       image: "leaf_1.png",
       badge: "",
@@ -208,7 +208,7 @@ function renderActivities(activitiesToRender) {
                 <div class="activity-meta">
                     <div class="activity-meta-item">
                         <i class="fas fa-graduation-cap"></i>
-                        <span>ასაკი: ${activity.age}</span>
+                        <span>age: ${activity.age}</span>
                     </div>
                     <div class="activity-meta-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -216,13 +216,13 @@ function renderActivities(activitiesToRender) {
                     </div>
                     <div class="activity-meta-item">
                         <i class="far fa-clock"></i>
-                        <span>რეგისტრაციის დასრულება: ${activity.deadline}</span>
+                        <span>Registration Deadline: ${activity.deadline}</span>
                     </div>
                 </div>
                 
                 <div class="activity-actions">
-                    <a href="#" class="activity-btn details-btn">დეტალები</a>
-                    <a href="${activity.link}" target="_blank" class="activity-btn register-btn">რეგისტრაცია</a>
+                    <a href="#" class="activity-btn details-btn">Details</a>
+                    <a href="${activity.link}" target="_blank" class="activity-btn register-btn">Register</a>
                 </div>
             </div>
         `;
@@ -344,7 +344,7 @@ function setupDetailsButtons() {
       checkbox.checked = false;
     });
     gradeSlider.value = 9;
-    selectedGrade.textContent = "9 კლასი";
+    selectedGrade.textContent = "9 Grade";
   });
 
   // Sort functionality
