@@ -280,9 +280,6 @@ header {
   margin: auto;
   padding: 10px 0;
 }
-
-
-
 .ad-slide {
   min-width: 100%;
   flex-shrink: 1;
@@ -312,7 +309,7 @@ header {
 .ad-track {
   display: flex;
   animation: scroll 7.5s ease-out infinite;
-  animation-delay: 7.5s;
+  /* animation-delay: 7.5s; */
 }
 @keyframes scroll {
   0% {

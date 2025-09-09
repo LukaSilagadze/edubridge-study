@@ -619,7 +619,7 @@ https://forms.gle/oo1qrc5nGAqWgVez6
       title: "International Education Fair LEAF Tbilisi / Batumi",
       type: "galley",
       subject: "გამოფენა",
-      age: "12-21 წლის",
+      age: "15-16+",
       deadline: "",
       date: "11/12 ოქტომბერი",
       location: "თბილისი / ბათუმი",
@@ -689,7 +689,7 @@ LEAF-ის განათლების საერთაშორისო 
       contact: {
         email: "info@leaf.ge",
         phones: ["+995 577 230464, 032 294 61 74"],
-        address: "ბაკურიანი, საქართველო",
+        address: "გამრეკელის 19 საბურთალო, თბილისი",
         maps: "https://maps.app.goo.gl/adPrbB8Ug52LRx389",
         social: {
           facebook: "https://www.facebook.com/leaf.ge",
