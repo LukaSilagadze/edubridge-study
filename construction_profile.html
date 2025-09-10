@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduBridge | პროფილი მშენებარეა</title>
+    <title>EduBridge | Construction Profile</title>
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/resolutions.css">
@@ -114,6 +114,15 @@
             font-size: 1.3rem;
             margin-top: 1rem;
         }
+        .profile-link {
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-size: 18px;
+        }
+        .profile-link-a {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -145,22 +154,21 @@
         <nav class="header_nav" id="main-menu">
           <ul class="header_ul">
             <li>
-              <a href="./index.html" class="header_list">მთავარი</a>
+              <a href="./index.html" class="header_list">Home</a>
             </li>
             <li>
-              <a href="./discover.html" class="header_list"
-                >აღმოაჩინე აქტივობები</a
-              >
+              <a href="./discover.html" class="header_list">Discover Activities</a>
+            </li>
             </li>
             <li>
               <a href="./construction_profile.html" class="header_list under-construction active">
-                <i class="fas fa-hard-hat under-construction-icon"></i> ჩემი პროფილი
+                <i class="fas fa-hard-hat under-construction-icon"></i> My Profile
               </a>
             </li>
             <!-- <li>
-              <a href="./certificates.html" class="header_list">სერტიფიკატები</a>
+              <a href="./certificates.html" class="header_list">Certificates</a>
             </li> -->
-            <li><a href="./contact.html" class="header_list">კონტაქტი</a></li>
+            <li><a href="./contact.html" class="header_list">Contact</a></li>
           </ul>
         </nav>
 
@@ -168,8 +176,8 @@
         <div class="header_right_side">
           <div class="auth-buttons profile-dropdown">
             <!-- <a href="./auth.html" class="btn signup">auth</a> -->
-            <a href="#" class="btn signup">რეგისტრაცია</a>
-            <a href="#" class="btn signin">ავტორიზაცია</a>
+            <a href="#" class="btn signup">Sign Up</a>
+            <a href="#" class="btn signin">Sign In</a>
           </div>
           <i class="fa-solid fa-user profile_btn"></i>
         </div>
@@ -184,19 +192,21 @@
                     <i class="fas fa-hammer" style="margin-left: -20px;"></i>
                 </div>
                 
-                <h1 class="construction-title">პროფილის გვერდი დეველოპმენტშია!</h1>
+                <h1 class="construction-title">The profile page is under development!</h1>
                 
                 <!-- <div class="progress-bar">
                     <div class="progress"></div>
                 </div> -->
                 
                 <p class="construction-text">
-                    ჩვენ ვმუშაობთ თქვენი პროფილის გვერდის შექმნაზე, სადაც შეძლებთ თქვენი მონაწილეობის ისტორიის, 
-                    მიღწევების და სერტიფიკატების ნახვას. გთხოვთ, მოგვიანებით სცადოთ.
+                    We are working on creating your profile page, where you will be able to view your participation history,
+                    achievements, and certificates. Please check back later.
                 </p>
-                
-                <p class="coming-soon">მალე ხელმისაწვდომი იქნება!</p>
-                
+
+                <p class="coming-soon">Coming Soon!</p>
+
+                <p class="profile-link">To see how the profile page will look, please visit the <a href="./profile.html" class="profile-link-a">Profile Page</a>.</p>
+
                 <div class="construction-belt"></div>
             </section>
         </main>
@@ -215,8 +225,7 @@
               />
             </a>
             <p class="footer-about">
-              EduBridge არის პლატფორმა, რომელიც აკავშირებს მოსწავლეებს სასკოლო
-              აქტივობებთან და ეხმარებათ მათი წარმატებების დოკუმენტირებაში.
+              EduBridge is a platform that connects students to school activities and helps them document their successes.
             </p>
             <div class="footer-social">
               <a
@@ -240,31 +249,31 @@
             </div>
           </div>
           <div class="footer-section">
-            <h4>სარჩევი</h4>
+            <h4>Table of contents</h4>
             <ul>
-              <li><a href="./index.html">მთავარი</a></li>
-              <li><a href="./discover.html">აღმოაჩინე აქტივობები</a></li>
-              <li><a href="./profile.html">ჩემი პროფილი</a></li>
-              <li><a href="./certificates.html">სერტიფიკატები</a></li>
-              <li><a href="./contact.html">კონტაქტი</a></li>
+              <li><a href="./index.html">Home</a></li>
+              <li><a href="./discover.html">Discover Activities</a></li>
+              <li><a href="./profile.html">My Profile</a></li>
+              <li><a href="./certificates.html">Certificates</a></li>
+              <li><a href="./contact.html">Contact</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>ინფორმაცია</h4>
+            <h4>Information</h4>
             <ul>
-              <li><a href="#">ჩვენს შესახებ</a></li>
-              <li><a href="#">პარტნიორები</a></li>
-              <li><a href="#">წესები და პირობები</a></li>
-              <li><a href="#">კონფიდენციალურობის პოლიტიკა</a></li>
-              <li><a href="#">ხშირად დასმული კითხვები</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Partners</a></li>
+              <li><a href="#">Terms and Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Frequently Asked Questions</a></li>
             </ul>
           </div>
           <div class="footer-section">
-            <h4>კონტაქტი</h4>
+            <h4>Contact</h4>
             <ul class="footer-contact">
               <li>
                 <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                თბილისი, საქართველო
+                Tbilisi, Georgia
               </li>
               <li>
                 <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
@@ -277,10 +286,10 @@
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 EduBridge. ყველა უფლება დაცულია.</p>
+          <p>&copy; 2025 EduBridge. All rights reserved.</p>
           <div class="footer-links">
-            <a href="#">წესები</a>
-            <a href="#">კონფიდენციალურობა</a>
+            <a href="#">Terms</a>
+            <a href="#">Privacy</a>
           </div>
         </div>
       </footer>
