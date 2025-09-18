@@ -472,6 +472,7 @@
   height: 120px;
   object-fit: contain;
   margin-bottom: 20px;
+  border-radius: 50%;
 }
 
 .org-card h3 {
