@@ -184,6 +184,22 @@ document.addEventListener("DOMContentLoaded", function () {
       badge: "",
       link: "https://leaf.ge/leaf-fair-registration-2025/",
     },
+    {
+      id: 11,
+      title: "სკოლა-პანსიონი კომაროვი • Komarovi Campus School ",
+      type: "mathematics",
+      subject: "mathematics",
+      age: "VII - XI grades",
+      deadline: "29 September",
+      date: "Starts 29 September",
+      location: "Online",
+      price: "",
+      description: "",
+      image: "komarovi_online_school.jpg",
+      badge: "Online",
+      link: "https://forms.gle/KkCFaXT45GZjXEnw8 ",
+      detailsLink: "https://komarovi.edu.ge/ge/news/1390_%E1%83%99%E1%83%9D%E1%83%9B%E1%83%90%E1%83%A0%E1%83%9D%E1%83%95%E1%83%98%E1%83%A1%20%E1%83%9D%E1%83%9A%E1%83%90%E1%83%98%E1%83%9C%20%20%E1%83%A1%E1%83%99%E1%83%9D%E1%83%9A%E1%83%90",
+    },
   ];
 
   // Render Activities
@@ -221,7 +237,7 @@ function renderActivities(activitiesToRender) {
                 </div>
                 
                 <div class="activity-actions">
-                    <a href="#" class="activity-btn details-btn">Details</a>
+                    ${activity.detailsLink ? `<a href="${activity.detailsLink}" class="activity-btn details-btn">Details</a>` : `<a href="#" class="activity-btn details-btn">Details</a>`}
                     <a href="${activity.link}" target="_blank" class="activity-btn register-btn">Register</a>
                 </div>
             </div>
@@ -238,18 +254,15 @@ function setupDetailsButtons() {
     document.querySelectorAll('.details-btn').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            
-            // Find the closest activity card
             const card = this.closest('.activity-card');
-            
-            // Get the activity ID from the data-id attribute
-            const activityId = card.getAttribute('data-id');
-            
-            // Debugging: log the ID to console
-            console.log("Navigating to activity ID:", activityId);
-            
-            // Redirect to details page with activity ID
-            window.location.href = `details.html?id=${activityId}`;
+            const activityId = card.dataset.id;
+            // Find the activity object by id
+            const activity = activities.find(act => act.id == activityId);
+            if (activity && activity.detailsLink) {
+                window.open(activity.detailsLink, '_blank');
+            } else {
+                window.location.href = `details.html?id=${activityId}`;
+            }
         });
     });
 }
@@ -383,12 +396,15 @@ function setupDetailsButtons() {
     document.querySelectorAll('.details-btn').forEach(button => {
         button.addEventListener('click', function(e) {
             e.preventDefault();
-            // Get the activity ID from the card (you'll need to add data-id to your cards)
             const card = this.closest('.activity-card');
             const activityId = card.dataset.id;
-            
-            // Redirect to details page with activity ID
-            window.location.href = `details.html?id=${activityId}`;
+            // Find the activity object by id
+            const activity = activities.find(act => act.id == activityId);
+            if (activity && activity.detailsLink) {
+                window.open(activity.detailsLink, '_blank');
+            } else {
+                window.location.href = `details.html?id=${activityId}`;
+            }
         });
     });
 }
