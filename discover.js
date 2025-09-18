@@ -174,7 +174,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "International Education Fair LEAF Tbilisi / Batumi",
       type: "gallery",
       subject: "Gallery",
-      age: "12-21 years",
+      age: "15-16+ years",
       deadline: "",
       date: "11/12 October",
       location: "Tbilisi / Batumi",
