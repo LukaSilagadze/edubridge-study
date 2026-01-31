@@ -1,262 +1,559 @@
 <!DOCTYPE html>
 <html lang="ka">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="EduBridge - Student Profile for Nino Gigauri">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
-  <link rel="stylesheet" href="./css/profile.css">
-  <link rel="stylesheet" href="./css/style.css">
-  <link rel="stylesheet" href="./css/resolutions.css">
-  <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon">
-  <title>EduBridge - Nino Gigauri's profile</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>პროფილი - EduBridge</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="./css/resolutions.css">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-  <header>
-            <!-- Mobile Menu Toggle -->
-            <button class="mobile-menu-toggle" aria-expanded="false" aria-controls="main-menu">
-                <i class="fas fa-bars menu"></i>
-            </button>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+          <a href="./index.html" class="logo">
+            <img src="./images/logo.svg" alt="logo" />
+            <h1 class="logo_text">EduBridge</h1>
+          </a>
+        </div>
+        <div class="header_rightSide">
+          <nav class="nav">
+            <ul class="nav_ul">
+              <li><a href="./index.html" class="nav_a">მთავარი</a></li>
+              <li><a href="./events.html" class="nav_a">აქტივობები</a></li>
+                <li><a href="./calendar.html" class="nav_a active">კალენდარი</a></li>
+                <li><a href="./profile.html" class="nav_a">პროფილი</a></li>
+                <li><a href="./tips.html" class="nav_a">რჩევები</a></li>
+                <li><a href="./contact.html" class="nav_a">კონტაქტი</a></li>
+              <li class="mobile_auth"><button class="header_btn">ავტორიზაცია</button></li>
+            </ul>
+          </nav>
+          <button class="header_btn desktop_auth">ავტორიზაცია</button>
+          <button class="burger_menu" id="burgerMenu">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+      </header>
 
-            <!-- Logo -->
-            <div class="header_left_side">
-                <a href="./index.html" aria-label="EduBridge homepage">
-                    <img src="./images/logo1.png" alt="EduBridge Logo" class="logo" width="70" height="70" />
-                </a>
-            </div>
-
-            <!-- ✅ Nav Menu (This will be shown/hidden on mobile) -->
-            <nav class="header_nav" id="main-menu">
-                <ul class="header_ul">
-                    <li><a href="./index.html" class="header_list ">Home</a></li>
-                    <li><a href="./discover.html" class="header_list">Discover Activities</a></li>
-                    <li><a href="./profile.html" class="header_list active">My Profile</a></li>
-                    <!-- <li><a href="./certificates.html" class="header_list">Certificates</a></li> -->
-                    <li><a href="./contact.html" class="header_list">Contact</a></li>
-                </ul>
-            </nav>
-
-            <!-- Auth Buttons and Profile -->
-            <div class="header_right_side">
-                <div class="auth-buttons profile-dropdown">
-                    <a href="#" class="btn signup">Sign Up</a>
-                    <a href="#" class="btn signin">Sign In</a>
+    <!-- Profile Hero Section -->
+    <section class="profile_hero">
+        <div class="profile_hero_content">
+            <div class="profile_avatar">
+                <img src="./images/unnamed.jpg" alt="Student Avatar" class="avatar_img">
+                <div class="avatar_badge">
+                    <i class="fas fa-crown"></i>
                 </div>
-                <i class="fa-solid fa-user profile_btn"></i>
             </div>
-        </header>
-
-  <main class="profile-main">
-    <div class="container">
-      <section class="profile-card">
-        <div class="profile-header">
-          <div class="profile-info">
-            <img src="./images/profilepic_girl.jpg" alt="Nino Gigauri's photo" class="profile-avatar">
-            <div class="profile-details">
-              <h1 class="profile-name">Nino Gigauri</h1>
-              <p class="profile-meta"><i class="fas fa-graduation-cap"></i> 11th Grade | Private School "Kolegiumi"</p>
-              <p class="profile-meta"><i class="fas fa-map-marker-alt"></i> Georgia, Tbilisi  </p>
-              <button class="edit-profile-btn">
-                <i class="fas fa-pen"></i> Edit Profile
-              </button>
-            </div>
-          </div>
-          <div class="profile-stats">
-            <div class="stat-item">
-              <i class="fas fa-trophy"></i>
-              <span>Achievements: <strong>14</strong></span>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-certificate"></i>
-              <span>Certificates: <strong>10</strong></span>
-            </div>
-            <div class="stat-item">
-              <i class="fas fa-tasks"></i>
-              <span>Activities: <strong>12</strong></span>
-            </div>
-            <div class="skill-tags">
-              <span class="tag">STEM</span>
-              <span class="tag">Public Speaking</span>
-              <span class="tag">Leadership</span>
-              <span class="tag">Programming</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title"><i class="fas fa-scroll"></i> Certificates</h2>
-        <div class="grid-container">
-          <article class="certificate-card">
-            <div class="certificate-content">
-              <h3>Math Olympiad</h3>
-              <p class="certificate-meta">By Georgian MOE • National • March 2025</p>
-              <button class="view-btn">
-                <i class="fas fa-file-pdf"></i> View
-              </button>
-            </div>
-          </article>
-          <article class="certificate-card">
-            <div class="certificate-content">
-              <h3>Debate Championship</h3>
-              <p class="certificate-meta">By Youth Parliament • School • April 2025</p>
-              <button class="view-btn">
-                <i class="fas fa-file-pdf"></i> View
-              </button>
-            </div>
-          </article>
-          <article class="certificate-card">
-            <div class="certificate-content">
-              <h3>Best Delegate - UN Model</h3>
-              <p class="certificate-meta">By UN Association • International • May 2025</p>
-              <button class="view-btn">
-                <i class="fas fa-file-pdf"></i> View
-              </button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title"><i class="fas fa-history"></i> Activities History</h2>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <time class="timeline-date">May 2025</time>
-              <p>Best Delegate Award at the UN Model Conference</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <time class="timeline-date">February 2025</time>
-              <p>Participated in the Debate Tournament</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker"></div>
-            <div class="timeline-content">
-              <time class="timeline-date">January 2025</time>
-              <p>Won the Mathematics Olympiad</p>
-            </div>
-          </div>
-          
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title"><i class="fas fa-project-diagram"></i> Projects</h2>
-        <div class="grid-container">
-          <article class="project-card">
-            <img src="./images/smartirrigation.jpeg" alt="Smart Irrigation System" class="project-image">
-            <div class="project-content">
-              <h3>Smart Irrigation System</h3>
-              <p class="project-meta">Science Fair • Electronics, IoT</p>
-              <button class="view-btn">View</button>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="./images/mobilelearning.webp" alt="Mobile Learning App" class="project-image">
-            <div class="project-content">
-              <h3>Mobile Learning App</h3>
-              <p class="project-meta">App Hackathon • UI/UX, JavaScript</p>
-              <button class="view-btn">View</button>
-            </div>
-          </article>
-          <article class="project-card">
-            <img src="./images/robotics.jpg" alt="Robotics Club" class="project-image">
-            <div class="project-content">
-              <h3>Robotics Club</h3>
-              <p class="project-meta">School Club • Robotics, Teamwork</p>
-              <button class="view-btn">View</button>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <section class="section">
-        <h2 class="section-title"><i class="fas fa-comment-alt"></i> Recommendations</h2>
-        <div class="grid-container">
-          <article class="testimonial-card">
-            <blockquote>
-              <p>"Nino stood out for her teamwork and leadership skills."</p>
-              <footer>— Maia Ioseliani, Teacher</footer>
-            </blockquote>
-          </article>
-          <article class="testimonial-card">
-            <blockquote>
-              <p>"Very creative student, always with innovative ideas."</p>
-              <footer>— Giorgi Kvaratskhelia, Mentor</footer>
-            </blockquote>
-          </article>
-          <article class="testimonial-card">
-            <blockquote>
-              <p>"Nino's dedication and passion for learning are truly inspiring."</p>
-              <footer>— Ana Bakradze, Coach</footer>
-            </blockquote>
-          </article>
-        </div>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-            <div class="footer-content">
-                <div class="footer-section">
-                    <a href="./index.html" aria-label="EduBridge homepage">
-                        <img src="./images/logo1.png" alt="EduBridge Logo" class="footer-logo" width="100" height="100">
-                    </a>
-                    <p class="footer-about">EduBridge is a platform that connects students with school activities and helps them document their achievements.</p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/profile.php?id=61576915596052" aria-label="Facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/edubridge_study/" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@EduBridge-study" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <div class="profile_info">
+                <h1 class="profile_name">გიორგი მაისურაძე</h1>
+                <div class="profile_stats">
+                    <div class="stat_item">
+                        <span class="stat_number">15</span>
+                        <span class="stat_label">აქტივობა</span>
+                    </div>
+                    <div class="stat_item">
+                        <span class="stat_number">8</span>
+                        <span class="stat_label">ჯილდო</span>
+                    </div>
+                    <div class="stat_item">
+                        <span class="stat_number">95%</span>
+                        <span class="stat_label">წარმატება</span>
                     </div>
                 </div>
-                <div class="footer-section">
-                    <h4>Table of Contents</h4>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./discover.html">Discover Activities</a></li>
-                        <li><a href="./profile.html">My Profile</a></li>
-                        <li><a href="./certificates.html">Certificates</a></li>
-                        <li><a href="./contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Information</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Terms and Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Frequently Asked Questions</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul class="footer-contact">
-                        <li><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Tbilisi, Georgia</li>
-                        <li><i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789</li>
-                        <li><i class="fas fa-envelope" aria-hidden="true"></i> edubridge.org@gmail.com</li>
-                    </ul>
+                <div class="profile_actions">
+                    <button class="profile_btn primary">
+                        <i class="fas fa-edit"></i>
+                        <span>პროფილის რედაქტირება</span>
+                    </button>
+                    <button class="profile_btn secondary">
+                        <i class="fas fa-share"></i>
+                        <span>გაზიარება</span>
+                    </button>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 EduBridge. All rights reserved.</p>
-                <div class="footer-links">
-                    <a href="#">Terms</a>
-                    <a href="#">Privacy</a>
+        </div>
+        <div class="profile_hero_background">
+            <div class="achievement_showcase">
+                <div class="achievement_item">
+                    <i class="fas fa-trophy"></i>
+                    <span>1st Place</span>
+                </div>
+                <div class="achievement_item">
+                    <i class="fas fa-medal"></i>
+                    <span>Gold Medal</span>
+                </div>
+                <div class="achievement_item">
+                    <i class="fas fa-star"></i>
+                    <span>Top 10</span>
                 </div>
             </div>
-        </footer>
-          <a href="#top">
-        <button class="back-to-top" aria-label="Back to top">
-            <i class="fas fa-arrow-up" aria-hidden="true"></i>
-        </button>
-    </a>
-    <script src="./script.js"></script>
+        </div>
+    </section>
+
+    <!-- Main Profile Content -->
+    <main class="profile_main">
+        <div class="profile_container">
+            <!-- Left Sidebar -->
+            <aside class="profile_sidebar">
+                <!-- Personal Info Card -->
+                <div class="sidebar_card">
+                    <h3 class="card_title">
+                        <i class="fas fa-user"></i>
+                        პირადი ინფორმაცია
+                    </h3>
+                    <div class="personal_info">
+                        <div class="info_item">
+                            <span class="info_label">სკოლა:</span>
+                            <span class="info_value">თბილისის ფიზიკა-მათემატიკის სკოლა</span>
+                        </div>
+                        <div class="info_item">
+                            <span class="info_label">კლასი:</span>
+                            <span class="info_value">11-ე კლასი</span>
+                        </div>
+                        <div class="info_item">
+                            <span class="info_label">ქალაქი:</span>
+                            <span class="info_value">თბილისი</span>
+                        </div>
+                        <div class="info_item">
+                            <span class="info_label">დაბადების თარიღი:</span>
+                            <span class="info_value">15 მარტი, 2007</span>
+                        </div>
+                        <div class="info_item">
+                            <span class="info_label">ელ-ფოსტა:</span>
+                            <span class="info_value">giorgi@example.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Card -->
+                <div class="sidebar_card">
+                    <h3 class="card_title">
+                        <i class="fas fa-brain"></i>
+                        უნარები
+                    </h3>
+                    <div class="skills_list">
+                        <div class="skill_item">
+                            <span class="skill_name">მათემატიკა</span>
+                            <div class="skill_bar">
+                                <div class="skill_progress" style="width: 95%"></div>
+                            </div>
+                            <span class="skill_percentage">95%</span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">ფიზიკა</span>
+                            <div class="skill_bar">
+                                <div class="skill_progress" style="width: 88%"></div>
+                            </div>
+                            <span class="skill_percentage">88%</span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">პროგრამირება</span>
+                            <div class="skill_bar">
+                                <div class="skill_progress" style="width: 82%"></div>
+                            </div>
+                            <span class="skill_percentage">82%</span>
+                        </div>
+                        <div class="skill_item">
+                            <span class="skill_name">ინგლისური</span>
+                            <div class="skill_bar">
+                                <div class="skill_progress" style="width: 90%"></div>
+                            </div>
+                            <span class="skill_percentage">90%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="sidebar_card">
+                    <h3 class="card_title">
+                        <i class="fas fa-chart-line"></i>
+                        სტატისტიკა
+                    </h3>
+                    <div class="quick_stats">
+                        <div class="stat_card">
+                            <div class="stat_icon">
+                                <i class="fas fa-calendar-check"></i>
+                            </div>
+                            <div class="stat_content">
+                                <span class="stat_number">23</span>
+                                <span class="stat_label">დასწრებული</span>
+                            </div>
+                        </div>
+                        <div class="stat_card">
+                            <div class="stat_icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div class="stat_content">
+                                <span class="stat_number">12</span>
+                                <span class="stat_label">ჯილდო</span>
+                            </div>
+                        </div>
+                        <div class="stat_card">
+                            <div class="stat_icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat_content">
+                                <span class="stat_number">8</span>
+                                <span class="stat_label">გუნდი</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="profile_content">
+                <!-- Achievement Showcase -->
+                <section class="achievement_section">
+                    <div class="section_header">
+                        <h2 class="section_title">
+                            <i class="fas fa-trophy"></i>
+                            მიღწევები
+                        </h2>
+                        <button class="section_btn">
+                            <i class="fas fa-plus"></i>
+                            ახალი ჯილდო
+                        </button>
+                    </div>
+                    <div class="achievements_grid">
+                        <div class="achievement_card gold">
+                            <div class="achievement_icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div class="achievement_content">
+                                <h3 class="achievement_title">მათემატიკის რესპუბლიკური ოლიმპიადა</h3>
+                                <p class="achievement_description">1-ლი ადგილი, 2024 წელი</p>
+                                <div class="achievement_meta">
+                                    <span class="achievement_date">15 დეკემბერი, 2024</span>
+                                    <span class="achievement_score">98/100 ქულა</span>
+                                </div>
+                            </div>
+                            <div class="achievement_badge">🥇</div>
+                        </div>
+                        <div class="achievement_card silver">
+                            <div class="achievement_icon">
+                                <i class="fas fa-medal"></i>
+                            </div>
+                            <div class="achievement_content">
+                                <h3 class="achievement_title">ფიზიკის საერთაშორისო ოლიმპიადა</h3>
+                                <p class="achievement_description">2-ე ადგილი, 2024 წელი</p>
+                                <div class="achievement_meta">
+                                    <span class="achievement_date">20 ნოემბერი, 2024</span>
+                                    <span class="achievement_score">92/100 ქულა</span>
+                                </div>
+                            </div>
+                            <div class="achievement_badge">🥈</div>
+                        </div>
+                        <div class="achievement_card bronze">
+                            <div class="achievement_icon">
+                                <i class="fas fa-award"></i>
+                            </div>
+                            <div class="achievement_content">
+                                <h3 class="achievement_title">პროგრამირების ტურნირი</h3>
+                                <p class="achievement_description">3-ე ადგილი, 2024 წელი</p>
+                                <div class="achievement_meta">
+                                    <span class="achievement_date">10 ოქტომბერი, 2024</span>
+                                    <span class="achievement_score">85/100 ქულა</span>
+                                </div>
+                            </div>
+                            <div class="achievement_badge">🥉</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Activity History -->
+                <section class="activity_section">
+                    <div class="section_header">
+                        <h2 class="section_title">
+                            <i class="fas fa-history"></i>
+                            აქტივობების ისტორია
+                        </h2>
+                        <div class="activity_filters">
+                            <button class="filter_btn active">ყველა</button>
+                            <button class="filter_btn">ოლიმპიადები</button>
+                            <button class="filter_btn">სახელოსნოები</button>
+                            <button class="filter_btn">ტურნირები</button>
+                        </div>
+                    </div>
+                    <div class="activity_timeline">
+                        <div class="timeline_item completed">
+                            <div class="timeline_marker">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">მათემატიკის რესპუბლიკური ოლიმპიადა</h3>
+                                <p class="timeline_description">1-ლი ადგილი, 98/100 ქულა</p>
+                                <div class="timeline_meta">
+                                    <span class="timeline_date">15 დეკემბერი, 2024</span>
+                                    <span class="timeline_type olympiad">ოლიმპიადა</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline_item completed">
+                            <div class="timeline_marker">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">ფიზიკის საერთაშორისო ოლიმპიადა</h3>
+                                <p class="timeline_description">2-ე ადგილი, 92/100 ქულა</p>
+                                <div class="timeline_meta">
+                                    <span class="timeline_date">20 ნოემბერი, 2024</span>
+                                    <span class="timeline_type olympiad">ოლიმპიადა</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline_item upcoming">
+                            <div class="timeline_marker">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">ქიმიის ტურნირი</h3>
+                                <p class="timeline_description">რეგისტრაცია დასრულებული</p>
+                                <div class="timeline_meta">
+                                    <span class="timeline_date">25 დეკემბერი, 2024</span>
+                                    <span class="timeline_type tournament">ტურნირი</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline_item completed">
+                            <div class="timeline_marker">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="timeline_content">
+                                <h3 class="timeline_title">AI და მანქანური სწავლება</h3>
+                                <p class="timeline_description">სახელოსნო დასრულებული</p>
+                                <div class="timeline_meta">
+                                    <span class="timeline_date">22 ნოემბერი, 2024</span>
+                                    <span class="timeline_type workshop">სახელოსნო</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Portfolio Builder -->
+                <section class="portfolio_section">
+                    <div class="section_header">
+                        <h2 class="section_title">
+                            <i class="fas fa-briefcase"></i>
+                            პორტფოლიო
+                        </h2>
+                        <button class="section_btn">
+                            <i class="fas fa-plus"></i>
+                            ახალი პროექტი
+                        </button>
+                    </div>
+                    <div class="portfolio_grid">
+                        <div class="portfolio_card">
+                            <div class="portfolio_image">
+                                <img src="./images/project1.jpg" alt="Project 1">
+                                <div class="portfolio_overlay">
+                                    <button class="portfolio_btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="portfolio_content">
+                                <h3 class="portfolio_title">მათემატიკური ალგორითმი</h3>
+                                <p class="portfolio_description">პროგრამა, რომელიც ამოხსნის კომპლექსურ მათემატიკურ ამოცანებს</p>
+                                <div class="portfolio_meta">
+                                    <span class="portfolio_tech">Python, NumPy</span>
+                                    <span class="portfolio_date">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card">
+                            <div class="portfolio_image">
+                                <img src="./images/project2.jpg" alt="Project 2">
+                                <div class="portfolio_overlay">
+                                    <button class="portfolio_btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="portfolio_content">
+                                <h3 class="portfolio_title">ფიზიკის სიმულატორი</h3>
+                                <p class="portfolio_description">3D სიმულატორი ფიზიკური პროცესების დემონსტრაციისთვის</p>
+                                <div class="portfolio_meta">
+                                    <span class="portfolio_tech">JavaScript, Three.js</span>
+                                    <span class="portfolio_date">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio_card">
+                            <div class="portfolio_image">
+                                <img src="./images/project3.jpg" alt="Project 3">
+                                <div class="portfolio_overlay">
+                                    <button class="portfolio_btn">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="portfolio_content">
+                                <h3 class="portfolio_title">საგანმანათლებლო აპლიკაცია</h3>
+                                <p class="portfolio_description">მობილური აპლიკაცია სტუდენტებისთვის</p>
+                                <div class="portfolio_meta">
+                                    <span class="portfolio_tech">React Native</span>
+                                    <span class="portfolio_date">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Goals & Progress -->
+                <section class="goals_section">
+                    <div class="section_header">
+                        <h2 class="section_title">
+                            <i class="fas fa-target"></i>
+                            მიზნები და პროგრესი
+                        </h2>
+                        <button class="section_btn">
+                            <i class="fas fa-plus"></i>
+                            ახალი მიზანი
+                        </button>
+                    </div>
+                    <div class="goals_grid">
+                        <div class="goal_card">
+                            <div class="goal_header">
+                                <h3 class="goal_title">საერთაშორისო ოლიმპიადა</h3>
+                                <span class="goal_percentage">75%</span>
+                            </div>
+                            <div class="goal_progress">
+                                <div class="progress_bar">
+                                    <div class="progress_fill" style="width: 75%"></div>
+                                </div>
+                            </div>
+                            <p class="goal_description">მონაწილეობა მიიღო საერთაშორისო მათემატიკის ოლიმპიადაში</p>
+                            <div class="goal_deadline">
+                                <i class="fas fa-calendar"></i>
+                                <span>15 იანვარი, 2025</span>
+                            </div>
+                        </div>
+                        <div class="goal_card">
+                            <div class="goal_header">
+                                <h3 class="goal_title">უნივერსიტეტის მოსამზადებელი</h3>
+                                <span class="goal_percentage">60%</span>
+                            </div>
+                            <div class="goal_progress">
+                                <div class="progress_bar">
+                                    <div class="progress_fill" style="width: 60%"></div>
+                                </div>
+                            </div>
+                            <p class="goal_description">მომზადება უნივერსიტეტის მისაღებ გამოცდებზე</p>
+                            <div class="goal_deadline">
+                                <i class="fas fa-calendar"></i>
+                                <span>1 მაისი, 2025</span>
+                            </div>
+                        </div>
+                        <div class="goal_card">
+                            <div class="goal_header">
+                                <h3 class="goal_title">პროგრამირების სერტიფიკატი</h3>
+                                <span class="goal_percentage">90%</span>
+                            </div>
+                            <div class="goal_progress">
+                                <div class="progress_bar">
+                                    <div class="progress_fill" style="width: 90%"></div>
+                                </div>
+                            </div>
+                            <p class="goal_description">Python პროგრამირების სერტიფიკატის მიღება</p>
+                            <div class="goal_deadline">
+                                <i class="fas fa-calendar"></i>
+                                <span>30 დეკემბერი, 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer_container">
+          <div class="footer_main">
+            <div class="footer_brand">
+              <div class="footer_logo">
+                <img src="./images/logo.svg" alt="EduBridge Logo" />
+                <h3 class="footer_logo_text">EduBridge</h3>
+              </div>
+              <p class="footer_description">აღმოაჩინე, მიიღე მონაწილეობა და გამოიჩინე თავი საქართველოს საუკეთესო საგანმანათლებლო აქტივობებში</p>
+              <div class="footer_social">
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+            <div class="footer_links">
+              <div class="footer_column">
+                <h4 class="footer_column_title">აქტივობები</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">ოლიმპიადები</a></li>
+                  <li><a href="#" class="footer_link">ტურნირები</a></li>
+                  <li><a href="#" class="footer_link">სახელოსნოები</a></li>
+                  <li><a href="#" class="footer_link">კონფერენციები</a></li>
+                  <li><a href="#" class="footer_link">საგანმანათლებლო ლაბორატორიები</a></li>
+                </ul>
+              </div>
+              <div class="footer_column">
+                <h4 class="footer_column_title">სერვისები</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">სერტიფიკატები</a></li>
+                  <li><a href="#" class="footer_link">პორტფოლიო</a></li>
+                  <li><a href="#" class="footer_link">რჩევები</a></li>
+                  <li><a href="#" class="footer_link">მენტორობა</a></li>
+                  <li><a href="#" class="footer_link">კარიერული რჩევები</a></li>
+                </ul>
+              </div>
+              <div class="footer_column">
+                <h4 class="footer_column_title">ჩვენს შესახებ</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">ჩვენი ისტორია</a></li>
+                  <li><a href="#" class="footer_link">გუნდი</a></li>
+                  <li><a href="#" class="footer_link">პარტნიორები</a></li>
+                  <li><a href="#" class="footer_link">კარიერა</a></li>
+                  <li><a href="#" class="footer_link">პრესა</a></li>
+                </ul>
+              </div>
+              <div class="footer_column">
+                <h4 class="footer_column_title">დახმარება</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">FAQ</a></li>
+                  <li><a href="#" class="footer_link">კონტაქტი</a></li>
+                  <li><a href="#" class="footer_link">მხარდაჭერა</a></li>
+                  <li><a href="#" class="footer_link">სახელმძღვანელო</a></li>
+                  <li><a href="#" class="footer_link">შეფასებები</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer_bottom">
+            <div class="footer_bottom_content">
+              <div class="footer_copyright">
+                <p>&copy; 2024 EduBridge. ყველა უფლება დაცულია.</p>
+              </div>
+              <div class="footer_legal">
+                <a href="#" class="footer_legal_link">პირობები</a>
+                <a href="#" class="footer_legal_link">კონფიდენციალურობა</a>
+                <a href="#" class="footer_legal_link">Cookie პოლიტიკა</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <script src="./script.js"></script>
+    <script src="./js/profile.js"></script>
 </body>
-</html>
+</html> 

@@ -1,421 +1,332 @@
 <!DOCTYPE html>
-<html lang="ka">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="EduBridge - დაგვიკავშირდით" />
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/style.css" />
-    <link rel="stylesheet" href="./css/contact.css" />
-    <link rel="stylesheet" href="./css/resolutions.css" />
+    <link rel="stylesheet" href="/node_modules/alk-life/css/alk-life.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Fira+Sans+Georgian:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans+Georgian:wght@100..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/resolutions.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
     <script
-      src="https://kit.fontawesome.com/54e5db6ee9.js"
+      src="https://kit.fontawesome.com/dc2d1e509b.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="shortcut icon" href="./images/logo1.png" type="image/x-icon" />
-    <title>EduBridge | Contact</title>
+    <link rel="shortcut icon" href="./images/logo.svg" type="image/x-icon" />
+    <title>კონტაქტი - EduBridge</title>
   </head>
-
   <body>
     <div class="container">
-      <header>
-        <!-- Mobile Menu Toggle -->
-        <button
-          class="mobile-menu-toggle"
-          aria-expanded="false"
-          aria-controls="main-menu"
-        >
-          <i class="fas fa-bars menu"></i>
-        </button>
-
-        <!-- Logo -->
-        <div class="header_left_side">
-          <a href="./index.html" aria-label="EduBridge homepage">
-            <img
-              src="./images/logo1.png"
-              alt="EduBridge Logo"
-              class="logo"
-              width="70"
-              height="70"
-            />
+      <!-- header -->
+      <header class="header">
+        <div class="logo">
+          <a href="./index.html" class="logo">
+            <img src="./images/logo.svg" alt="logo" />
+            <h1 class="logo_text">EduBridge</h1>
           </a>
         </div>
-
-        <!-- Nav Menu -->
-        <nav class="header_nav" id="main-menu">
-          <ul class="header_ul">
-            <li><a href="./index.html" class="header_list">Home</a></li>
-            <li>
-              <a href="./discover.html" class="header_list">Discover Activities</a>
-            </li>
-            <li>
-              <a href="./construction_profile.html" class="header_list under-construction">
-                <i class="fas fa-hard-hat under-construction-icon"></i> My Profile
-              </a>
-            </li>
-            <!-- <li>
-              <a href="./certificates.html" class="header_list"
-                >Certificates</a
-              >
-            </li> -->
-            <li>
-              <a href="./contact.html" class="header_list active">Contact</a>
-            </li>
-          </ul>
-        </nav>
-
-        <!-- Auth Buttons and Profile -->
-        <div class="header_right_side">
-          <div class="auth-buttons profile-dropdown">
-            <a href="#" class="btn signup">Sign Up</a>
-            <a href="#" class="btn signin">Sign In</a>
-          </div>
-          <i class="fa-solid fa-user profile_btn"></i>
+        <div class="header_rightSide">
+          <nav class="nav">
+            <ul class="nav_ul">
+              <li><a href="./index.html" class="nav_a">მთავარი</a></li>
+              <li><a href="./events.html" class="nav_a">აქტივობები</a></li>
+              <li><a href="./calendar.html" class="nav_a">კალენდარი</a></li>
+              <li><a href="./tips.html" class="nav_a">რჩევები</a></li>
+              <li><a href="./contact.html" class="nav_a active">კონტაქტი</a></li>
+              <li class="mobile_auth"><button class="header_btn">ავტორიზაცია</button></li>
+            </ul>
+          </nav>
+          <button class="header_btn desktop_auth">ავტორიზაცია</button>
+          <button class="burger_menu" id="burgerMenu">
+            <i class="fas fa-bars"></i>
+          </button>
         </div>
       </header>
 
-      <main class="contact-main">
-        <!-- Contact Hero Section -->
-        <section class="contact-hero" aria-labelledby="contact-heading">
-          <p class="hero-test-mode">
-            <i class="fas fa-exclamation-triangle"></i> This page is in test mode.
-            Some features may not work as expected.
-          </p>
-          <div class="contact-hero-content">
-            <h1 id="contact-heading">
-              <i class="fas fa-envelope"></i> Contact Us
-            </h1>
-            <p class="hero-text">
-              Do you have questions or suggestions? Our team is ready to help you!
+      <!-- Contact Form Section -->
+      <section class="contact_form_section">
+        <div class="contact_form_container">
+          <div class="form_content">
+            <h3 class="form_h3">მოგვწერეთ შეტყობინება</h3>
+            <p class="form_description">
+              შეავსეთ ფორმა ქვემოთ და ჩვენი გუნდი დაგიკავშირდებათ რაც შეიძლება სწრაფად.
             </p>
-          </div>
-        </section>
-
-        <!-- Contact Content -->
-        <section class="contact-content">
-          <div class="contact-container">
-            <!-- Contact Form -->
-            <div class="contact-form-container">
-              <h2><i class="fas fa-paper-plane"></i> Send Us a Message</h2>
-              <form
-                id="contact-form"
-                class="contact-form"
-                action="https://formspree.io/f/mgvzvnan"
-                method="POST"
-                aria-label="Contact Form"
-              >
-                <div class="form-group">
-                  <label for="name">name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    aria-label="Name"
-                  />
+            <form class="contact_form" id="contactForm">
+              <div class="form_row">
+                <div class="form_group">
+                  <label class="form_label" for="firstName">სახელი *</label>
+                  <input type="text" id="firstName" name="firstName" class="form_input" required>
                 </div>
-                <div class="form-group">
-                  <label for="email">Email</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    aria-label="Email"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="subject">Subject</label>
-                  <select id="subject" name="subject" aria-label="Subject">
-                    <option value="general">General Inquiry</option>
-                    <option value="technical">Technical Issue</option>
-                    <option value="partnership">Partnership</option>
-                    <option value="feedback">Feedback/Suggestion</option>
-                  </select>
-                </div>
-                <div class="form-group">
-                  <label for="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="6"
-                    required
-                    aria-label="Message"
-                  ></textarea>
-                </div>
-
-                <!-- Add these hidden fields -->
-                <input
-                  type="hidden"
-                  name="_subject"
-                  value="New Contact from EduBridge"
-                />
-                <input
-                  type="hidden"
-                  name="_next"
-                  value="https://yourwebsite.com/thank-you.html"
-                />
-                  <!-- Add these hidden fields -->
-                <input type="hidden" name="_subject" value="New Contact from EduBridge">
-                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html"> <!-- Optional -->
-                <input type="text" name="_gotcha" style="display:none"> <!-- Spam protection -->
-
-                <div class="form-actions">
-                  <button type="submit" class="btn submit-btn">
-                    <i class="fas fa-paper-plane"></i> Send
-                  </button>
-                </div>
-              </form>
-            </div>
-
-            <!-- Contact Info -->
-            <div class="contact-info-container">
-              <h2><i class="fas fa-info-circle"></i>Contact Information</h2>
-              <div class="contact-info">
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                  </div>
-                  <div class="info-content">
-                    <h3>Address</h3>
-                    <p>Tbilisi, Georgia<br />Kavtaradze St. #15</p>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="fas fa-phone"></i>
-                  </div>
-                  <div class="info-content">
-                    <h3>Telephone</h3>
-                    <p>+995 123 456 789</p>
-                    <p>+995 987 654 321</p>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="fas fa-envelope"></i>
-                  </div>
-                  <div class="info-content">
-                    <h3>Email</h3>
-                    <!-- <p>info@edubridge.ge</p> -->
-                    <p>edubridge.org@gmail.com</p>
-                  </div>
-                </div>
-                <div class="info-item">
-                  <div class="info-icon">
-                    <i class="fas fa-clock"></i>
-                  </div>
-                  <div class="info-content">
-                    <h3>Working Hours</h3>
-                    <p>Monday - Friday: 10:00 - 18:00</p>
-                    <p>Saturday: 11:00 - 15:00</p>
-                    <p>Sunday: Closed</p>
-                  </div>
+                <div class="form_group">
+                  <label class="form_label" for="lastName">გვარი *</label>
+                  <input type="text" id="lastName" name="lastName" class="form_input" required>
                 </div>
               </div>
-
-              <div class="social-links">
-                <h3>Follow us on social media</h3>
-                <div class="social-icons">
-                  <a
-                    href="https://www.facebook.com/profile.php?id=61576915596052"
-                    target="_blank"
-                    aria-label="Facebook"
-                  >
-                    <i class="fab fa-facebook-f"></i>
-                  </a>
-                  <a
-                    href="https://www.instagram.com/edubridge_study/"
-                    target="_blank"
-                    aria-label="Instagram"
-                  >
-                    <i class="fab fa-instagram"></i>
-                  </a>
-                  <a
-                    href="https://www.youtube.com/@EduBridge-study"
-                    target="_blank"
-                    aria-label="YouTube"
-                  >
-                    <i class="fa-brands fa-youtube"></i>
-                  </a>
-                  <a href="#" target="_blank" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin-in"></i>
-                  </a>
+              <div class="form_row">
+                <div class="form_group">
+                  <label class="form_label" for="email">ელ-ფოსტა *</label>
+                  <input type="email" id="email" name="email" class="form_input" required>
+                </div>
+                <div class="form_group">
+                  <label class="form_label" for="phone">ტელეფონი</label>
+                  <input type="tel" id="phone" name="phone" class="form_input">
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        <!-- Map Section -->
-        <section class="map-section">
-          <h2><i class="fas fa-map-marked-alt"></i> Our Location</h2>
-          <div class="map-container">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2978.126836764627!2d44.79845131543579!3d41.71693357923569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDQzJzAxLjAiTiA0NMKwNDgnMDMuOSJF!5e0!3m2!1sen!2sge!4v1620000000000!5m2!1sen!2sge"
-              width="100%"
-              height="450"
-              style="border: 0"
-              allowfullscreen=""
-              loading="lazy"
-              aria-label="Google Maps location"
-            ></iframe>
-          </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="faq-section">
-          <h2>
-            <i class="fas fa-question-circle"></i> Frequently Asked Questions
-          </h2>
-          <div class="faq-container">
-            <div class="faq-item">
-              <button class="faq-question">
-                How do I upload a certificate to my profile?
-                <i class="fas fa-chevron-down"></i>
+              <div class="form_group">
+                <label class="form_label" for="subject">თემა *</label>
+                <select id="subject" name="subject" class="form_select" required>
+                  <option value="">აირჩიეთ თემა</option>
+                  <option value="general">ზოგადი კითხვა</option>
+                  <option value="technical">ტექნიკური პრობლემა</option>
+                  <option value="partnership">პარტნიორობა</option>
+                  <option value="feedback">მოსაზრება</option>
+                  <option value="other">სხვა</option>
+                </select>
+              </div>
+              <div class="form_group">
+                <label class="form_label" for="message">შეტყობინება *</label>
+                <textarea id="message" name="message" class="form_textarea" rows="5" required placeholder="დაწერეთ თქვენი შეტყობინება აქ..."></textarea>
+              </div>
+              <div class="form_group checkbox_group">
+                <label class="checkbox_label">
+                  <input type="checkbox" id="privacy" name="privacy" class="form_checkbox" required>
+                  <span class="checkmark"></span>
+                  ვეთანხმები <a href="#" class="terms_link">პირობებს</a> და <a href="#" class="terms_link">კონფიდენციალურობის პოლიტიკას</a> *
+                </label>
+              </div>
+              <button type="submit" class="submit_btn">
+                <span>გაგზავნა</span>
+                <i class="fas fa-paper-plane"></i>
               </button>
-              <div class="faq-answer">
-                <p>
-                  Certificates can only be uploaded on our platform by registered users. After the activity is completed, the certificate is automatically added to your profile.
-                </p>
+            </form>
+          </div>
+          <!-- contact info section -->
+          <div class="contact_info">
+            <h3 class="contact_info_h3">საკონტაქტო ინფორმაცია</h3>
+            <div class="contact_info_items">
+              <div class="contact_info_item">
+                <div class="contact_info_icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="contact_info_content">
+                  <h4>ელ-ფოსტა</h4>
+                  <a href="mailto:info@edubridge.ge">edubridge.org@gmail.com</a>
+                </div>
+              </div>
+              <div class="contact_info_item">
+                <div class="contact_info_icon">
+                  <i class="fas fa-phone"></i>
+                </div>
+                <div class="contact_info_content">
+                  <h4>ტელეფონი</h4>
+                  <a href="tel:+995322123456">+995 322 123 456</a>
+                </div>
+              </div>
+              <div class="contact_info_item">
+                <div class="contact_info_icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="contact_info_content">
+                  <h4>მისამართი</h4>
+                  <span>თბილისი, საქართველო</span>
+                </div>
               </div>
             </div>
-            <div class="faq-item">
-              <button class="faq-question">
-                How do I register for an activity?
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="faq-answer">
-                <p>
-                  To register, select the desired activity on the "Discover Activities" page, click the "Register" button, and fill in the required information.
-                </p>
+            <div class="contact_social">
+              <h4>სოციალური ქსელები</h4>
+              <div class="social_links">
+                <a href="#" class="social_link">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social_link">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social_link">
+                  <i class="fab fa-youtube"></i>
+                </a>
+                <a href="#" class="social_link">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
               </div>
             </div>
-            <div class="faq-item">
-              <button class="faq-question">
-                How do I share my certificate?
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="faq-answer">
-                <p>
-                  To share your certificates, go to the "Certificates" page, select the desired certificate, and click the "Share" button. You can share it on social media or via email.
-                </p>
-              </div>
-            </div>
-            <div class="faq-item">
-              <button class="faq-question">
-                How do I edit my profile?
-                <i class="fas fa-chevron-down"></i>
-              </button>
-              <div class="faq-answer">
-                <p>
-                  To edit your profile, go to the "My Profile" page. Click the "Edit Profile" button, make the necessary changes, and save your updates.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <footer>
-        <div class="footer-content">
-          <div class="footer-section">
-            <a href="./index.html" aria-label="EduBridge homepage">
-              <img
-                src="./images/logo1.png"
-                alt="EduBridge Logo"
-                class="footer-logo"
-                width="100"
-                height="100"
-              />
-            </a>
-            <p class="footer-about">
-              EduBridge is a platform that connects students to school activities and helps them document their successes.
-            </p>
-            <div class="footer-social">
-              <a
-                href="https://www.facebook.com/profile.php?id=61576915596052"
-                aria-label="Facebook"
-                target="_blank"
-                ><i class="fa-brands fa-facebook-f"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/edubridge_study/"
-                aria-label="Instagram"
-                target="_blank"
-                ><i class="fa-brands fa-instagram"></i
-              ></a>
-              <a
-                href="https://www.youtube.com/@EduBridge-study"
-                aria-label="YouTube"
-                ><i class="fa-brands fa-youtube"></i
-              ></a>
-              <a href="#" aria-label="LinkedIn"
-                ><i class="fa-brands fa-linkedin-in"></i
-              ></a>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h4>Table of contents</h4>
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./discover.html">Discover Activities</a></li>
-              <li><a href="./profile.html">My Profile</a></li>
-              <li><a href="./certificates.html">Certificates</a></li>
-              <li><a href="./contact.html">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Information</h4>
-            <ul>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Partners</a></li>
-              <li><a href="#">Terms and Conditions</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Frequently Asked Questions</a></li>
-            </ul>
-          </div>
-          <div class="footer-section">
-            <h4>Contact</h4>
-            <ul class="footer-contact">
-              <li>
-                <i class="fas fa-map-marker-alt" aria-hidden="true"></i>
-                Tbilisi, Georgia
-              </li>
-              <li>
-                <i class="fas fa-phone" aria-hidden="true"></i> +995 123 456 789
-              </li>
-              <li>
-                <i class="fas fa-envelope" aria-hidden="true"></i>
-                edubridge.org@gmail.com
-              </li>
-            </ul>
           </div>
         </div>
-        <div class="footer-bottom">
-          <p>&copy; 2025 EduBridge. All rights reserved.</p>
-          <div class="footer-links">
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="faq_section">
+        <div class="faq_container">
+          <h3 class="faq_h3">ხშირად დასმული კითხვები</h3>
+          <div class="faq_list" id="faqList">
+            <div class="faq_item">
+              <div class="faq_question" onclick="toggleFAQ(this)">
+                <span>როგორ შემიძლია მივიღო მონაწილეობა აქტივობებში?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq_answer">
+                <p>აქტივობებში მონაწილეობის მისაღებად, უბრალოდ აირჩიეთ სასურველი აქტივობა, დაათვალიერეთ დეტალები და დააჭირეთ "რეგისტრაცია" ღილაკს. შემდეგ შეავსეთ საჭირო ინფორმაცია და დაადასტურეთ მონაწილეობა.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question" onclick="toggleFAQ(this)">
+                <span>არის თუ არა აქტივობები უფასო?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq_answer">
+                <p>ჩვენი პლატფორმაზე არის როგორც უფასო, ასევე ფასიანი აქტივობები. თითოეული აქტივობის გვერდზე მითითებულია მონაწილეობის ღირებულება ან "უფასო" ნიშანი.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question" onclick="toggleFAQ(this)">
+                <span>როგორ შემიძლია მივიღო სერტიფიკატი?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq_answer">
+                <p>სერტიფიკატები გაიცემა აქტივობის წარმატებით დასრულების შემდეგ. ისინი ავტომატურად გამოგიგზავნებათ ელ-ფოსტაზე, ან შეგიძლიათ ჩამოტვირთოთ თქვენი პროფილიდან.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question" onclick="toggleFAQ(this)">
+                <span>რა მოხდება თუ არ შევძლებ მონაწილეობას?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq_answer">
+                <p>თუ ვერ შეძლებთ მონაწილეობას, გთხოვთ დაგვიკავშირდეთ მინიმუმ 24 საათით ადრე. უფასო აქტივობებისთვის უბრალოდ გააუქმეთ რეგისტრაცია, ფასიანი აქტივობებისთვის კი ჩვენ დაგეხმარებით.</p>
+              </div>
+            </div>
+            <div class="faq_item">
+              <div class="faq_question" onclick="toggleFAQ(this)">
+                <span>როგორ შემიძლია გავხდე პარტნიორი?</span>
+                <i class="fas fa-chevron-down"></i>
+              </div>
+              <div class="faq_answer">
+                <p>პარტნიორობისთვის დაგვიკავშირდით ელ-ფოსტით partnership@edubridge.ge ან გამოიყენეთ ზემოთ მოცემული კონტაქტის ფორმა. ჩვენი გუნდი დაგიკავშირდებათ დეტალების გასარკვევად.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Office Hours Section -->
+      <section class="office_hours_section">
+        <div class="office_hours_container">
+          <div class="office_hours_content">
+            <h3 class="office_hours_h3">სამუშაო საათები</h3>
+            <div class="hours_list">
+              <div class="hour_item">
+                <span class="day">ორშაბათი - პარასკევი</span>
+                <span class="time">09:00 - 18:00</span>
+              </div>
+              <div class="hour_item">
+                <span class="day">შაბათი</span>
+                <span class="time">10:00 - 16:00</span>
+              </div>
+              <div class="hour_item">
+                <span class="day">კვირა</span>
+                <span class="time">უქმე</span>
+              </div>
+            </div>
+            <p class="office_note">
+              * ონლაინ მხარდაჭერა ხელმისაწვდომია 24/7
+            </p>
+          </div>
+          <div class="office_map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d190570.22333991126!2d44.64195479775819!3d41.72786065435448!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440cd7e64f626b%3A0x61d084ede2576ea3!2sTbilisi!5e0!3m2!1sen!2sge!4v1754294650927!5m2!1sen!2sge" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <div class="footer_container">
+          <div class="footer_main">
+            <div class="footer_brand">
+              <div class="footer_logo">
+                <img src="./images/logo.svg" alt="EduBridge Logo" />
+                <h3 class="footer_logo_text">EduBridge</h3>
+              </div>
+              <p class="footer_description">აღმოაჩინე, მიიღე მონაწილეობა და გამოიჩინე თავი საქართველოს საუკეთესო საგანმანათლებლო აქტივობებში</p>
+              <div class="footer_social">
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a href="#" class="footer_social_link">
+                  <i class="fa-brands fa-youtube"></i>
+                </a>
+              </div>
+            </div>
+            <div class="footer_links">
+              <div class="footer_column">
+                <h4 class="footer_column_title">აქტივობები</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">ოლიმპიადები</a></li>
+                  <li><a href="#" class="footer_link">ტურნირები</a></li>
+                  <li><a href="#" class="footer_link">სახელოსნოები</a></li>
+                  <li><a href="#" class="footer_link">კონფერენციები</a></li>
+                  <li><a href="#" class="footer_link">საგანმანათლებლო ლაბორატორიები</a></li>
+                </ul>
+              </div>
+              <div class="footer_column">
+                <h4 class="footer_column_title">სერვისები</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">სერტიფიკატები</a></li>
+                  <li><a href="#" class="footer_link">პორტფოლიო</a></li>
+                  <li><a href="#" class="footer_link">რჩევები</a></li>
+                  <li><a href="#" class="footer_link">მენტორობა</a></li>
+                  <li><a href="#" class="footer_link">კარიერული რჩევები</a></li>
+                </ul>
+              </div>
+              <div class="footer_column">
+                <h4 class="footer_column_title">ჩვენს შესახებ</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">ჩვენი ისტორია</a></li>
+                  <li><a href="#" class="footer_link">გუნდი</a></li>
+                  <li><a href="#" class="footer_link">პარტნიორები</a></li>
+                  <li><a href="#" class="footer_link">კარიერა</a></li>
+                  <li><a href="#" class="footer_link">პრესა</a></li>
+                </ul>
+              </div>
+              <div class="footer_column">
+                <h4 class="footer_column_title">დახმარება</h4>
+                <ul class="footer_links_list">
+                  <li><a href="#" class="footer_link">FAQ</a></li>
+                  <li><a href="#" class="footer_link">კონტაქტი</a></li>
+                  <li><a href="#" class="footer_link">მხარდაჭერა</a></li>
+                  <li><a href="#" class="footer_link">სახელმძღვანელო</a></li>
+                  <li><a href="#" class="footer_link">შეფასებები</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer_bottom">
+            <div class="footer_bottom_content">
+              <div class="footer_copyright">
+                <p>&copy; 2024 EduBridge. ყველა უფლება დაცულია.</p>
+              </div>
+              <div class="footer_legal">
+                <a href="#" class="footer_legal_link">პირობები</a>
+                <a href="#" class="footer_legal_link">კონფიდენციალურობა</a>
+                <a href="#" class="footer_legal_link">Cookie პოლიტიკა</a>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
     </div>
 
-    <a href="#top">
-      <button class="back-to-top" aria-label="Back to top">
-        <i class="fas fa-arrow-up" aria-hidden="true"></i>
-      </button>
-    </a>
-
     <script src="./script.js"></script>
     <script src="./contact.js"></script>
   </body>
-</html>
+</html> 
