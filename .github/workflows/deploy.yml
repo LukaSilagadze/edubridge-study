@@ -32,5 +32,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./frontend/dist
-          # We don't automatically provide CNAME here so it doesn't overwrite your custom domain setting from the GH UI.
+          cname: www.edubridge.ge
           keep_files: false
