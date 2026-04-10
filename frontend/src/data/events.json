@@ -54,24 +54,6 @@
     }
   },
   {
-    "id": 4,
-    "title": "ლოგოსის საზაფხულო სკოლა ლისზე",
-    "category": "camp",
-    "subject": "საზაფხულო სკოლა",
-    "age": "5-12 წლამდე",
-    "location": "თბილისი, საქართველო",
-    "date": "12-16 აგვისტო",
-    "description": "ლოგოსის საზაფხულო სკოლა ლისზე",
-    "image": "/images/gardening.png",
-    "status": "open",
-    "participants": 25,
-    "maxParticipants": 30,
-    "organizer": {
-      "name": "ლოგოსი",
-      "logo": "/images/logosi.jpg"
-    }
-  },
-  {
     "id": 5,
     "title": "ახალგაზრდობის ხმა",
     "category": "workshops",
@@ -175,8 +157,62 @@
     "participants": 25,
     "maxParticipants": 30,
     "organizer": {
-      "name": "იქსტრიმი",
+      "name": "LEAF",
       "logo": "/images/LEAF.jpg"
+    }
+  },
+  {
+    "id": 11,
+    "title": "Boarding School & Summer Programs Fair",
+    "category": "fair",
+    "subject": "სამსახური",
+    "age": "14-25",
+    "location": "თბილისი, საქართველო",
+    "date": "23 აპრილი",
+    "description": "განათლების საერთაშორისო გამოფენა",
+    "image": "/images/EMA.jpg",
+    "status": "open",
+    "participants": 25,
+    "maxParticipants": 30,
+    "organizer": {
+      "name": "EMAG",
+      "logo": "/images/EMA.jpg"
+    }
+  },
+  {
+    "id": 12,
+    "title": "რობოტიკისა და ელექტრონიკის სიმპოზიუმი",
+    "category": "fair",
+    "subject": "სამსახური",
+    "age": "VII-XII კლასის მოსწავლეები",
+    "location": "თბილისი, საქართველო",
+    "date": "18-19 აპრილი",
+    "description": "განათლების საერთაშორისო გამოფენა",
+    "image": "/images/alte.jpg",
+    "status": "open",
+    "participants": 25,
+    "maxParticipants": 30,
+    "organizer": {
+      "name": "Alte University",
+      "logo": "/images/alte_logo.jpg"
+    }
+  },
+  {
+    "id": 13,
+    "title": "სამეწარმო იდეების კონკურსი მოსწავლეებისთვის",
+    "category": "tournaments",
+    "subject": "სამსახური",
+    "age": "VII-XII კლასის მოსწავლეები",
+    "location": "თბილისი, საქართველო",
+    "date": "30 აპრილი",
+    "description": "სამეწარმო იდეების კონკურსი მოსწავლეებისთვის",
+    "image": "/images/saba-uni.jpg",
+    "status": "open",
+    "participants": 25,
+    "maxParticipants": 30,
+    "organizer": {
+      "name": "SabaUni",
+      "logo": "/images/sabauni_logo.jpg"
     }
   }
 ]
