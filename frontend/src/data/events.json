@@ -1,5 +1,59 @@
 [
   {
+    "id": 11,
+    "title": "Boarding School & Summer Programs Fair",
+    "category": "fair",
+    "subject": "სამსახური",
+    "age": "14-25",
+    "location": "თბილისი, საქართველო",
+    "date": "23 აპრილი",
+    "description": "განათლების საერთაშორისო გამოფენა",
+    "image": "/images/EMA.jpg",
+    "status": "open",
+    "participants": 25,
+    "maxParticipants": 30,
+    "organizer": {
+      "name": "EMAG",
+      "logo": "/images/EMA.jpg"
+    }
+  },
+  {
+    "id": 12,
+    "title": "რობოტიკისა და ელექტრონიკის სიმპოზიუმი",
+    "category": "fair",
+    "subject": "სამსახური",
+    "age": "VII-XII კლასის მოსწავლეები",
+    "location": "თბილისი, საქართველო",
+    "date": "18-19 აპრილი",
+    "description": "განათლების საერთაშორისო გამოფენა",
+    "image": "/images/alte.jpg",
+    "status": "open",
+    "participants": 25,
+    "maxParticipants": 30,
+    "organizer": {
+      "name": "Alte University",
+      "logo": "/images/alte_logo.jpg"
+    }
+  },
+  {
+    "id": 13,
+    "title": "სამეწარმო იდეების კონკურსი მოსწავლეებისთვის",
+    "category": "tournaments",
+    "subject": "სამსახური",
+    "age": "VII-XII კლასის მოსწავლეები",
+    "location": "თბილისი, საქართველო",
+    "date": "30 აპრილი",
+    "description": "სამეწარმო იდეების კონკურსი მოსწავლეებისთვის",
+    "image": "/images/saba-uni.jpg",
+    "status": "open",
+    "participants": 25,
+    "maxParticipants": 30,
+    "organizer": {
+      "name": "SabaUni",
+      "logo": "/images/sabauni_logo.jpg"
+    }
+  },
+  {
     "id": 1,
     "title": "ნიუ იორკის საერთაშორისო გაეროს მოდელირება",
     "category": "mun",
@@ -159,60 +213,6 @@
     "organizer": {
       "name": "LEAF",
       "logo": "/images/LEAF.jpg"
-    }
-  },
-  {
-    "id": 11,
-    "title": "Boarding School & Summer Programs Fair",
-    "category": "fair",
-    "subject": "სამსახური",
-    "age": "14-25",
-    "location": "თბილისი, საქართველო",
-    "date": "23 აპრილი",
-    "description": "განათლების საერთაშორისო გამოფენა",
-    "image": "/images/EMA.jpg",
-    "status": "open",
-    "participants": 25,
-    "maxParticipants": 30,
-    "organizer": {
-      "name": "EMAG",
-      "logo": "/images/EMA.jpg"
-    }
-  },
-  {
-    "id": 12,
-    "title": "რობოტიკისა და ელექტრონიკის სიმპოზიუმი",
-    "category": "fair",
-    "subject": "სამსახური",
-    "age": "VII-XII კლასის მოსწავლეები",
-    "location": "თბილისი, საქართველო",
-    "date": "18-19 აპრილი",
-    "description": "განათლების საერთაშორისო გამოფენა",
-    "image": "/images/alte.jpg",
-    "status": "open",
-    "participants": 25,
-    "maxParticipants": 30,
-    "organizer": {
-      "name": "Alte University",
-      "logo": "/images/alte_logo.jpg"
-    }
-  },
-  {
-    "id": 13,
-    "title": "სამეწარმო იდეების კონკურსი მოსწავლეებისთვის",
-    "category": "tournaments",
-    "subject": "სამსახური",
-    "age": "VII-XII კლასის მოსწავლეები",
-    "location": "თბილისი, საქართველო",
-    "date": "30 აპრილი",
-    "description": "სამეწარმო იდეების კონკურსი მოსწავლეებისთვის",
-    "image": "/images/saba-uni.jpg",
-    "status": "open",
-    "participants": 25,
-    "maxParticipants": 30,
-    "organizer": {
-      "name": "SabaUni",
-      "logo": "/images/sabauni_logo.jpg"
     }
   }
 ]
