@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import eventsData from '../data/events.json';
 
@@ -38,6 +39,7 @@ function formatDate(dateString) {
 }
 
 export default function EventsPage() {
+  const navigate = useNavigate();
   const [currentCategory, setCurrentCategory] = useState('all');
   const [currentSearch, setCurrentSearch] = useState('');
   const [currentFilters, setCurrentFilters] = useState({ subject: '', grade: '', location: '', date: '' });
@@ -221,7 +223,7 @@ export default function EventsPage() {
           {filteredEvents.length > 0 ? (
             <div className="events_grid">
               {filteredEvents.map(event => (
-                <div key={event.id} className="event_card">
+                <div key={event.id} className="event_card" onClick={() => navigate(`/events/${event.id}`)}>
                   <div className="event_image">
                     <img src={event.image} alt={event.title} />
                     <div className="event_badge">{getCategoryText(event.category)}</div>
