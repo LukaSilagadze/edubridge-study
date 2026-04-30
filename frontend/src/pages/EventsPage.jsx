@@ -128,28 +128,30 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Category Tabs */}
-      <section className="category_section">
-        <div className="category_container">
-          <div className="category_tabs">
-            {['all', 'olympiads', 'tournaments', 'conferences', 'charity', 'labs'].map(cat => (
-              <button 
-                key={cat}
-                className={`category_tab ${currentCategory === cat ? 'active' : ''}`} 
-                onClick={() => setCurrentCategory(cat)}
-              >
-                <i className="fas fa-th-large"></i>
-                <span>{getCategoryText(cat) === 'all' ? 'ყველა' : getCategoryText(cat)}</span>
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Filters Section */}
       <section className="filters_section">
         <div className="filters_container">
           <div className="filters_row">
+            <div className="filter_group">
+              <label className="filter_label">კატეგორია</label>
+              <select 
+                className="filter_select" 
+                value={currentCategory}
+                onChange={(e) => setCurrentCategory(e.target.value)}
+              >
+                <option value="all">ყველა კატეგორია</option>
+                <option value="olympiads">ოლიმპიადა</option>
+                <option value="tournaments">ტურნირი</option>
+                <option value="workshops">სახელოსნო</option>
+                <option value="conferences">კონფერენცია</option>
+                <option value="charity">ქველმოქმედება</option>
+                <option value="labs">ლაბორატორია</option>
+                <option value="camp">ბანაკი</option>
+                <option value="mun">მუნი</option>
+                <option value="course">კურსი</option>
+                <option value="fair">გამოფენა</option>
+              </select>
+            </div>
             <div className="filter_group">
               <label className="filter_label">საგანი</label>
               <select 
@@ -194,12 +196,12 @@ export default function EventsPage() {
                 <option value="hybrid">ჰიბრიდული</option>
               </select>
             </div>
-          </div>
-          <div className="filters_actions">
-            <button className="clear_filters_btn" onClick={clearAllFilters}>
-              <i className="fas fa-times"></i>
-              ფილტრების გასუფთავება
-            </button>
+            <div className="filter_group" style={{ justifyContent: 'flex-end' }}>
+              <button className="clear_filters_btn" onClick={clearAllFilters} style={{ borderRadius: '12px', height: '46px', width: '100%', justifyContent: 'center' }}>
+                <i className="fas fa-times"></i>
+                გასუფთავება
+              </button>
+            </div>
           </div>
         </div>
       </section>
