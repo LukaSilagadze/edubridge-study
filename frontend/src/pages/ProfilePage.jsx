@@ -61,16 +61,16 @@ export default function ProfilePage() {
         .modal_content { position: relative; background: #FFFFFF; border-radius: 20px; padding: 30px; max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); }
         .modal_close { position: absolute; top: 20px; right: 20px; width: 40px; height: 40px; border-radius: 50%; border: none; background: #f1f5f9; color: #64748b; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; }
         .modal_close:hover { background: #e2e8f0; color: #1e293b; }
-        .modal_body h3 { font-family: var(--text-font); font-weight: 700; font-size: 24px; color: #1e293b; margin-bottom: 20px; text-transform: uppercase; }
+        .modal_body h3 { font-family: var(--text-font); font-weight: 700; font-size: 21px; color: #1e293b; margin-bottom: 20px; text-transform: uppercase; }
         .profile_form, .achievement_form, .project_form, .goal_form { display: flex; flex-direction: column; gap: 20px; }
         .form_group { display: flex; flex-direction: column; gap: 8px; }
-        .form_group label { font-family: var(--text-font); font-weight: 600; font-size: 14px; color: #1e293b; text-transform: uppercase; letter-spacing: 1px; }
-        .form_group input, .form_group select, .form_group textarea { padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: var(--text-font); font-size: 14px; transition: all 0.3s ease; }
+        .form_group label { font-family: var(--text-font); font-weight: 600; font-size: 11px; color: #1e293b; text-transform: uppercase; letter-spacing: 1px; }
+        .form_group input, .form_group select, .form_group textarea { padding: 12px 16px; border: 2px solid #e2e8f0; border-radius: 8px; font-family: var(--text-font); font-size: 11px; transition: all 0.3s ease; }
         .form_group input:focus, .form_group select:focus, .form_group textarea:focus { outline: none; border-color: #00E6FB; box-shadow: 0 0 0 3px rgba(0, 230, 251, 0.1); }
         .form_group textarea { resize: vertical; min-height: 80px; }
         .form_row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
         .form_actions { display: flex; gap: 12px; justify-content: flex-end; margin-top: 20px; }
-        .btn_primary, .btn_secondary { padding: 12px 24px; border-radius: 8px; border: none; font-family: var(--text-font); font-weight: 600; font-size: 14px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
+        .btn_primary, .btn_secondary { padding: 12px 24px; border-radius: 8px; border: none; font-family: var(--text-font); font-weight: 600; font-size: 11px; cursor: pointer; transition: all 0.3s ease; text-transform: uppercase; letter-spacing: 1px; }
         .btn_primary { background: linear-gradient(135deg, #00E6FB 0%, #00D4E6 100%); color: #022762; }
         .btn_primary:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0, 230, 251, 0.3); }
         .btn_secondary { background: #f1f5f9; color: #64748b; }
@@ -78,10 +78,10 @@ export default function ProfilePage() {
         .notification { position: fixed; top: 20px; right: 20px; background: #FFFFFF; border-radius: 12px; padding: 16px 20px; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); display: flex; align-items: center; gap: 12px; z-index: 1001; animation: slideIn 0.3s ease; border-left: 4px solid #00E6FB; }
         .notification.success { border-left-color: #10b981; }
         .notification.error { border-left-color: #ef4444; }
-        .notification i { color: #00E6FB; font-size: 18px; }
+        .notification i { color: #00E6FB; font-size: 15px; }
         .notification.success i { color: #10b981; }
         .notification.error i { color: #ef4444; }
-        .notification span { font-family: var(--text-font); font-weight: 600; font-size: 14px; color: #1e293b; }
+        .notification span { font-family: var(--text-font); font-weight: 600; font-size: 11px; color: #1e293b; }
         .notification button { background: none; border: none; color: #64748b; cursor: pointer; padding: 4px; border-radius: 4px; transition: all 0.3s ease; }
         .notification button:hover { background: #f1f5f9; color: #1e293b; }
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
@@ -276,20 +276,7 @@ export default function ProfilePage() {
           </div>
           <div className="profile_info">
             <h1 className="profile_name">გიორგი მაისურაძე</h1>
-            <div className="profile_stats">
-              <div className="stat_item">
-                <span className="stat_number">15</span>
-                <span className="stat_label">აქტივობა</span>
-              </div>
-              <div className="stat_item">
-                <span className="stat_number">8</span>
-                <span className="stat_label">ჯილდო</span>
-              </div>
-              <div className="stat_item">
-                <span className="stat_number">95%</span>
-                <span className="stat_label">წარმატება</span>
-              </div>
-            </div>
+
             <div className="profile_actions">
               <button className="profile_btn primary" onClick={() => setActiveModal('editProfile')}>
                 <i className="fas fa-edit"></i>
@@ -393,42 +380,7 @@ export default function ProfilePage() {
               </div>
             </div>
 
-            {/* Quick Stats */}
-            <div className="sidebar_card">
-              <h3 className="card_title">
-                <i className="fas fa-chart-line"></i>
-                სტატისტიკა
-              </h3>
-              <div className="quick_stats">
-                <div className="stat_card">
-                  <div className="stat_icon">
-                    <i className="fas fa-calendar-check"></i>
-                  </div>
-                  <div className="stat_content">
-                    <span className="stat_number">23</span>
-                    <span className="stat_label">დასწრებული</span>
-                  </div>
-                </div>
-                <div className="stat_card">
-                  <div className="stat_icon">
-                    <i className="fas fa-trophy"></i>
-                  </div>
-                  <div className="stat_content">
-                    <span className="stat_number">12</span>
-                    <span className="stat_label">ჯილდო</span>
-                  </div>
-                </div>
-                <div className="stat_card">
-                  <div className="stat_icon">
-                    <i className="fas fa-users"></i>
-                  </div>
-                  <div className="stat_content">
-                    <span className="stat_number">8</span>
-                    <span className="stat_label">გუნდი</span>
-                  </div>
-                </div>
-              </div>
-            </div>
+
           </aside>
 
           {/* Main Content */}

@@ -4,7 +4,6 @@ import Footer from './components/common/Footer';
 import HomePage from './pages/HomePage';
 import EventsPage from './pages/EventsPage';
 import EventDetailsPage from './pages/EventDetailsPage';
-import TipsPage from './pages/TipsPage';
 import ContactPage from './pages/ContactPage';
 import ProfilePage from './pages/ProfilePage';
 import CalendarPage from './pages/CalendarPage';
@@ -18,7 +17,6 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/events" element={<EventsPage />} />
           <Route path="/events/:id" element={<EventDetailsPage />} />
-          <Route path="/tips" element={<TipsPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/calendar" element={<CalendarPage />} />
