@@ -12,16 +12,16 @@ export default function Footer() {
             </div>
             <p className="footer_description">აღმოაჩინე, მიიღე მონაწილეობა და გამოიჩინე თავი საქართველოს საუკეთესო საგანმანათლებლო აქტივობებში</p>
             <div className="footer_social">
-              <a href="#" className="footer_social_link">
+              <a href="https://www.facebook.com/profile.php?id=61576915596052" className="footer_social_link" target="_blank">
                 <i className="fa-brands fa-facebook-f"></i>
               </a>
-              <a href="#" className="footer_social_link">
+              <a href="https://www.instagram.com/edubridge_study?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="footer_social_link" target="_blank">
                 <i className="fa-brands fa-instagram"></i>
               </a>
-              <a href="#" className="footer_social_link">
-                <i className="fa-brands fa-telegram"></i>
+              <a href="https://www.linkedin.com/company/edubridge-study/" className="footer_social_link" target="_blank">
+                <i className="fa-brands fa-linkedin-in"></i>
               </a>
-              <a href="#" className="footer_social_link">
+              <a href="https://www.youtube.com/@EduBridge-study" className="footer_social_link" target="_blank">
                 <i className="fa-brands fa-youtube"></i>
               </a>
             </div>

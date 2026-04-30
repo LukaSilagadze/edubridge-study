@@ -12,9 +12,10 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "https://fb.me/e/9hEju0Qh9",
     "organizer": {
-      "name": "EMAG",
-      "logo": "/images/EMA.jpg"
+      "name": "EMA",
+      "logo": "/images/EMA_logo.png"
     }
   },
   {
@@ -30,6 +31,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "https://l.instagram.com/?u=https%3A%2F%2Fshorturl.at%2FQnuI6%3Futm_source%3Dig%26utm_medium%3Dsocial%26utm_content%3Dlink_in_bio%26fbclid%3DPAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnxsxSQvn6WRoYEvFi2HMKRwoNT2bGj3sVOY19drXM007A2SuZonBzE6IMkLE_aem_dHT0SRDHN3j9C4xRZa7zKQ&e=AT7vVhpZ_liZcYE4PY0JU85CbzBBm8pph62qfNOU9-JEvpaTe9CbtVZL7ikgf9YnFBqFLa4QFXlhaHqZB7Jv9dVqV_AcBrooQgcbk7Nuhg",
     "organizer": {
       "name": "Alte University",
       "logo": "/images/alte_logo.jpg"
@@ -48,6 +50,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "https://l.facebook.com/l.php?u=https%3A%2F%2Fshorturl.at%2Fagff4%3Ffbclid%3DIwZXh0bgNhZW0CMTAAYnJpZBExSGdCMW5laXRCUzl0SDZBaXNydGMGYXBwX2lkEDIyMjAzOTE3ODgyMDA4OTIAAR4TR9tL2JXF13FfUPxSj90CA-5IZnEp6RnbOOJCB5WWwmCyziu2e0TlF3RNtw_aem_WzZeuDBqiJFqrvXJQ9FtYw&h=AT5RCMP4dF8Mt7qnXVRBbe7zLOeIMIPl74JttjkGToqsKzp6RMu8VGV1Hen8qchGxv4bWsd-dGW-yDZvfMOh4HCmlC5t11s3aRgUEjGuBWxa4TGhYzAuReHbPkdZJODb3bjezyC99QjsNQKU&__tn__=-UK-R&c[0]=AT5aEmp5T1EF_d92JiLKwS83CMS-ze3ZvWypK1H-_uf2JtJ3uz5Dt4NOP4Yxhx1vdxex0HPtp0w2hQ5s5zvt3E1nXlmqGJ9MazAKWXysHof2EqNLwjjKXRxjqHFknzyNep9eOPTSs9c9NzwDdPg1YCe27PnDmNi4uQXM4siMpRzyilf7juXyph7GnM6cS80",
     "organizer": {
       "name": "SabaUni",
       "logo": "/images/sabauni_logo.jpg"
@@ -66,6 +69,7 @@
     "status": "closed",
     "participants": 150,
     "maxParticipants": 200,
+    "registrationLink": "",
     "organizer": {
       "name": "Gmuna",
       "logo": "/images/gmuna.jpg"
@@ -84,6 +88,7 @@
     "status": "closed",
     "participants": 80,
     "maxParticipants": 100,
+    "registrationLink": "",
     "organizer": {
       "name": "Gmuna",
       "logo": "/images/gmuna.jpg"
@@ -102,6 +107,7 @@
     "status": "closed",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "Gmuna",
       "logo": "/images/gmuna.jpg"
@@ -120,6 +126,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "GIDE",
       "logo": "/images/GIDE.png"
@@ -138,6 +145,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "ItStep Academy",
       "logo": "/images/it-step.png"
@@ -156,6 +164,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "ItStep Academy",
       "logo": "/images/it-step.png"
@@ -174,6 +183,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "ItStep Academy",
       "logo": "/images/it-step.png"
@@ -192,6 +202,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "იქსტრიმი",
       "logo": "/images/Xtreme.jpg"
@@ -210,6 +221,7 @@
     "status": "open",
     "participants": 25,
     "maxParticipants": 30,
+    "registrationLink": "",
     "organizer": {
       "name": "LEAF",
       "logo": "/images/LEAF.jpg"

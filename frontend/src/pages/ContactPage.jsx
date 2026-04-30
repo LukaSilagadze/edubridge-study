@@ -193,16 +193,16 @@ export default function ContactPage() {
             <div className="contact_social">
               <h4>სოციალური ქსელები</h4>
               <div className="social_links">
-                <a href="#" className="social_link">
+                <a href="https://www.facebook.com/profile.php?id=61576915596052" className="social_link" target='_blank'>
                   <i className="fab fa-facebook-f"></i>
                 </a>
-                <a href="#" className="social_link">
+                <a href="https://www.instagram.com/edubridge_study?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" className="social_link" target="_blank">
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href="#" className="social_link">
+                <a href="https://www.youtube.com/@EduBridge-study" className="social_link" target="_blank">
                   <i className="fab fa-youtube"></i>
                 </a>
-                <a href="#" className="social_link">
+                <a href="https://www.linkedin.com/company/edubridge-study/" className="social_link" target="_blank">
                   <i className="fab fa-linkedin-in"></i>
                 </a>
               </div>
