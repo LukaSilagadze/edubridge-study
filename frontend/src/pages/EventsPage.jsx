@@ -112,20 +112,6 @@ export default function EventsPage() {
             </div>
           </div>
         </div>
-        <div className="events_hero_stats">
-          <div className="stat_item">
-            <span className="stat_number">500+</span>
-            <span className="stat_label">აქტივობა</span>
-          </div>
-          <div className="stat_item">
-            <span className="stat_number">50+</span>
-            <span className="stat_label">ორგანიზაცია</span>
-          </div>
-          <div className="stat_item">
-            <span className="stat_number">10K+</span>
-            <span className="stat_label">მონაწილე</span>
-          </div>
-        </div>
       </section>
 
       {/* Filters Section */}

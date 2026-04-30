@@ -43,6 +43,7 @@
   align-items: start;
   max-width: 1000px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* Left: Image Side */
@@ -70,6 +71,7 @@
 /* Right: Info Side */
 .ecommerce_info_side {
   padding-top: 5px;
+  padding-right: 20px;
 }
 
 .event_details_badge {
@@ -270,6 +272,7 @@
   .ecommerce_grid {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding: 0;
   }
   
   .event_details_ecommerce_section {

@@ -211,20 +211,7 @@ export default function HomePage() {
               <h4 className="partner_name">Georgian Institute for Debate and Education • GIDE</h4>
             </div>
           </div>
-          <div className="partners_stats">
-            <div className="stat_item">
-              <span className="stat_number">50+</span>
-              <span className="stat_label">პარტნიორი ორგანიზაცია</span>
-            </div>
-            <div className="stat_item">
-              <span className="stat_number">100+</span>
-              <span className="stat_label">სასწავლო დაწესებულება</span>
-            </div>
-            <div className="stat_item">
-              <span class="stat_number">1000+</span>
-              <span class="stat_label">წარმატებული სტუდენტი</span>
-            </div>
-          </div>
+
         </div>
       </section>
 
