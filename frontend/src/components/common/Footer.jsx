@@ -43,7 +43,6 @@ export default function Footer() {
               <ul className="footer_links_list">
                 <li><a href="#" className="footer_link">სერტიფიკატები</a></li>
                 <li><a href="#" className="footer_link">პორტფოლიო</a></li>
-                <li><a href="#" className="footer_link">რჩევები</a></li>
                 <li><a href="#" className="footer_link">მენტორობა</a></li>
                 <li><a href="#" className="footer_link">კარიერული რჩევები</a></li>
               </ul>

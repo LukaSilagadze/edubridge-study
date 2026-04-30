@@ -42,7 +42,6 @@ export default function Header() {
             <li><Link to="/" className="nav_a" onClick={() => setMenuActive(false)}>მთავარი</Link></li>
             <li><Link to="/events" className="nav_a" onClick={() => setMenuActive(false)}>აქტივობები</Link></li>
             <li><Link to="/calendar" className="nav_a" onClick={() => setMenuActive(false)}>კალენდარი</Link></li>
-            <li><Link to="/tips" className="nav_a" onClick={() => setMenuActive(false)}>რჩევები</Link></li>
             <li><Link to="/contact" className="nav_a" onClick={() => setMenuActive(false)}>კონტაქტი</Link></li>
             <li className="mobile_auth"><Link to="/profile" className="header_btn" style={{ textDecoration: 'none' }} onClick={() => setMenuActive(false)}>პროფილი</Link></li>
           </ul>
