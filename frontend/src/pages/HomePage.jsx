@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const activityCards = [
   {
@@ -31,6 +31,7 @@ const activityCards = [
 ];
 
 export default function HomePage() {
+  const navigate = useNavigate();
   return (
     <>
       {/* after header section */}
@@ -43,7 +44,7 @@ export default function HomePage() {
             იპოვე ოლიმპიადები, ტურნირები და სხვა სასკოლო აქტივობები. განათავსე
             შენი წარმატებები ერთ პორტფოლიოში.
           </p>
-          <button className="hero_btn" onClick={() => window.location.href='/events'}>
+          <button className="hero_btn" onClick={() => navigate('/events')}>
             <img src="/images/arrow.svg" alt="" />აქტივობები
           </button>
         </div>

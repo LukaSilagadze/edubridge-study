@@ -166,27 +166,6 @@ export default function CalendarPage() {
         </div>
       )}
 
-      {/* Hero Section */}
-      <section className="calendar_hero">
-        <div className="calendar_hero_content">
-          <h2 className="calendar_hero_h2">თქვენი საგანმანათლებლო კალენდარი</h2>
-          <p className="calendar_hero_p">
-            თვალი ადევნეთ ყველა მნიშვნელოვან აქტივობას, ვადას და მოვლენას.
-            არ გამოგრჩეთ არანაირი შესაძლებლობა!
-          </p>
-          <div className="calendar_quick_actions">
-            <button className="quick_action_btn primary" onClick={() => setActiveModal('addEvent')}>
-              <i className="fas fa-plus"></i>
-              <span>ახალი აქტივობა</span>
-            </button>
-            <button className="quick_action_btn secondary" onClick={() => setActiveModal('reminder')}>
-              <i className="fas fa-bell"></i>
-              <span>შეგახსენებთ</span>
-            </button>
-          </div>
-        </div>
-      </section>
-
       {/* Calendar Main Section */}
       <section className="calendar_main">
         <div className="calendar_container">

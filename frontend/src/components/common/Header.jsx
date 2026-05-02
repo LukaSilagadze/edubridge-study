@@ -43,13 +43,13 @@ export default function Header() {
             <li><Link to="/events" className="nav_a" onClick={() => setMenuActive(false)}>აქტივობები</Link></li>
             <li><Link to="/calendar" className="nav_a" onClick={() => setMenuActive(false)}>კალენდარი</Link></li>
             <li><Link to="/contact" className="nav_a" onClick={() => setMenuActive(false)}>კონტაქტი</Link></li>
-            <li className="mobile_auth"><Link to="/profile" className="header_btn" style={{ textDecoration: 'none' }} onClick={() => setMenuActive(false)}>პროფილი</Link></li>
+            {/* <li className="mobile_auth"><Link to="/profile" className="header_btn" style={{ textDecoration: 'none' }} onClick={() => setMenuActive(false)}>პროფილი</Link></li> */}
           </ul>
         </nav>
-        <Link to="/profile" className="header_btn desktop_auth" style={{ textDecoration: 'none' }}>პროფილი</Link>
-        <button ref={burgerRef} className={`burger_menu ${menuActive ? 'active' : ''}`} id="burgerMenu" onClick={toggleMenu}>
+        {/* <Link to="/profile" className="header_btn desktop_auth" style={{ textDecoration: 'none' }}>პროფილი</Link> */}
+        {/* <button ref={burgerRef} className={`burger_menu ${menuActive ? 'active' : ''}`} id="burgerMenu" onClick={toggleMenu}>
           <i className="fas fa-bars"></i>
-        </button>
+        </button> */}
       </div>
     </header>
   );
