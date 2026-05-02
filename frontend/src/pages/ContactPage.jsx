@@ -177,7 +177,7 @@ export default function ContactPage() {
                 </div>
                 <div className="contact_info_content">
                   <h4>ტელეფონი</h4>
-                  <a href="tel:+995322123456">+995 322 123 456</a>
+                  <a href="tel:+995322123456">+995 596 160 003</a>
                 </div>
               </div>
               <div className="contact_info_item">

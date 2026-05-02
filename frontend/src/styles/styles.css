@@ -10,7 +10,7 @@
 /* header */
 .header{
     background-color: #022762;
-    padding: 20px 50px;
+    padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -47,7 +47,7 @@
     font-family: var(--text-font);
     font-weight: 700;
     font-style: Bold;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 120%;
     letter-spacing: -1%;
     text-transform: uppercase;
@@ -545,17 +545,12 @@
     animation: glow 2s ease-in-out infinite alternate;
 }
 
-@keyframes glow {
-    from { box-shadow: 0 0 15px rgba(0, 230, 251, 0.5); }
-    to { box-shadow: 0 0 25px rgba(0, 230, 251, 0.8); }
-}
-
 .steps_container {
     display: flex;
     gap: 30px;
     justify-content: center;
     overflow-x: scroll;
-    padding-top: 30px;
+    padding-block: 30px;
     scrollbar-width: none;
 }
 
@@ -578,14 +573,10 @@
 .step_card:nth-child(7) { animation-delay: 3s; }
 
 .step_card:hover {
-    transform: translateY(-8px) scale(1.02);
+    /* transform: translateY(-8px) scale(1.02); */
     box-shadow: 0 20px 60px rgba(0, 230, 251, 0.2);
-    border: 2px solid rgba(0, 230, 251, 0.3);
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+    /* border: 2px solid rgba(0, 230, 251, 0.3); */
+    cursor: pointer;
 }
 
 .step_number {
@@ -620,8 +611,8 @@
 
 .step_card:hover .step_icon i {
     color: #00E6FB;
-    transform: scale(1.1);
-    text-shadow: 0 0 20px rgba(0, 230, 251, 0.5);
+    /* transform: scale(1.1); */
+    /* text-shadow: 0 0 20px rgba(0, 230, 251, 0.5); */
 }
 
 .step_title {
@@ -639,7 +630,7 @@
 
 .step_card:hover .step_title {
     color: #00E6FB;
-    text-shadow: 0 0 10px rgba(0, 230, 251, 0.3);
+    /* text-shadow: 0 0 10px rgba(0, 230, 251, 0.3); */
 }
 
 .step_description {
@@ -658,15 +649,6 @@
     color: #00E6FB;
     font-size: 20px;
     opacity: 0.7;
-}
-
-.step_arrow i {
-    animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
 }
 
 /* Partner Organizations Section */
@@ -788,19 +770,20 @@
 }
 
 .partner_card:hover {
-    transform: translateY(-8px) rotateX(5deg);
+    /* transform: translateY(-8px) rotateX(5deg);
     box-shadow: 
         0 20px 40px rgba(0, 0, 0, 0.12),
         0 8px 16px rgba(0, 230, 251, 0.15),
         0 4px 8px rgba(0, 0, 0, 0.06),
         0 0 0 1px rgba(0, 230, 251, 0.1);
-    border: 2px solid rgba(0, 230, 251, 0.2);
+    border: 2px solid rgba(0, 230, 251, 0.2); */
+    cursor: pointer;
 }
 
 .partner_card:hover::before {
-    height: 6px;
+    /* height: 6px; */
     background: linear-gradient(135deg, #00E6FB 0%, #00D4E6 50%, #00E6FB 100%);
-    box-shadow: 0 0 20px rgba(0, 230, 251, 0.4);
+    /* box-shadow: 0 0 20px rgba(0, 230, 251, 0.4); */
 }
 
 .partner_card:hover::after {
@@ -838,12 +821,7 @@
 
 .partner_card:hover .partner_logo::before {
     opacity: 1;
-    animation: rotate 2s linear infinite;
-}
-
-@keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+    /* animation: rotate 2s linear infinite; */
 }
 
 .partner_logo img {
@@ -857,8 +835,8 @@
 
 .partner_card:hover .partner_logo img {
     opacity: 1;
-    transform: scale(1.15);
-    filter: drop-shadow(0 0 10px rgba(0, 230, 251, 0.3));
+    /* transform: scale(1.15); */
+    /* filter: drop-shadow(0 0 10px rgba(0, 230, 251, 0.3)); */
 }
 
 .partner_name {
@@ -874,10 +852,10 @@
     transition: all 0.3s ease;
 }
 
-.partner_card:hover .partner_name {
+/* .partner_card:hover .partner_name {
     color: #00E6FB;
     transform: translateY(-2px);
-}
+} */
 
 .partner_description {
     font-family: var(--text-font);
