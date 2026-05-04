@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import eventsData from '../data/events.json';
 
@@ -40,10 +40,18 @@ function formatDate(dateString) {
 
 export default function EventsPage() {
   const navigate = useNavigate();
-  const [currentCategory, setCurrentCategory] = useState('all');
+  const [searchParams] = useSearchParams();
+  const [currentCategory, setCurrentCategory] = useState(searchParams.get('category') || 'all');
   const [currentSearch, setCurrentSearch] = useState('');
   const [currentFilters, setCurrentFilters] = useState({ subject: '', grade: '', location: '', date: '' });
   const [filteredEvents, setFilteredEvents] = useState(eventsData);
+
+  useEffect(() => {
+    const category = searchParams.get('category');
+    if (category) {
+      setCurrentCategory(category);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     let filtered = [...eventsData];
