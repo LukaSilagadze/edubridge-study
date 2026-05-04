@@ -1,10 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import eventsData from '../data/events.json';
 import '../styles/new-homepage.css';
 
 export default function NewHomePage() {
   const navigate = useNavigate();
+  const rowRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (rowRef.current) {
+      const { clientWidth } = rowRef.current;
+      const scrollAmount = direction === 'left' ? -clientWidth : clientWidth;
+      rowRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   // Extract unique categories for the sidebar (mapping to Georgian names if desired, or just using current text/functionality)
   const categories = [
@@ -60,13 +69,17 @@ export default function NewHomePage() {
         </div>
         
         <div className="events-row-container">
-          <button className="scroll-btn left-btn" aria-label="Scroll left">
+          <button className="scroll-btn left-btn" aria-label="Scroll left" onClick={() => scroll('left')}>
             <i className="fa-solid fa-chevron-left"></i>
           </button>
           
-          <div className="events-row">
-            {eventsData.slice(0, 8).map((event) => (
-              <article key={event.id} className="event-product-card">
+          <div className="events-row" ref={rowRef}>
+            {eventsData.slice(0, 15).map((event) => (
+              <article 
+                key={event.id} 
+                className="event-product-card"
+                onClick={() => navigate(`/events/${event.id}`)}
+              >
                 <div className="card-image-wrapper">
                   <img src={event.image} alt={event.title} loading="lazy" />
                   {event.status === 'open' && <span className="badge open">ღიაა</span>}
@@ -86,9 +99,21 @@ export default function NewHomePage() {
                     </div>
                   </div>
                   <div className="card-actions">
-                    <Link to={`/events/${event.id}`} className="action-btn details-btn">დეტალები</Link>
+                    <Link 
+                      to={`/events/${event.id}`} 
+                      className="action-btn details-btn"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      დეტალები
+                    </Link>
                     {event.registrationLink && (
-                      <a href={event.registrationLink} target="_blank" rel="noreferrer" className="action-btn register-btn">
+                      <a 
+                        href={event.registrationLink} 
+                        target="_blank" 
+                        rel="noreferrer" 
+                        className="action-btn register-btn"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         რეგისტრაცია
                       </a>
                     )}
@@ -98,7 +123,7 @@ export default function NewHomePage() {
             ))}
           </div>
 
-          <button className="scroll-btn right-btn" aria-label="Scroll right">
+          <button className="scroll-btn right-btn" aria-label="Scroll right" onClick={() => scroll('right')}>
             <i className="fa-solid fa-chevron-right"></i>
           </button>
         </div>
