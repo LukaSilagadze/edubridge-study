@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
-import eventsData from '../data/events.json';
+import { db } from '../firebase';
+import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 
 function getCategoryText(category) {
   const categories = {
@@ -12,8 +13,11 @@ function getCategoryText(category) {
     'labs': 'ლაბორატორია',
     'camp': 'ბანაკი',
     'mun': 'მუნი',
+    'competitions': 'კონკურსი',
     'course': 'კურსი',
-    'fair': 'გამოფენა'
+    'fair': 'გამოფენა',
+    'hackathons': 'ჰაკათონი',
+    'volunteering': 'მოხალისეობა'
   };
   return categories[category] || category;
 }
@@ -22,9 +26,37 @@ function getLocationText(location) {
   const locations = {
     'online': 'ონლაინ',
     'offline': 'ფიზიკური',
-    'hybrid': 'ჰიბრიდული'
+    'hybrid': 'ჰიბრიდული',
+    'tbilisi': 'თბილისი',
+    'kutaisi': 'ქუთაისი',
+    'batumi': 'ბათუმი',
+    'rustavi': 'რუსთავი'
   };
   return locations[location] || location;
+}
+
+function getSubjectText(subject) {
+  const subjects = {
+    'stem': 'STEM',
+    'business': 'ბიზნესი',
+    'finance': 'ფინანსები',
+    'law': 'სამართალი',
+    'medicine': 'მედიცინა',
+    'arts': 'ხელოვნება',
+    'languages': 'ენები',
+    'coding': 'პროგრამირება',
+    'entrepreneurship': 'მეწარმეობა'
+  };
+  return subjects[subject] || subject;
+}
+
+function getGradeText(grade) {
+  const grades = {
+    'elementary': 'დაწყებითი',
+    'middle': 'საშუალო',
+    'high': 'საშუალო სრული'
+  };
+  return grades[grade] || grade;
 }
 
 function formatDate(dateString) {
@@ -47,21 +79,36 @@ export default function EventDetailsPage() {
     // Scroll to top when event changes
     window.scrollTo(0, 0);
 
-    const eventId = parseInt(id, 10);
-    const foundEvent = eventsData.find(e => e.id === eventId);
+    const fetchEventData = async () => {
+      try {
+        // Fetch specific event
+        const eventDocRef = doc(db, 'events', id);
+        const eventSnapshot = await getDoc(eventDocRef);
+        
+        if (eventSnapshot.exists()) {
+          const foundEvent = { id: eventSnapshot.id, ...eventSnapshot.data() };
+          setEvent(foundEvent);
+          
+          // Fetch all events for similar events calculation
+          const querySnapshot = await getDocs(collection(db, 'events'));
+          const allEvents = querySnapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+          
+          // Find similar events
+          const similar = allEvents
+            .filter(e => e.category === foundEvent.category && String(e.id) !== String(foundEvent.id))
+            .slice(0, 3); // Max 3 similar events
+          
+          setSimilarEvents(similar);
+        } else {
+          setEvent(null);
+        }
+      } catch (error) {
+        console.error("Error fetching event details:", error);
+        setEvent(null);
+      }
+    };
     
-    if (foundEvent) {
-      setEvent(foundEvent);
-      
-      // Find similar events
-      const similar = eventsData
-        .filter(e => e.category === foundEvent.category && e.id !== foundEvent.id)
-        .slice(0, 3); // Max 3 similar events
-      
-      setSimilarEvents(similar);
-    } else {
-      setEvent(null);
-    }
+    fetchEventData();
   }, [id]);
 
   if (!event) {
@@ -136,14 +183,14 @@ export default function EventDetailsPage() {
                   <div className="meta_icon"><i className="fas fa-user-graduate"></i></div>
                   <div className="meta_text">
                     <span className="meta_label">ასაკი / კლასი</span>
-                    <span className="meta_value">{event.age}</span>
+                    <span className="meta_value">{getGradeText(event.grade)}</span>
                   </div>
                 </div>
                 <div className="meta_item">
                   <div className="meta_icon"><i className="fas fa-book"></i></div>
                   <div className="meta_text">
                     <span className="meta_label">საგანი</span>
-                    <span className="meta_value">{event.subject}</span>
+                    <span className="meta_value">{getSubjectText(event.subject)}</span>
                   </div>
                 </div>
                 <div className="meta_item">

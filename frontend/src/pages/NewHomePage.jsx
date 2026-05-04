@@ -1,11 +1,58 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import eventsData from '../data/events.json';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
 import '../styles/new-homepage.css';
+
+function getLocationText(location) {
+  const locations = {
+    'online': 'ონლაინ',
+    'offline': 'ფიზიკური',
+    'hybrid': 'ჰიბრიდული',
+    'tbilisi': 'თბილისი',
+    'kutaisi': 'ქუთაისი',
+    'batumi': 'ბათუმი',
+    'rustavi': 'რუსთავი'
+  };
+  return locations[location] || location;
+}
+
+function getGradeText(grade) {
+  const grades = {
+    'elementary': 'დაწყებითი',
+    'middle': 'საშუალო',
+    'high': 'საშუალო სრული'
+  };
+  return grades[grade] || grade;
+}
+
+function formatDate(dateString) {
+  const date = new Date(dateString);
+  if (isNaN(date.getTime())) return dateString; 
+  return date.toLocaleDateString('ka-GE', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric'
+  });
+}
 
 export default function NewHomePage() {
   const navigate = useNavigate();
   const rowRef = useRef(null);
+  const [eventsData, setEventsData] = useState([]);
+
+  React.useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "events"));
+        const eventsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setEventsData(eventsList);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   const scroll = (direction) => {
     if (rowRef.current) {
@@ -92,11 +139,16 @@ export default function NewHomePage() {
                   <h4 className="event-title">{event.title}</h4>
                   <div className="event-details">
                     <div className="detail-item">
-                      <i className="fa-solid fa-graduation-cap"></i> {event.age}
+                      <i className="fa-solid fa-graduation-cap"></i> {getGradeText(event.grade)}
                     </div>
                     <div className="detail-item">
-                      <i className="fa-solid fa-location-dot"></i> {event.location}
+                      <i className="fa-solid fa-location-dot"></i> {getLocationText(event.location)}
                     </div>
+                    {event.deadline && (
+                      <div className="detail-item" style={{ color: '#dc3545', width: '100%' }}>
+                        <i className="fa-regular fa-clock"></i> ბოლო ვადა: {formatDate(event.deadline)}
+                      </div>
+                    )}
                   </div>
                   <div className="card-actions">
                     <Link 
