@@ -65,11 +65,12 @@ export default function NewHomePage() {
   // Extract unique categories for the sidebar (mapping to Georgian names if desired, or just using current text/functionality)
   const categories = [
     { id: 'mun', label: 'გაეროს მოდელირება', icon: 'fa-globe' },
-    { id: 'course', label: 'კურსები', icon: 'fa-laptop-code' },
+    { id: 'course', label: 'კურსები', icon: 'fa-book-open' },
     { id: 'camp', label: 'ბანაკები', icon: 'fa-campground' },
     { id: 'fair', label: 'გამოფენები', icon: 'fa-building' },
     { id: 'workshops', label: 'ვორქშოფები', icon: 'fa-users' },
     { id: 'tournaments', label: 'ტურნირები', icon: 'fa-trophy' },
+    { id: 'hackathon', label: 'ჰაკათონები', icon: 'fa-laptop-code' },
   ];
 
   return (

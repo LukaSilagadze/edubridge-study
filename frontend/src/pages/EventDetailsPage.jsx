@@ -59,6 +59,27 @@ function getGradeText(grade) {
   return grades[grade] || grade;
 }
 
+function getPriceText(price) {
+  const prices = {
+    'free': 'უფასო',
+    'paid': 'ფასიანი',
+    'under50': '50₾-მდე',
+    '50to100': '50₾ - 100₾',
+    'over100': '100₾+'
+  };
+  return prices[price] || price;
+}
+
+function getLanguageText(language) {
+  const languages = {
+    'georgian': 'ქართული',
+    'english': 'ინგლისური',
+    'russian': 'რუსული',
+    'bilingual': 'ორენოვანი'
+  };
+  return languages[language] || language;
+}
+
 function formatDate(dateString) {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) return dateString; 
@@ -194,13 +215,6 @@ export default function EventDetailsPage() {
                   </div>
                 </div>
                 <div className="meta_item">
-                  <div className="meta_icon"><i className="fas fa-users"></i></div>
-                  <div className="meta_text">
-                    <span className="meta_label">მონაწილეები</span>
-                    <span className="meta_value">{event.participants} / {event.maxParticipants}</span>
-                  </div>
-                </div>
-                <div className="meta_item">
                   <div className="meta_icon"><i className="fas fa-info-circle"></i></div>
                   <div className="meta_text">
                     <span className="meta_label">სტატუსი</span>
@@ -209,6 +223,33 @@ export default function EventDetailsPage() {
                     </span>
                   </div>
                 </div>
+                {event.price && (
+                  <div className="meta_item">
+                    <div className="meta_icon"><i className="fas fa-ticket-alt"></i></div>
+                    <div className="meta_text">
+                      <span className="meta_label">ღირებულება</span>
+                      <span className="meta_value">{getPriceText(event.price)}</span>
+                    </div>
+                  </div>
+                )}
+                {event.language && (
+                  <div className="meta_item">
+                    <div className="meta_icon"><i className="fas fa-globe"></i></div>
+                    <div className="meta_text">
+                      <span className="meta_label">ენა</span>
+                      <span className="meta_value">{getLanguageText(event.language)}</span>
+                    </div>
+                  </div>
+                )}
+                {event.deadline && (
+                  <div className="meta_item">
+                    <div className="meta_icon"><i className="fas fa-clock"></i></div>
+                    <div className="meta_text">
+                      <span className="meta_label">რეგისტრაციის ბოლო ვადა</span>
+                      <span className="meta_value" style={{ color: '#dc3545' }}>{formatDate(event.deadline)}</span>
+                    </div>
+                  </div>
+                )}
               </div>
 
               <div className="ecommerce_actions">
