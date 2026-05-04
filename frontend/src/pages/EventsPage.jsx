@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import eventsData from '../data/events.json';
+import { db } from '../firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 function getCategoryText(category) {
   const categories = {
@@ -13,8 +14,11 @@ function getCategoryText(category) {
     'labs': 'ლაბორატორია',
     'camp': 'ბანაკი',
     'mun': 'მუნი',
+    'competitions': 'კონკურსი',
     'course': 'კურსი',
-    'fair': 'გამოფენა'
+    'fair': 'გამოფენა',
+    'hackathons': 'ჰაკათონი',
+    'volunteering': 'მოხალისეობა'
   };
   return categories[category] || category;
 }
@@ -23,9 +27,37 @@ function getLocationText(location) {
   const locations = {
     'online': 'ონლაინ',
     'offline': 'ფიზიკური',
-    'hybrid': 'ჰიბრიდული'
+    'hybrid': 'ჰიბრიდული',
+    'tbilisi': 'თბილისი',
+    'kutaisi': 'ქუთაისი',
+    'batumi': 'ბათუმი',
+    'rustavi': 'რუსთავი'
   };
   return locations[location] || location;
+}
+
+function getSubjectText(subject) {
+  const subjects = {
+    'stem': 'STEM',
+    'business': 'ბიზნესი',
+    'finance': 'ფინანსები',
+    'law': 'სამართალი',
+    'medicine': 'მედიცინა',
+    'arts': 'ხელოვნება',
+    'languages': 'ენები',
+    'coding': 'პროგრამირება',
+    'entrepreneurship': 'მეწარმეობა'
+  };
+  return subjects[subject] || subject;
+}
+
+function getGradeText(grade) {
+  const grades = {
+    'elementary': 'დაწყებითი',
+    'middle': 'საშუალო',
+    'high': 'საშუალო სრული'
+  };
+  return grades[grade] || grade;
 }
 
 function formatDate(dateString) {
@@ -41,58 +73,97 @@ function formatDate(dateString) {
 export default function EventsPage() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
-  const [currentCategory, setCurrentCategory] = useState(searchParams.get('category') || 'all');
   const [currentSearch, setCurrentSearch] = useState('');
-  const [currentFilters, setCurrentFilters] = useState({ subject: '', grade: '', location: '', date: '' });
-  const [filteredEvents, setFilteredEvents] = useState(eventsData);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [filters, setFilters] = useState({
+    category: searchParams.get('category') || 'all',
+    subject: '',
+    grade: '',
+    location: '',
+    price: '',
+    language: '',
+    status: ''
+  });
+  const [allEvents, setAllEvents] = useState([]);
+  const [filteredEvents, setFilteredEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const querySnapshot = await getDocs(collection(db, "events"));
+        const eventsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setAllEvents(eventsList);
+        setFilteredEvents(eventsList);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching events:", error);
+        setLoading(false);
+      }
+    };
+    fetchEvents();
+  }, []);
 
   useEffect(() => {
     const category = searchParams.get('category');
     if (category) {
-      setCurrentCategory(category);
+      setFilters(prev => ({...prev, category: category}));
     }
   }, [searchParams]);
 
   useEffect(() => {
-    let filtered = [...eventsData];
+    let filtered = [...allEvents];
     
     // Filter by category
-    if (currentCategory !== 'all') {
-      filtered = filtered.filter(event => event.category === currentCategory);
+    if (filters.category && filters.category !== 'all') {
+      filtered = filtered.filter(event => event.category === filters.category);
     }
     
     // Filter by search
     if (currentSearch) {
       const lowerSearch = currentSearch.toLowerCase();
       filtered = filtered.filter(event => 
-        event.title.toLowerCase().includes(lowerSearch) ||
-        event.description.toLowerCase().includes(lowerSearch)
+        event.title?.toLowerCase().includes(lowerSearch) ||
+        event.description?.toLowerCase().includes(lowerSearch)
       );
     }
     
     // Filter by subject
-    if (currentFilters.subject) {
-      filtered = filtered.filter(event => event.subject === currentFilters.subject);
+    if (filters.subject) {
+      filtered = filtered.filter(event => event.subject === filters.subject);
     }
     
     // Filter by grade
-    if (currentFilters.grade) {
-      filtered = filtered.filter(event => event.grade === currentFilters.grade);
+    if (filters.grade) {
+      filtered = filtered.filter(event => event.grade === filters.grade);
     }
     
     // Filter by location
-    if (currentFilters.location) {
-      filtered = filtered.filter(event => event.location === currentFilters.location);
+    if (filters.location) {
+      filtered = filtered.filter(event => event.location === filters.location);
+    }
+
+    // Filter by price
+    if (filters.price) {
+      filtered = filtered.filter(event => event.price === filters.price);
+    }
+
+    // Filter by language
+    if (filters.language) {
+      filtered = filtered.filter(event => event.language === filters.language);
     }
     
-    setFilteredEvents(filtered);
-  }, [currentCategory, currentSearch, currentFilters]);
+    // Filter by status / upcoming
+    if (filters.status) {
+      if (filters.status === 'upcoming' || filters.status === 'open') {
+        filtered = filtered.filter(event => event.status === 'open');
+      } else if (filters.status === 'closed') {
+        filtered = filtered.filter(event => event.status === 'closed');
+      }
+    }
 
-  const clearAllFilters = () => {
-    setCurrentCategory('all');
-    setCurrentSearch('');
-    setCurrentFilters({ subject: '', grade: '', location: '', date: '' });
-  };
+    setFilteredEvents(filtered);
+  }, [filters, currentSearch, allEvents]);
 
   return (
     <>
@@ -122,81 +193,118 @@ export default function EventsPage() {
         </div>
       </section>
 
-      {/* Filters Section */}
-      <section className="filters_section">
-        <div className="filters_container">
-          <div className="filters_row">
-            <div className="filter_group">
-              <label className="filter_label">კატეგორია</label>
-              <select 
-                className="filter_select" 
-                value={currentCategory}
-                onChange={(e) => setCurrentCategory(e.target.value)}
-              >
-                <option value="all">ყველა კატეგორია</option>
-                <option value="olympiads">ოლიმპიადა</option>
-                <option value="tournaments">ტურნირი</option>
-                <option value="workshops">სახელოსნო</option>
-                <option value="conferences">კონფერენცია</option>
-                <option value="charity">ქველმოქმედება</option>
-                <option value="labs">ლაბორატორია</option>
-                <option value="camp">ბანაკი</option>
-                <option value="mun">მუნი</option>
-                <option value="course">კურსი</option>
-                <option value="fair">გამოფენა</option>
-              </select>
-            </div>
-            <div className="filter_group">
-              <label className="filter_label">საგანი</label>
-              <select 
-                className="filter_select" 
-                value={currentFilters.subject}
-                onChange={(e) => setCurrentFilters({...currentFilters, subject: e.target.value})}
-              >
-                <option value="">ყველა საგანი</option>
-                <option value="math">მათემატიკა</option>
-                <option value="science">მეცნიერება</option>
-                <option value="literature">ლიტერატურა</option>
-                <option value="history">ისტორია</option>
-                <option value="geography">გეოგრაფია</option>
-                <option value="languages">ენები</option>
-                <option value="arts">ხელოვნება</option>
-                <option value="technology">ტექნოლოგია</option>
-              </select>
-            </div>
-            <div className="filter_group">
-              <label className="filter_label">კლასი</label>
-              <select 
-                className="filter_select"
-                value={currentFilters.grade}
-                onChange={(e) => setCurrentFilters({...currentFilters, grade: e.target.value})}
-              >
-                <option value="">ყველა კლასი</option>
-                <option value="elementary">დაწყებითი</option>
-                <option value="middle">საშუალო</option>
-                <option value="high">საშუალო სრული</option>
-              </select>
-            </div>
-            <div className="filter_group">
-              <label className="filter_label">მდებარეობა</label>
-              <select 
-                className="filter_select"
-                value={currentFilters.location}
-                onChange={(e) => setCurrentFilters({...currentFilters, location: e.target.value})}  
-              >
-                <option value="">ყველა ფორმატი</option>
-                <option value="online">ონლაინ</option>
-                <option value="offline">ფიზიკური</option>
-                <option value="hybrid">ჰიბრიდული</option>
-              </select>
-            </div>
-            <div className="filter_group" style={{ justifyContent: 'flex-end' }}>
-              <button className="clear_filters_btn" onClick={clearAllFilters} style={{ borderRadius: '12px', height: '46px', width: '100%', justifyContent: 'center' }}>
-                <i className="fas fa-times"></i>
-                გასუფთავება
-              </button>
-            </div>
+      {/* Sidebar Filter Overlay & Panel */}
+      <div className={`filter_sidebar_overlay ${isSidebarOpen ? 'active' : ''}`} onClick={() => setIsSidebarOpen(false)}></div>
+      <aside className={`filter_sidebar ${isSidebarOpen ? 'active' : ''}`}>
+        <div className="filter_sidebar_header">
+          <h3>ფილტრები</h3>
+          <button className="close_sidebar_btn" onClick={() => setIsSidebarOpen(false)}>
+            <i className="fas fa-times"></i>
+          </button>
+        </div>
+        
+        <div className="filter_sidebar_body">
+          <div className="sidebar_filter_group">
+            <label>კატეგორია</label>
+            <select value={filters.category} onChange={(e) => setFilters({...filters, category: e.target.value})}>
+              <option value="all">ყველა</option>
+              <option value="olympiads">ოლიმპიადა</option>
+              <option value="mun">მუნი (MUN)</option>
+              <option value="competitions">კონკურსი</option>
+              <option value="course">კურსები</option>
+              <option value="camp">ბანაკი</option>
+              <option value="fair">უნივერსიტეტების გამოფენა</option>
+              <option value="workshops">ვორქშოფები</option>
+              <option value="hackathons">ჰაკათონები</option>
+              <option value="volunteering">მოხალისეობა</option>
+            </select>
           </div>
+
+          <div className="sidebar_filter_group">
+            <label>საგანი / სფერო</label>
+            <select value={filters.subject} onChange={(e) => setFilters({...filters, subject: e.target.value})}>
+              <option value="">ყველა</option>
+              <option value="STEM">STEM</option>
+              <option value="business">ბიზნესი</option>
+              <option value="finance">ფინანსები</option>
+              <option value="law">სამართალი</option>
+              <option value="medicine">მედიცინა</option>
+              <option value="arts">ხელოვნება</option>
+              <option value="languages">ენები</option>
+              <option value="coding">პროგრამირება</option>
+              <option value="entrepreneurship">მეწარმეობა</option>
+            </select>
+          </div>
+
+          <div className="sidebar_filter_group">
+            <label>ასაკი / კლასი</label>
+            <select value={filters.grade} onChange={(e) => setFilters({...filters, grade: e.target.value})}>
+              <option value="">ყველა</option>
+              <option value="elementary">დაწყებითი</option>
+              <option value="middle">საშუალო</option>
+              <option value="high">საშუალო სრული</option>
+            </select>
+          </div>
+
+          <div className="sidebar_filter_group">
+            <label>მდებარეობა / ფორმატი</label>
+            <select value={filters.location} onChange={(e) => setFilters({...filters, location: e.target.value})}>
+              <option value="">ყველა</option>
+              <option value="tbilisi">თბილისი</option>
+              <option value="kutaisi">ქუთაისი</option>
+              <option value="batumi">ბათუმი</option>
+              <option value="rustavi">რუსთავი</option>
+              <option value="online">ონლაინ</option>
+              <option value="hybrid">ჰიბრიდული</option>
+              <option value="offline">ფიზიკური</option>
+            </select>
+          </div>
+
+          <div className="sidebar_filter_group">
+            <label>ფასი</label>
+            <select value={filters.price} onChange={(e) => setFilters({...filters, price: e.target.value})}>
+              <option value="">ყველა</option>
+              <option value="free">უფასო</option>
+              <option value="paid">ფასიანი</option>
+              <option value="under50">50₾-მდე</option>
+              <option value="50to100">50₾ - 100₾</option>
+              <option value="over100">100₾+</option>
+            </select>
+          </div>
+
+          <div className="sidebar_filter_group">
+            <label>ენა</label>
+            <select value={filters.language} onChange={(e) => setFilters({...filters, language: e.target.value})}>
+              <option value="">ყველა</option>
+              <option value="georgian">ქართული</option>
+              <option value="english">ინგლისური</option>
+              <option value="russian">რუსული</option>
+              <option value="bilingual">ორენოვანი</option>
+            </select>
+          </div>
+
+          <div className="sidebar_filter_group">
+            <label>სტატუსი / თარიღი</label>
+            <select value={filters.status} onChange={(e) => setFilters({...filters, status: e.target.value})}>
+              <option value="">ყველა</option>
+              <option value="upcoming">მომავალი / მიმდინარე</option>
+              <option value="open">რეგისტრაცია ღიაა</option>
+              <option value="closed">დასრულებული</option>
+            </select>
+          </div>
+
+          <button className="sidebar_clear_btn" onClick={() => setFilters({category: 'all', subject: '', grade: '', location: '', price: '', language: '', status: ''})}>
+            გასუფთავება
+          </button>
+        </div>
+      </aside>
+
+      {/* Top Bar for Filter Button */}
+      <section className="active_filters_section">
+        <div className="events_container" style={{ paddingTop: '20px', paddingBottom: '0', display: 'flex', gap: '15px', alignItems: 'center' }}>
+          <button className="open_filters_btn" onClick={() => setIsSidebarOpen(true)}>
+            <i className="fas fa-filter"></i> ფილტრები
+          </button>
         </div>
       </section>
 
@@ -216,7 +324,9 @@ export default function EventsPage() {
             </div>
           </div>
           
-          {filteredEvents.length > 0 ? (
+          {loading ? (
+            <div className="loading_spinner" style={{ textAlign: 'center', padding: '50px' }}>იტვირთება...</div>
+          ) : filteredEvents.length > 0 ? (
             <div className="events_grid">
               {filteredEvents.map(event => (
                 <div key={event.id} className="event_card" onClick={() => navigate(`/events/${event.id}`)}>
@@ -235,12 +345,16 @@ export default function EventsPage() {
                         <i className="fas fa-map-marker-alt"></i>
                         <span>{getLocationText(event.location)}</span>
                       </div>
-                      <div className="event_meta_item">
-                        <i className="fas fa-users"></i>
-                        <span>{event.participants}/{event.maxParticipants} მონაწილე</span>
-                      </div>
+                      {event.deadline && (
+                        <div className="event_meta_item">
+                          <i className="fas fa-clock"></i>
+                          <div style={{display: 'flex', flexDirection: 'column', gap: '5px'}}>
+                            <span>რეგისტრაცია სრულდება: </span>
+                            <span style={{ color: '#dc3545' }}>{formatDate(event.deadline)}</span>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                    <p className="event_description">{event.description}</p>
                     <div className="event_actions">
                       {event.organizer && (
                         <div className="event_organizer">
@@ -261,7 +375,7 @@ export default function EventsPage() {
               <i className="fas fa-search"></i>
               <h3>არ არის ნაპოვნი აქტივობები</h3>
               <p>სცადეთ სხვა ფილტრები ან ძიების ტერმინები</p>
-              <button className="reset_search_btn" onClick={clearAllFilters}>
+              <button className="reset_search_btn" onClick={() => {setFilters({category: 'all', subject: '', grade: '', location: '', price: '', language: '', status: ''}); setCurrentSearch('');}}>
                 <i className="fas fa-refresh"></i>
                 ძიების გასუფთავება
               </button>
