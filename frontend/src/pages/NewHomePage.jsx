@@ -1,7 +1,8 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { db } from '../firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { mapEventsSnapshot, sortEventsByFreshness } from '../utils/events';
 import '../styles/new-homepage.css';
 
 function getLocationText(location) {
@@ -42,16 +43,17 @@ export default function NewHomePage() {
   const [eventsData, setEventsData] = useState([]);
 
   React.useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "events"));
-        const eventsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setEventsData(eventsList);
-      } catch (error) {
+    const unsubscribe = onSnapshot(
+      collection(db, "events"),
+      (querySnapshot) => {
+        setEventsData(sortEventsByFreshness(mapEventsSnapshot(querySnapshot)));
+      },
+      (error) => {
         console.error("Error fetching events:", error);
-      }
-    };
-    fetchEvents();
+      },
+    );
+
+    return unsubscribe;
   }, []);
 
   const scroll = (direction) => {

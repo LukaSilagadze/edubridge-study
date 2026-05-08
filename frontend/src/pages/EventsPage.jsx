@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
 import { db } from '../firebase';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot } from 'firebase/firestore';
+import { mapEventsSnapshot, sortEventsByFreshness } from '../utils/events';
 
 function getCategoryText(category) {
   const categories = {
@@ -36,7 +37,7 @@ function getLocationText(location) {
   return locations[location] || location;
 }
 
-function getSubjectText(subject) {
+function _getSubjectText(subject) {
   const subjects = {
     'stem': 'STEM',
     'business': 'ბიზნესი',
@@ -51,7 +52,7 @@ function getSubjectText(subject) {
   return subjects[subject] || subject;
 }
 
-function getGradeText(grade) {
+function _getGradeText(grade) {
   const grades = {
     'elementary': 'დაწყებითი',
     'middle': 'საშუალო',
@@ -85,33 +86,25 @@ export default function EventsPage() {
     status: ''
   });
   const [allEvents, setAllEvents] = useState([]);
-  const [filteredEvents, setFilteredEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchEvents = async () => {
-      try {
-        const querySnapshot = await getDocs(collection(db, "events"));
-        const eventsList = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-        setAllEvents(eventsList);
-        setFilteredEvents(eventsList);
+    const unsubscribe = onSnapshot(
+      collection(db, "events"),
+      (querySnapshot) => {
+        setAllEvents(sortEventsByFreshness(mapEventsSnapshot(querySnapshot)));
         setLoading(false);
-      } catch (error) {
+      },
+      (error) => {
         console.error("Error fetching events:", error);
         setLoading(false);
-      }
-    };
-    fetchEvents();
+      },
+    );
+
+    return unsubscribe;
   }, []);
 
-  useEffect(() => {
-    const category = searchParams.get('category');
-    if (category) {
-      setFilters(prev => ({...prev, category: category}));
-    }
-  }, [searchParams]);
-
-  useEffect(() => {
+  const filteredEvents = useMemo(() => {
     let filtered = [...allEvents];
     
     // Filter by category
@@ -162,7 +155,7 @@ export default function EventsPage() {
       }
     }
 
-    setFilteredEvents(filtered);
+    return filtered;
   }, [filters, currentSearch, allEvents]);
 
   return (

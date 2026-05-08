@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { db } from '../firebase';
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { mapEventDoc, mapEventsSnapshot } from '../utils/events';
 
 function getCategoryText(category) {
   const categories = {
@@ -107,12 +108,12 @@ export default function EventDetailsPage() {
         const eventSnapshot = await getDoc(eventDocRef);
         
         if (eventSnapshot.exists()) {
-          const foundEvent = { id: eventSnapshot.id, ...eventSnapshot.data() };
+          const foundEvent = mapEventDoc(eventSnapshot);
           setEvent(foundEvent);
           
           // Fetch all events for similar events calculation
           const querySnapshot = await getDocs(collection(db, 'events'));
-          const allEvents = querySnapshot.docs.map(d => ({ id: d.id, ...d.data() }));
+          const allEvents = mapEventsSnapshot(querySnapshot);
           
           // Find similar events
           const similar = allEvents

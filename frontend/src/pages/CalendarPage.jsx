@@ -51,7 +51,7 @@ export default function CalendarPage() {
     return days;
   };
 
-  const calendarDays = useMemo(() => getCalendarDays(), [currentMonthDate]);
+  const calendarDays = getCalendarDays();
 
   const isSameDay = (d1, d2) => {
     return d1.getFullYear() === d2.getFullYear() &&
