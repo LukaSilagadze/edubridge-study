@@ -308,15 +308,15 @@ export default function NewHomePage() {
                 <h4 className="form_title">გამოიწერე ჩვენი ბიულეტენი</h4>
                 <form className="subscribe_form">
                   <div className="input_group">
-                    <input type="text" placeholder="თქვენი სახელი" className="form_input" required />
+                    <input type="text" placeholder="თქვენი სახელი" className="newsletter_form_input" required />
                     <i className="fa-solid fa-user input_icon"></i>
                   </div>
                   <div className="input_group">
-                    <input type="email" placeholder="ელ-ფოსტა" className="form_input" required />
+                    <input type="email" placeholder="ელ-ფოსტა" className="newsletter_form_input" required />
                     <i className="fa-solid fa-envelope input_icon"></i>
                   </div>
                   <div className="checkbox_group">
-                    <label className="checkbox_label">
+                    <label className="newsletter_checkbox_label">
                       <input type="checkbox" className="form_checkbox" required />
                       <span className="checkmark"></span>
                       ვეთანხმები <a href="#" className="terms_link">პირობებს</a> და <a href="#" className="terms_link">კონფიდენციალურობის პოლიტიკას</a>

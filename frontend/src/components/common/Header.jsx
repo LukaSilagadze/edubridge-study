@@ -59,15 +59,6 @@ export default function Header() {
             </li>
             <li>
               <Link
-                to="/calendar"
-                className="nav_a"
-                onClick={() => setMenuActive(false)}
-              >
-                კალენდარი
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/contact"
                 className="nav_a"
                 onClick={() => setMenuActive(false)}

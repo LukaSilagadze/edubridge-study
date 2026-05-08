@@ -72,7 +72,7 @@ export default function Footer() {
         <div className="footer_bottom">
           <div className="footer_bottom_content">
             <div className="footer_copyright">
-              <p>&copy; 2024 EduBridge. ყველა უფლება დაცულია.</p>
+              <p>&copy; 2026 EduBridge. ყველა უფლება დაცულია.</p>
             </div>
             <div className="footer_legal">
               <a href="#" className="footer_legal_link">პირობები</a>

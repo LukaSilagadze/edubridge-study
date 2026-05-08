@@ -1,0 +1,45 @@
+:root {
+  --notebook-paper: #f7fbff;
+  --notebook-dot: rgba(2, 39, 98, 0.12);
+  --notebook-dot-soft: rgba(0, 230, 251, 0.08);
+  --notebook-bg:
+    radial-gradient(circle at 1px 1px, var(--notebook-dot) 1.1px, transparent 1.2px),
+    radial-gradient(circle at 11px 11px, var(--notebook-dot-soft) 0.8px, transparent 0.9px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(247, 251, 255, 0.94));
+  --notebook-bg-size: 22px 22px, 22px 22px, auto;
+}
+
+html,
+body,
+#root,
+.container,
+.admin_app {
+  min-height: 100%;
+  background: var(--notebook-bg);
+  background-size: var(--notebook-bg-size);
+  background-attachment: fixed;
+}
+
+#root,
+.container,
+.admin_app {
+  min-height: 100svh;
+}
+
+.new-home-container,
+.activity_section,
+.category_section,
+.active_filters_section,
+.events_section,
+.contact_form_section,
+.faq_section,
+.event_details_page,
+.event_details_nav,
+.event_details_ecommerce_section,
+.similar_events_section,
+.profile_main,
+.calendar_main,
+.upcoming_events_section {
+  background: var(--notebook-bg);
+  background-size: var(--notebook-bg-size);
+}

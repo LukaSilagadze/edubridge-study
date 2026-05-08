@@ -9,11 +9,17 @@
 
 /* header */
 .header{
-    background-color: #022762;
+    background-color: rgba(2, 39, 98, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 .logo{
     display: flex;
@@ -494,9 +500,7 @@
 }
 
 /* How It Works Section */
-.how_it_works_section {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-}
+
 
 .how_it_works_section::before {
     content: '';
@@ -515,7 +519,6 @@
     flex-direction: column;
     justify-content: center;
     row-gap: 60px;
-    padding: 80px 50px;
 }
 
 .how_it_works_h3 {
@@ -653,8 +656,8 @@
 
 /* Partner Organizations Section */
 .partners_section {
-    background: #ffffff;
-    padding: 80px 50px;
+    background: none;
+    padding: 30px 0;
     position: relative;
     overflow: hidden;
 }
@@ -725,7 +728,6 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-bottom: 60px;
 }
 
 .partner_card {
@@ -1041,7 +1043,7 @@
     position: relative;
 }
 
-.form_input {
+.newsletter_form_input {
     width: 100%;
     padding: 15px 45px 15px 20px;
     background: rgba(255, 255, 255, 0.1);
@@ -1053,11 +1055,11 @@
     transition: all 0.3s ease;
 }
 
-.form_input::placeholder {
+.newsletter_form_input::placeholder {
     color: rgba(255, 255, 255, 0.6);
 }
 
-.form_input:focus {
+.newsletter_form_input:focus {
     outline: none;
     border-color: #00E6FB;
     background: rgba(255, 255, 255, 0.15);
@@ -1077,13 +1079,13 @@
     margin-top: 10px;
 }
 
-.checkbox_label {
+.newsletter_checkbox_label {
     display: flex;
     align-items: flex-start;
     gap: 10px;
     font-family: var(--text-font);
-    font-size: 12px;
-    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    color: rgb(255, 255, 255);
     cursor: pointer;
     line-height: 140%;
 }

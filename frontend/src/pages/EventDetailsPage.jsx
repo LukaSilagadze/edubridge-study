@@ -81,6 +81,10 @@ function getLanguageText(language) {
   return languages[language] || language;
 }
 
+function getDisplayPrice(price) {
+  return price ? getPriceText(price) : 'Price TBD';
+}
+
 function formatDate(dateString) {
   const date = new Date(dateString);
   if (isNaN(date.getTime())) return dateString; 
@@ -146,30 +150,42 @@ export default function EventDetailsPage() {
 
   return (
     <div className="event_details_page">
-      {/* Back button */}
-      <div className="event_details_nav">
-        <div className="container">
-          <button onClick={() => navigate('/events')} className="back_btn">
-            <i className="fas fa-arrow-left"></i> ყველა აქტივობა
-          </button>
-        </div>
-      </div>
 
       {/* Main Product Section */}
       <section className="event_details_ecommerce_section">
         <div className="container">
-          <div className="ecommerce_grid">
-            {/* Left: Image */}
-            <div className="ecommerce_image_side">
-              <div className="ecommerce_image_wrapper">
-                <img src={event.image} alt={event.title} className="ecommerce_main_image" />
-              </div>
-            </div>
+          <button onClick={() => navigate('/events')} className="details_back_btn">
+            <i className="fas fa-arrow-left"></i> უკან დაბრუნება
+          </button>
 
-            {/* Right: Info */}
+          <div className="ecommerce_grid">
+            {/* Left: Info */}
             <div className="ecommerce_info_side">
               <div className="event_details_badge">{getCategoryText(event.category)}</div>
               <h1 className="ecommerce_title">{event.title}</h1>
+
+              <p className="ecommerce_description ecommerce_intro">{event.description}</p>
+
+              <div className="event_overview_meta">
+                <div className="overview_meta_item">
+                  <i className="fas fa-calendar-alt"></i>
+                  <span>{formatDate(event.date)}</span>
+                </div>
+                <div className="overview_meta_item">
+                  <i className="fas fa-map-marker-alt"></i>
+                  <span>{getLocationText(event.location)}</span>
+                </div>
+                {event.participants && (
+                  <div className="overview_meta_item">
+                    <i className="fas fa-users"></i>
+                    <span>{event.participants} participants</span>
+                  </div>
+                )}
+                <div className="overview_meta_item">
+                  <i className="fas fa-info-circle"></i>
+                  <span className={`status_${event.status}`}>{event.status === 'open' ? 'Open' : 'Closed'}</span>
+                </div>
+              </div>
               
               {event.organizer && (
                 <div className="ecommerce_organizer">
@@ -276,6 +292,61 @@ export default function EventDetailsPage() {
                 </p>
               </div>
             </div>
+
+            {/* Right: Image and registration */}
+            <aside className="ecommerce_purchase_side">
+              <div className="ecommerce_purchase_card">
+                <div className="ecommerce_image_wrapper">
+                  <img src={event.image} alt={event.title} className="ecommerce_main_image" />
+                </div>
+
+                <div className="ecommerce_actions ecommerce_sidebar_actions">
+                  <div className="ecommerce_price">{getDisplayPrice(event.price)}</div>
+                  <a
+                    href={event.registrationLink || "#"}
+                    target={event.registrationLink ? "_blank" : "_self"}
+                    rel="noopener noreferrer"
+                    className={`event_btn primary ecommerce_register_btn ${event.status !== 'open' ? 'disabled' : ''}`}
+                    data-label={event.status === 'open' ? 'რეგისტრაცია' : 'რეგისტრაცია დასრულებულია'}
+                    onClick={(e) => {
+                      if(event.status !== 'open' || !event.registrationLink) {
+                         if(!event.registrationLink && event.status === 'open') {
+                            // Allow click
+                         } else {
+                            e.preventDefault();
+                         }
+                      }
+                    }}
+                  >
+                    {event.status === 'open' ? 'áƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒáƒªáƒ˜áƒ' : 'áƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒáƒªáƒ˜áƒ áƒ“áƒáƒ¡áƒ áƒ£áƒšáƒ”áƒ‘áƒ£áƒšáƒ˜áƒ'}
+                  </a>
+                  <p className="ecommerce_action_note">
+                    {event.status === 'open' ? 'áƒáƒ“áƒ’áƒ˜áƒšáƒ”áƒ‘áƒ˜ áƒ¨áƒ”áƒ–áƒ¦áƒ£áƒ“áƒ£áƒšáƒ˜áƒ. áƒ“áƒáƒáƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒ˜áƒ áƒ“áƒ˜áƒ— áƒáƒ®áƒšáƒáƒ•áƒ”.' : 'áƒ áƒ”áƒ’áƒ˜áƒ¡áƒ¢áƒ áƒáƒªáƒ˜áƒ áƒáƒ¦áƒáƒ  áƒáƒ áƒ˜áƒ¡ áƒ¨áƒ”áƒ¡áƒáƒ«áƒšáƒ”áƒ‘áƒ”áƒšáƒ˜.'}
+                  </p>
+
+                  <div className="purchase_details_list">
+                    <div className="purchase_detail_row">
+                      <span>თარიღი:</span>
+                      <strong>{formatDate(event.date)}</strong>
+                    </div>
+                    <div className="purchase_detail_row">
+                      <span>კატეგორია:</span>
+                      <strong>{getCategoryText(event.category)}</strong>
+                    </div>
+                    <div className="purchase_detail_row">
+                      <span>ლოკაცია:</span>
+                      <strong>{getLocationText(event.location)}</strong>
+                    </div>
+                    {event.participants && (
+                      <div className="purchase_detail_row">
+                        <span>მონაწილეები:</span>
+                        <strong>{event.participants}</strong>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
