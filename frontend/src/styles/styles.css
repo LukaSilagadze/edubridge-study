@@ -9,11 +9,17 @@
 
 /* header */
 .header{
-    background-color: #022762;
+    background-color: rgba(2, 39, 98, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     padding: 15px 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
 }
 .logo{
     display: flex;
